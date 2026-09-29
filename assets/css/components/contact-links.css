@@ -1,0 +1,123 @@
+/* =====================================================
+ * components/contact-links.css
+ * Sidebar contact links: heading and three actions.
+ * Depends on: base.css.
+ * ===================================================== */
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+    margin-top: 1.25rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.dark .contact-links {
+    border-top-color: rgba(255, 255, 255, 0.10);
+}
+
+.contact-links-title {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #71717a;
+}
+
+@media (min-width: 640px) {
+    .contact-links-title { font-size: 11px; }
+}
+
+.dark .contact-links-title { color: #a1a1aa; }
+
+.contact-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* --- Base button --- */
+.btn-link {
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #27272a;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+}
+
+.btn-link:active {
+    transform: scale(0.95);
+}
+
+.dark .btn-link {
+    color: #e4e4e7;
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-link i {
+    font-size: 1rem;
+}
+
+/* --- Icons only on mobile --- */
+@media (max-width: 480px) {
+    .btn-link {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        justify-content: center;
+        gap: 0;
+    }
+    .btn-link span {
+        display: none;
+    }
+    .btn-link i {
+        font-size: 1.15rem;
+    }
+}
+
+/* --- Variantes por red --- */
+.btn-link--linkedin i { color: #3b82f6; }
+.btn-link--linkedin:hover {
+    background: rgba(59, 130, 246, 0.10);
+    border-color: rgba(59, 130, 246, 0.40);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.10);
+}
+.dark .btn-link--linkedin:hover { background: rgba(59, 130, 246, 0.20); }
+
+.btn-link--email i { color: #3b82f6; }
+.dark .btn-link--email i { color: #f59e0b; }
+
+.btn-link--email:hover {
+    background: rgba(245, 158, 11, 0.10);
+    border-color: rgba(245, 158, 11, 0.40);
+    box-shadow: 0 4px 8px rgba(245, 158, 11, 0.10);
+}
+.dark .btn-link--email:hover { background: rgba(245, 158, 11, 0.20); }
+
+.btn-link--whatsapp i { color: #10b981; }
+.btn-link--whatsapp:hover {
+    background: rgba(16, 185, 129, 0.10);
+    border-color: rgba(16, 185, 129, 0.40);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.10);
+}
+.dark .btn-link--whatsapp:hover { background: rgba(16, 185, 129, 0.20); }

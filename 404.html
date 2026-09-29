@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Resource not found | Ezequiel Garcia Gilabert</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻🚀</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Detectar tema guardado ANTES de pintar (evita flash) -->
+    <script>
+        (function() {
+            try {
+                const saved = localStorage.getItem('cosmos-state') || localStorage.getItem('theme');
+                const isDark = !saved || saved === 'dark' || saved === '"dark"' || saved.includes('dark');
+                if (isDark) document.documentElement.classList.add('dark');
+            } catch (e) {
+                // Si falla, dejamos dark por defecto
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body { height: 100%; overflow-x: hidden; }
+
+        /* ============================================================
+         * VARIABLES — Dark mode (default)
+         * ============================================================ */
+        :root {
+            --bg-gradient-1: #1e1e2e;
+            --bg-gradient-2: #0d0d10;
+            --text-primary: #eceeed;
+            --text-secondary: #a1a1aa;
+            --container-bg: rgba(22, 27, 34, 0.75);
+            --container-border: rgba(255, 255, 255, 0.08);
+            --code-bg: rgba(13, 17, 23, 0.85);
+            --code-border: rgba(255, 255, 255, 0.08);
+            --line-number: #484f58;
+            --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+            --btn-secondary-border: rgba(255, 255, 255, 0.12);
+            --btn-secondary-hover-bg: rgba(255, 255, 255, 0.10);
+            --btn-secondary-hover-border: rgba(255, 255, 255, 0.20);
+        }
+
+        /* ============================================================
+         * VARIABLES — Light mode
+         * ============================================================ */
+        html:not(.dark) {
+            --bg-gradient-1: #f3f0f7;
+            --bg-gradient-2: #e8e4f0;
+            --text-primary: #18181b;
+            --text-secondary: #52525b;
+            --container-bg: rgba(255, 255, 255, 0.75);
+            --container-border: rgba(0, 0, 0, 0.08);
+            --code-bg: rgba(245, 245, 247, 0.9);
+            --code-border: rgba(0, 0, 0, 0.08);
+            --line-number: #b0b0b0;
+            --btn-secondary-bg: rgba(0, 0, 0, 0.04);
+            --btn-secondary-border: rgba(0, 0, 0, 0.10);
+            --btn-secondary-hover-bg: rgba(0, 0, 0, 0.08);
+            --btn-secondary-hover-border: rgba(0, 0, 0, 0.20);
+        }
+
+        body {
+            background: radial-gradient(ellipse at top, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+            position: relative;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        /* Estrellitas decorativas del cosmos */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.4), transparent),
+                radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.3), transparent),
+                radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.4), transparent);
+            background-size: 100% 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        html:not(.dark) body::before {
+            opacity: 0.3; /* Menos visibles en light mode */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            width: 100%;
+            background: var(--container-bg);
+            backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4);
+            border: 1px solid var(--container-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow:
+                0 24px 60px -16px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.6s ease-out;
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Terminal header */
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot.red { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green { background-color: #27c93f; }
+
+        /* Código C# */
+        .code-block {
+            background-color: var(--code-bg);
+            border: 1px solid var(--code-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+
+        .line {
+            display: block;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .line-number {
+            color: var(--line-number);
+            user-select: none;
+            display: inline-block;
+            width: 2rem;
+            text-align: right;
+            margin-right: 1rem;
+            transition: color 0.4s ease;
+        }
+
+        /* Syntax highlighting — Dark (VS Code Dark+) */
+        .keyword { color: #569cd6; }
+        .type { color: #4ec9b0; }
+        .comment { color: #6a9955; font-style: italic; }
+        .method { color: #dcdcaa; }
+        .bracket { color: #c9d1d9; }
+        .error-text { color: #f85149; }
+
+        /* Syntax highlighting — Light (VS Code Light+) */
+        html:not(.dark) .keyword { color: #0000ff; }
+        html:not(.dark) .type { color: #267f99; }
+        html:not(.dark) .comment { color: #008000; }
+        html:not(.dark) .method { color: #795e26; }
+        html:not(.dark) .bracket { color: #1f1f1f; }
+        html:not(.dark) .error-text { color: #dc2626; }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #a855f7, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            transition: color 0.4s ease;
+        }
+
+        .subtitle strong { color: var(--text-primary); }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn i { font-size: 1rem; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #a855f7, #f97316);
+            color: #ffffff;
+            box-shadow: 0 4px 16px -4px rgba(168, 85, 247, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -4px rgba(168, 85, 247, 0.7);
+        }
+
+        .btn-secondary {
+            background: var(--btn-secondary-bg);
+            color: var(--text-primary);
+            border-color: var(--btn-secondary-border);
+            transition: all 0.2s ease, background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--btn-secondary-hover-bg);
+            border-color: var(--btn-secondary-hover-border);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================================
+         * MOBILE
+         * ============================================================ */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+                align-items: flex-start;
+                padding-top: 2rem;
+            }
+
+            .container {
+                padding: 1.25rem;
+                border-radius: 12px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .subtitle {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .code-block {
+                font-size: 0.6rem;
+                line-height: 1.6;
+                padding: 0.85rem 0.75rem;
+                margin-bottom: 1.5rem;
+                overflow-x: hidden;
+            }
+
+            .line {
+                white-space: pre-wrap;
+                word-break: break-word;
+                overflow-wrap: anywhere;
+            }
+
+            .line-number {
+                width: 1.2rem;
+                margin-right: 0.4rem;
+                font-size: 0.55rem;
+            }
+
+            .actions {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.7rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .btn i { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+
+        <h1>404</h1>
+        <p class="subtitle">
+            <strong>NullReferenceException</strong><br>
+            La página que buscás no existe o fue movida.<br>
+            <span style="font-size:0.85rem; opacity:0.7;">The page you're looking for doesn't exist or has been moved.</span>
+        </p>
+
+        <div class="code-block">
+            <span class="line"><span class="line-number">1</span><span class="comment">// Route not found on the server</span></span>
+            <span class="line"><span class="line-number">2</span><span class="keyword">public</span> <span class="type">IActionResult</span> <span class="method">GetPage</span><span class="bracket">(</span><span class="keyword">string</span> path<span class="bracket">)</span></span>
+            <span class="line"><span class="line-number">3</span><span class="bracket">{</span></span>
+            <span class="line"><span class="line-number">4</span>    <span class="keyword">var</span> page <span class="bracket">=</span> _repository<span class="bracket">.</span><span class="method">FindByPath</span><span class="bracket">(</span>path<span class="bracket">);</span></span>
+            <span class="line"><span class="line-number">5</span>    </span>
+            <span class="line"><span class="line-number">6</span>    <span class="keyword">if</span> <span class="bracket">(</span>page <span class="keyword">is</span> <span class="keyword">null</span><span class="bracket">)</span></span>
+            <span class="line"><span class="line-number">7</span>        <span class="keyword">return</span> <span class="method">NotFound</span><span class="bracket">();</span> <span class="error-text">// ⚠️ 404 - You are here</span></span>
+            <span class="line"><span class="line-number">8</span>    </span>
+            <span class="line"><span class="line-number">9</span>    <span class="keyword">return</span> <span class="method">Ok</span><span class="bracket">(</span>page<span class="bracket">);</span></span>
+            <span class="line"><span class="line-number">10</span><span class="bracket">}</span></span>
+        </div>
+
+        <div class="actions">
+            <a href="index.html" class="btn btn-primary">
+                <i class="ph-bold ph-house"></i>
+                <span>Volver al inicio</span>
+            </a>
+            <a href="index.html#contact" class="btn btn-secondary">
+                <i class="ph-bold ph-envelope-simple"></i>
+                <span>Contactame</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
