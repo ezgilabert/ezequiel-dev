@@ -12,23 +12,42 @@ const renderExperience = (() => {
         const detailsId = `experience-details-${index}`;
 
         card.innerHTML = `
-            <div class="profile-card-header" data-card-toggle role="button" tabindex="0" aria-expanded="${Boolean(exp.expanded)}" aria-controls="${detailsId}">
+            <div class="experience-header">
+                <div class="profile-card-header" data-card-toggle role="button" tabindex="0" aria-expanded="${Boolean(exp.expanded)}" aria-controls="${detailsId}">
                 <div class="flex-1 min-w-0">
                     <div class="exp-header-row">
                         <div class="exp-title-block">
                             <h3 class="exp-role">${exp.role}</h3>
-                            <p class="exp-company">${exp.company}</p>
                         </div>
                         <span class="exp-dates">${exp.dates}</span>
                     </div>
                 </div>
                 <span class="profile-chevron" aria-hidden="true"><i class="ph-bold ph-caret-down text-xs"></i></span>
+                </div>
             </div>
             <div id="${detailsId}" class="profile-card-body" aria-hidden="${!exp.expanded}" ${exp.expanded ? '' : 'inert'}>
                 <p class="exp-tech">Tech: ${exp.tech}</p>
                 <ul data-i18n-list="${exp.i18nKey}" class="exp-bullets"></ul>
             </div>
         `;
+
+        const company = document.createElement('p');
+        company.className = 'exp-company';
+        (exp.companyParts || [{ text: exp.company }]).forEach(part => {
+            if (!part.href) {
+                company.appendChild(document.createTextNode(part.text));
+                return;
+            }
+
+            const link = document.createElement('a');
+            link.href = part.href;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = part.text;
+            company.appendChild(link);
+        });
+        card.querySelector('.experience-header').appendChild(company);
+
         return card;
     }
 

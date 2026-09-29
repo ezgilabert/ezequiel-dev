@@ -40,7 +40,7 @@ const renderEducation = (() => {
                                 <span data-i18n="${edu.titleKey}">${edu.titleFallback}</span>
                             </h3>
                         </div>
-                        <span class="edu-badge">${edu.badge}</span>
+                        <span class="edu-badge" ${edu.badgeKey ? `data-i18n="${edu.badgeKey}"` : ''}>${edu.badge}</span>
                     </div>
                 </div>
                 <span class="profile-chevron" aria-hidden="true"><i class="ph-bold ph-caret-down text-xs"></i></span>

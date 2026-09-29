@@ -14,6 +14,7 @@ window.EDUCATION_DATA = [
         subtitleIcon: 'ph-arrow-square-out',
         subtitleLink: 'https://www.udemy.com/course/node-de-cero-a-experto/',
         badge: 'Curso',
+        badgeKey: 'course_badge',
         descKey: 'course_node_desc',
         descFallback: 'Formación completa en Node.js: creación de servidores, APIs REST, autenticación con JWT, bases de datos MongoDB, sockets en tiempo real y despliegue en producción.',
         bulletsKey: 'lists.education.nodeCourse'
@@ -26,6 +27,7 @@ window.EDUCATION_DATA = [
         subtitleIcon: 'ph-arrow-square-out',
         subtitleLink: 'https://www.udemy.com/course/angular-fernando-herrera/',
         badge: 'Curso',
+        badgeKey: 'course_badge',
         descKey: 'course_angular_desc',
         descFallback: 'Formación intensiva en Angular moderno: componentes, directivas, servicios, routing, formularios reactivos, HTTP, signals, standalone components, testing y despliegue en producción.',
         bulletsKey: 'lists.education.angularCourse'

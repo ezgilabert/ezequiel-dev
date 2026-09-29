@@ -30,6 +30,16 @@
     margin-top: 0.1rem;
 }
 
+.exp-company a {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+}
+
+.exp-company a:hover { color: #2563eb; }
+.dark .exp-company a:hover { color: #fbbf24; }
+.exp-company a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
 .dark .exp-company { color: #a1a1aa; }
 
 .exp-dates {

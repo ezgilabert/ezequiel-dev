@@ -8,6 +8,12 @@ window.EXPERIENCE_DATA = [
     {
         role: 'Senior .NET Full Stack Developer',
         company: 'Kopius Tech (Home Care & Home Base)',
+        companyParts: [
+            { text: 'Kopius Tech', href: 'https://kopiustech.com/' },
+            { text: ' (' },
+            { text: 'Home Care & Home Base', href: 'https://hchb.com/' },
+            { text: ')' }
+        ],
         dates: '06/2022 - 07/2026',
         tech: '.NET Core 8, Blazor, Angular, WinForms, TypeScript, SQL Server, Azure, GitHub Copilot, MCP',
         i18nKey: 'lists.experience.kopius',
@@ -16,6 +22,12 @@ window.EXPERIENCE_DATA = [
     {
         role: 'Ssr Full Stack Developer',
         company: 'Axonier Consulting (Assist-Card)',
+        companyParts: [
+            { text: 'Axonier Consulting', href: 'https://axonier.com/' },
+            { text: ' (' },
+            { text: 'Assist-Card', href: 'https://www.assistcard.com/ar' },
+            { text: ')' }
+        ],
         dates: '03/2021 - 06/2022',
         tech: '.NET Core 5.0, Razor, JavaScript, jQuery, Bootstrap, SQL Server, Azure, GIT, TFS',
         i18nKey: 'lists.experience.axonier'
@@ -30,6 +42,9 @@ window.EXPERIENCE_DATA = [
     {
         role: 'Full Stack Developer',
         company: 'Grupo Octubre',
+        companyParts: [
+            { text: 'Grupo Octubre', href: 'https://octubre.com/' }
+        ],
         dates: '02/2017 - 12/2019',
         tech: '.NET Framework, SQL Server, PostgreSQL, Angular, JavaScript, NHibernate, Crystal Reports',
         i18nKey: 'lists.experience.octubre'
