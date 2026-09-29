@@ -163,6 +163,20 @@
     transform: scale(1.15) rotate(-3deg);
 }
 
+.tech-capsule__icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #52525b;
+    font-size: 1rem;
+}
+
+.dark .tech-capsule__icon { color: #d4d4d8; }
+.tech-capsule:hover .tech-capsule__icon { transform: scale(1.15) rotate(-3deg); }
+
 /* Fallback */
 .tech-capsule i.ph-question {
     width: 1.125rem;

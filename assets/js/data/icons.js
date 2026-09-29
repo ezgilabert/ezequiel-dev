@@ -1,6 +1,6 @@
 /**
  * icons.js
- * Simple Icons CDN icon map.
+ * Simple Icons CDN slugs or Phosphor classes for generic concepts.
  * Formato: 'slug/color' → https://cdn.simpleicons.org/{slug}/{color}
  *
  * All slugs were verified against the current CDN.
@@ -10,18 +10,18 @@ window.ICONS = {
     // ============================================================
     // IA & Modern Dev
     // ============================================================
-    mcp:            'anthropic/CC785C',              // OpenAI (MCP es de Anthropic pero OpenAI sí existe)
+    mcp:            'anthropic/CC785C',
     aiWorkflow:     'googlegemini/8E75B2',
     copilot:        'githubcopilot/8B5CF6',
     grok:           'x/000000',
-    chatgpt:        'claude/CC785C',
+    chatgpt:        'ph-bold ph-open-ai-logo',
 
     // ============================================================
     // Frontend
     // ============================================================
     blazor:         'blazor/512BD4',
     angular:        'angular/DD0031',
-    winforms:       'dotnet/512BD4',              // .NET (para WinForms)
+    winforms:       'dotnet/512BD4',
     typescript:     'typescript/3178C6',
     javascript:     'javascript/F7DF1E',
     jquery:         'jquery/0769AD',
@@ -33,35 +33,35 @@ window.ICONS = {
     // ============================================================
     // Cloud & DevOps
     // ============================================================
-    azure:          'icloud/3693F3',              // iCloud (nube genérica)
-    tfs:            'git/181717',                 // Git (para TFS)
+    azure:          'ph-bold ph-cloud',
+    tfs:            'ph-bold ph-git-branch',
     docker:         'docker/2496ED',
     kubernetes:     'kubernetes/326CE5',
     git:            'git/F05032',
-    cicd:           'gitlab/FC6D26',              // GitLab CI
-    sonarqube:      'sonar/4E9BCD',               // Sonar (slug corto)
+    cicd:           'ph-bold ph-git-branch',
+    sonarqube:      'sonar/4E9BCD',
 
     // ============================================================
     // Backend
     // ============================================================
     dotnet8:        'dotnet/512BD4',
-    csharp:         'sharp/99CC00',               // Sharp (icono genérico para C#)
+    csharp:         'ph-bold ph-code',
     webapi:         'dotnet/512BD4',
     efcore:         'dotnet/512BD4',
-    dapper:         'dotnet/512BD4',              // .NET (Dapper es de .NET)
-    cleanArch:      'diagramsdotnet/FFA500',      // Diagrams.net
-    microservices:  'serverless/FF6B6B',          // Serverless
+    dapper:         'dotnet/512BD4',
+    cleanArch:      'ph-bold ph-blueprint',
+    microservices:  'ph-bold ph-circles-three-plus',
     nodejs:         'nodedotjs/5FA04E',
     laravel:        'laravel/FF2D20',
-    nhibernate:     'dotnet/512BD4',              // .NET (NHibernate es de .NET)
+    nhibernate:     'dotnet/512BD4',
 
     // ============================================================
     // DB & Reporting
     // ============================================================
-    sqlserver:      'databricks/FF3621',          // Databricks (para SQL Server)
+    sqlserver:      'ph-bold ph-database',
     postgres:       'postgresql/4169E1',
     mongodb:        'mongodb/47A248',
-    tsql:           'mysql/4479A1',               // MySQL (representa SQL)
-    reportBuilder:  'databricks/FF3621',             // Power BI fallback slug.
+    tsql:           'ph-bold ph-database',
+    reportBuilder:  'ph-bold ph-chart-bar',
     crystalReports: 'sap/0FAAFF'
 };

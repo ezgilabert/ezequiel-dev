@@ -15,6 +15,13 @@ const icon = (() => {
             return fallback(opts);
         }
 
+        if (def.startsWith('ph-')) {
+            const iconEl = document.createElement('i');
+            iconEl.className = `${def} tech-capsule__icon ${opts.className || ''}`.trim();
+            iconEl.setAttribute('aria-hidden', 'true');
+            return iconEl;
+        }
+
         const img = document.createElement('img');
         img.src = `${CDN}/${def}`;
         img.alt = opts.alt || '';
