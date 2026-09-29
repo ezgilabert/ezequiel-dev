@@ -76,7 +76,7 @@ window.TRANSLATIONS = {
         }
     },
     en: {
-        meta_description: "Portfolio of Ezequiel Garcia Gilabert, Senior .NET Full Stack Developer based in Buenos Aires.",
+        meta_description: "Portfolio of Ezequiel Garcia Gilabert, AI Software Engineer .NET based in Buenos Aires.",
         bio: `Hi, I'm <strong class="font-semibold text-zinc-900 dark:text-white">Ezequiel</strong>!<br><br>
         Developer with over 9 years of experience in the <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span> ecosystem, specializing primarily in sectors such as <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">Healthcare and Insurance</span>.<br><br>
         Beyond my passion for science and new technologies, what truly drives me is solving problems and helping people: understanding what is happening, discovering why it occurs, and striving to find the right solution.<br><br>

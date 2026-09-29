@@ -1,6 +1,6 @@
 # Ezequiel Garcia Gilabert Portfolio
 
-A responsive personal portfolio for a Senior .NET Full Stack Developer. It presents professional experience, technical skills, education, and contact links in a bilingual Spanish/English interface.
+A responsive personal portfolio for a AI Software Engineer .NET. It presents professional experience, technical skills, education, and contact links in a bilingual Spanish/English interface.
 
 ## Features
 
