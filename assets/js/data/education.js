@@ -7,6 +7,18 @@
 
 window.EDUCATION_DATA = [
     {
+        titleKey: 'course_node_title',
+        titleFallback: 'Node: De cero a experto (2022)',
+        titleIcon: 'ph-terminal',
+        subtitle: 'Fernando Herrera · Udemy',
+        subtitleIcon: 'ph-arrow-square-out',
+        subtitleLink: 'https://www.udemy.com/course/node-de-cero-a-experto/',
+        badge: 'Curso',
+        descKey: 'course_node_desc',
+        descFallback: 'Formación completa en Node.js: creación de servidores, APIs REST, autenticación con JWT, bases de datos MongoDB, sockets en tiempo real y despliegue en producción.',
+        bulletsKey: 'lists.education.nodeCourse'
+    },
+    {
         titleKey: 'course_angular_title',
         titleFallback: 'Angular: De cero a experto (Edición 2024)',
         titleIcon: 'ph-laptop',

@@ -27,6 +27,8 @@ window.TRANSLATIONS = {
         degree_avg: "Promedio Académico: 8.0 / 10.0",
         course_angular_title: "Angular: De cero a experto (Edición 2024)",
         course_angular_desc: "Formación intensiva en Angular moderno: componentes, directivas, servicios, routing, formularios reactivos, HTTP, signals, standalone components, testing y despliegue en producción.",
+        course_node_title: "Node: De cero a experto (2022)",
+        course_node_desc: "Formación completa en Node.js: creación de servidores, APIs REST, autenticación con JWT, bases de datos MongoDB, sockets en tiempo real y despliegue en producción.",
         title_contact: "¿Qué tenés en mente?",
         sub_contact: "Mandame un mensaje, contame tu idea y vemos qué podemos hacer!",
         ph_name: "Tu nombre",
@@ -71,6 +73,15 @@ window.TRANSLATIONS = {
                     "Formularios reactivos, validaciones, routing con guards y lazy loading.",
                     "Integración con APIs REST, manejo de errores, interceptores y autenticación.",
                     "Buenas prácticas de arquitectura, testing con Jasmine/Karma y despliegue en producción."
+                ],
+                nodeCourse: [
+                    "Creación de servidores backend y servicios REST con Express.",
+                    "Gestión de archivos, subida de archivos y variables de entorno.",
+                    "Conexión a MongoDB, modelos, validaciones y relaciones.",
+                    "Autenticación con JWT, roles, middlewares y protección de rutas.",
+                    "WebSockets con Socket.IO para aplicaciones en tiempo real.",
+                    "Despliegue en Heroku, GitHub y entornos de producción.",
+                    "Buenas prácticas, Git/GitHub y arquitectura escalable."
                 ]
             }
         }
@@ -98,6 +109,8 @@ window.TRANSLATIONS = {
         degree_avg: "Academic GPA: 8.0 / 10.0",
         course_angular_title: "Angular: From Zero to Expert (2024 Edition)",
         course_angular_desc: "Intensive training in modern Angular: components, directives, services, routing, reactive forms, HTTP, signals, standalone components, testing, and production deployment.",
+        course_node_title: "Node: From Zero to Expert (2022)",
+        course_node_desc: "Comprehensive Node.js training covering server creation, REST APIs, JWT authentication, MongoDB databases, real-time sockets, and production deployment.",
         title_contact: "What's on your mind?",
         sub_contact: "Send me a message, tell me your idea, and let's see what we can build together!",
         ph_name: "Your name",
@@ -142,6 +155,15 @@ window.TRANSLATIONS = {
                     "Reactive forms, validations, routing with guards, and lazy loading.",
                     "REST API integration, error handling, interceptors, and authentication.",
                     "Architecture best practices, testing with Jasmine/Karma, and production deployment."
+                ],
+                nodeCourse: [
+                    "Building backend servers and REST services with Express.",
+                    "File management and uploads, and environment variables.",
+                    "Connecting to MongoDB, with models, validations, and relationships.",
+                    "JWT authentication, roles, middleware, and route protection.",
+                    "WebSockets with Socket.IO for real-time applications.",
+                    "Deployment to Heroku, GitHub, and production environments.",
+                    "Best practices, Git/GitHub, and scalable architecture."
                 ]
             }
         }
