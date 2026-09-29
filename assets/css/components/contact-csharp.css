@@ -196,7 +196,8 @@
     font-size: 0.75rem;
     color: #ce9178;
     outline: none;
-    resize: vertical;
+    resize: none;
+    overflow-y: hidden;
     caret-color: #ce9178;
     line-height: 1.55;
     box-sizing: border-box;

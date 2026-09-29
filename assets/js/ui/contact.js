@@ -70,6 +70,12 @@ const contact = (() => {
         counter.classList.toggle('is-max', len >= MAX_CHARS);
     }
 
+    function resizeMessage(textarea) {
+        if (!textarea?.style) return;
+        textarea.style.height = 'auto';
+        if (textarea.scrollHeight) textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+
     async function handleSubmit(e) {
         e.preventDefault();
 
@@ -115,6 +121,7 @@ const contact = (() => {
             window.toast.show(t.toast_send);
             form.reset();
             updateCounter();
+            resizeMessage($('#contact-message'));
             setTimeout(() => {
                 outputBox.classList.add('hidden');
             }, 4000);
@@ -142,8 +149,12 @@ const contact = (() => {
 
         const textarea = $('#contact-message');
         if (textarea) {
-            on(textarea, 'input', updateCounter);
+            on(textarea, 'input', () => {
+                updateCounter();
+                resizeMessage(textarea);
+            });
             updateCounter();
+            resizeMessage(textarea);
         }
     }
 
