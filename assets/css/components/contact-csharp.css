@@ -132,7 +132,8 @@
  * ============================================================ */
 .contact-ide__input {
     display: inline-block;
-    min-width: 8ch;
+    width: 8ch;
+    min-width: 0;
     max-width: 100%;
     padding: 0;
     background: transparent;
@@ -143,7 +144,7 @@
     color: #ce9178;
     outline: none;
     caret-color: #ce9178;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, caret-color 0.2s ease;
     vertical-align: baseline;
     box-sizing: border-box;
 }
@@ -409,7 +410,7 @@ html:not(.dark) .contact-ide__feedback {
     }
 
     .contact-ide__input {
-        min-width: 5ch;
+        width: 5ch;
         font-size: 0.62rem;
     }
 
