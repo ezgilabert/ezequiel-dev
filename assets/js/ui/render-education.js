@@ -35,7 +35,10 @@ const renderEducation = (() => {
                 <div class="flex-1 min-w-0">
                     <div class="edu-header-row">
                         <div class="edu-title-block">
-                            <h3 data-i18n="${edu.titleKey}" class="edu-title">${edu.titleFallback}</h3>
+                            <h3 class="edu-title">
+                                ${edu.titleIcon ? `<i class="ph-bold ${edu.titleIcon} edu-title-icon" aria-hidden="true"></i>` : ''}
+                                <span data-i18n="${edu.titleKey}">${edu.titleFallback}</span>
+                            </h3>
                         </div>
                         <span class="edu-badge">${edu.badge}</span>
                     </div>

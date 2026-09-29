@@ -9,8 +9,9 @@ window.EDUCATION_DATA = [
     {
         titleKey: 'course_angular_title',
         titleFallback: 'Angular: De cero a experto (Edición 2024)',
+        titleIcon: 'ph-laptop',
         subtitle: 'Fernando Herrera · Udemy',
-        subtitleIcon: 'ph-graduation-cap',
+        subtitleIcon: 'ph-arrow-square-out',
         subtitleLink: 'https://www.udemy.com/course/angular-fernando-herrera/',
         badge: 'Curso',
         descKey: 'course_angular_desc',
@@ -20,6 +21,7 @@ window.EDUCATION_DATA = [
     {
         titleKey: 'degree_title',
         titleFallback: 'Título de Técnico Informático',
+        titleIcon: 'ph-graduation-cap',
         subtitle: 'Instituto Técnico Industrial San Judas Tadeo',
         subtitleIcon: 'ph-map-pin',
         subtitleLink: null,
