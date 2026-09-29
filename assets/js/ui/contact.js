@@ -5,8 +5,8 @@
 
 const contact = (() => {
     const { $, on } = window.DOM;
-    const MAX_CHARS = 100;
-    const NEAR_LIMIT = 90;
+    const MAX_CHARS = 150;
+    const NEAR_LIMIT = 135;
     const WEB3FORMS_ACCESS_KEY = '1541835c-c017-486b-a9a5-5a510b5e51e5';
     let inputMeasureCanvas;
 
