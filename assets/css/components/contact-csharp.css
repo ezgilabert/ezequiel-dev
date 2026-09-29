@@ -26,6 +26,7 @@
 .contact-ide__titlebar {
     display: flex;
     align-items: center;
+    position: relative;
     padding: 0 0.75rem;
     height: 2.2rem;
     background: #252526;
@@ -52,7 +53,9 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 0.75rem;
     color: #cccccc;
     font-family: 'Inter', sans-serif;
