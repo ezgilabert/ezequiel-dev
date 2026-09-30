@@ -23,7 +23,7 @@ npm install
 npm run build
 ```
 
-The build outputs the deployable static site to `dist/`, which is the publish directory configured in Netlify.
+The build outputs the static site to `dist/`, ready to publish with GitHub Pages.
 
 ## Tests
 

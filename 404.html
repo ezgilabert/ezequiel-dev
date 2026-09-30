@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 — Resource not found | Ezequiel Garcia Gilabert</title>
+    <title>404 — Página no encontrada | Ezequiel Garcia Gilabert</title>
+    <meta name="description" content="La ruta que buscás no existe o fue movida. Volvé al portfolio de Ezequiel Garcia Gilabert.">
+    <!-- Resolve asset paths for GitHub Pages project sites and custom domains. -->
+    <script>
+        if (location.protocol !== 'file:') {
+            const siteBase = document.createElement('base');
+            siteBase.href = location.hostname.endsWith('.github.io') ? '/ezequiel-dev/' : '/';
+            document.head.append(siteBase);
+        }
+    </script>
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻🚀</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/cosmos.css">
+    <link rel="stylesheet" href="assets/css/vendor/phosphor-bold.css">
+    <link rel="stylesheet" href="assets/css/vendor/phosphor-fill.css">
 
-    <!-- Detectar tema guardado ANTES de pintar (evita flash) -->
+    <!-- Apply the saved theme before the page is painted. -->
     <script>
         (function() {
             try {
-                const saved = localStorage.getItem('cosmos-state') || localStorage.getItem('theme');
+                const saved = localStorage.getItem('theme');
                 const isDark = !saved || saved === 'dark' || saved === '"dark"' || saved.includes('dark');
                 if (isDark) document.documentElement.classList.add('dark');
             } catch (e) {
-                // Si falla, dejamos dark por defecto
                 document.documentElement.classList.add('dark');
             }
         })();
@@ -31,18 +40,16 @@
 
         html, body { height: 100%; overflow-x: hidden; }
 
-        /* ============================================================
-         * VARIABLES — Dark mode (default)
-         * ============================================================ */
+        /* Theme tokens */
         :root {
-            --bg-gradient-1: #1e1e2e;
-            --bg-gradient-2: #0d0d10;
+            --page-background: #030206;
             --text-primary: #eceeed;
             --text-secondary: #a1a1aa;
-            --container-bg: rgba(22, 27, 34, 0.75);
-            --container-border: rgba(255, 255, 255, 0.08);
-            --code-bg: rgba(13, 17, 23, 0.85);
-            --code-border: rgba(255, 255, 255, 0.08);
+            --accent: #f59e0b;
+            --container-bg: rgba(12, 10, 20, 0.72);
+            --container-border: rgba(255, 120, 80, 0.2);
+            --code-bg: rgba(3, 2, 6, 0.58);
+            --code-border: rgba(255, 120, 80, 0.14);
             --line-number: #484f58;
             --btn-secondary-bg: rgba(255, 255, 255, 0.05);
             --btn-secondary-border: rgba(255, 255, 255, 0.12);
@@ -50,17 +57,14 @@
             --btn-secondary-hover-border: rgba(255, 255, 255, 0.20);
         }
 
-        /* ============================================================
-         * VARIABLES — Light mode
-         * ============================================================ */
         html:not(.dark) {
-            --bg-gradient-1: #f3f0f7;
-            --bg-gradient-2: #e8e4f0;
+            --page-background: #e8e4f0;
             --text-primary: #18181b;
             --text-secondary: #52525b;
-            --container-bg: rgba(255, 255, 255, 0.75);
-            --container-border: rgba(0, 0, 0, 0.08);
-            --code-bg: rgba(245, 245, 247, 0.9);
+            --accent: #c2410c;
+            --container-bg: rgba(255, 255, 255, 0.84);
+            --container-border: rgba(255, 255, 255, 0.7);
+            --code-bg: rgba(245, 245, 247, 0.82);
             --code-border: rgba(0, 0, 0, 0.08);
             --line-number: #b0b0b0;
             --btn-secondary-bg: rgba(0, 0, 0, 0.04);
@@ -69,8 +73,9 @@
             --btn-secondary-hover-border: rgba(0, 0, 0, 0.20);
         }
 
+        /* Canvas and page layout */
         body {
-            background: radial-gradient(ellipse at top, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            background: var(--page-background);
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
             display: flex;
@@ -82,27 +87,13 @@
             transition: background 0.4s ease, color 0.4s ease;
         }
 
-        /* Estrellitas decorativas del cosmos */
-        body::before {
-            content: '';
+        #space-canvas {
             position: fixed;
             inset: 0;
-            background-image:
-                radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.6), transparent),
-                radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.4), transparent),
-                radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.5), transparent),
-                radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.3), transparent),
-                radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.5), transparent),
-                radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.4), transparent);
-            background-size: 100% 100%;
-            pointer-events: none;
+            width: 100%;
+            height: 100%;
             z-index: 0;
-            opacity: 1;
-            transition: opacity 0.4s ease;
-        }
-
-        html:not(.dark) body::before {
-            opacity: 0.3; /* Menos visibles en light mode */
+            pointer-events: none;
         }
 
         .container {
@@ -114,7 +105,7 @@
             backdrop-filter: blur(20px) saturate(1.4);
             -webkit-backdrop-filter: blur(20px) saturate(1.4);
             border: 1px solid var(--container-border);
-            border-radius: 16px;
+            border-radius: 24px;
             padding: 2.5rem;
             box-shadow:
                 0 24px 60px -16px rgba(0, 0, 0, 0.4),
@@ -128,7 +119,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Terminal header */
         .terminal-header {
             display: flex;
             gap: 8px;
@@ -140,7 +130,7 @@
         .dot.yellow { background-color: #ffbd2e; }
         .dot.green { background-color: #27c93f; }
 
-        /* Código C# */
+        /* C# error example */
         .code-block {
             background-color: var(--code-bg);
             border: 1px solid var(--code-border);
@@ -170,30 +160,21 @@
             transition: color 0.4s ease;
         }
 
-        /* Syntax highlighting — Dark (VS Code Dark+) */
         .keyword { color: #569cd6; }
         .type { color: #4ec9b0; }
-        .comment { color: #6a9955; font-style: italic; }
         .method { color: #dcdcaa; }
         .bracket { color: #c9d1d9; }
-        .error-text { color: #f85149; }
 
-        /* Syntax highlighting — Light (VS Code Light+) */
         html:not(.dark) .keyword { color: #0000ff; }
         html:not(.dark) .type { color: #267f99; }
-        html:not(.dark) .comment { color: #008000; }
         html:not(.dark) .method { color: #795e26; }
         html:not(.dark) .bracket { color: #1f1f1f; }
-        html:not(.dark) .error-text { color: #dc2626; }
 
         h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #a855f7, #f97316);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--accent);
             text-align: center;
         }
 
@@ -233,14 +214,14 @@
         .btn i { font-size: 1rem; }
 
         .btn-primary {
-            background: linear-gradient(135deg, #a855f7, #f97316);
+            background: #f97316;
             color: #ffffff;
-            box-shadow: 0 4px 16px -4px rgba(168, 85, 247, 0.5);
+            box-shadow: 0 4px 16px -4px rgba(249, 115, 22, 0.35);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px -4px rgba(168, 85, 247, 0.7);
+            box-shadow: 0 8px 24px -4px rgba(249, 115, 22, 0.5);
         }
 
         .btn-secondary {
@@ -256,9 +237,7 @@
             transform: translateY(-2px);
         }
 
-        /* ============================================================
-         * MOBILE
-         * ============================================================ */
+        /* Responsive layout */
         @media (max-width: 600px) {
             body {
                 padding: 1rem;
@@ -268,7 +247,7 @@
 
             .container {
                 padding: 1.25rem;
-                border-radius: 12px;
+                border-radius: 20px;
             }
 
             h1 {
@@ -282,7 +261,7 @@
             }
 
             .code-block {
-                font-size: 0.6rem;
+                font-size: 0.7rem;
                 line-height: 1.6;
                 padding: 0.85rem 0.75rem;
                 margin-bottom: 1.5rem;
@@ -317,8 +296,9 @@
         }
     </style>
 </head>
-<body>
-    <div class="container">
+<body class="cosmos-page">
+    <canvas id="space-canvas" aria-hidden="true"></canvas>
+    <main class="container glass-card">
         <div class="terminal-header">
             <span class="dot red"></span>
             <span class="dot yellow"></span>
@@ -327,22 +307,21 @@
 
         <h1>404</h1>
         <p class="subtitle">
-            <strong>NullReferenceException</strong><br>
+            <strong>RouteNotFoundException</strong><br>
             La página que buscás no existe o fue movida.<br>
             <span style="font-size:0.85rem; opacity:0.7;">The page you're looking for doesn't exist or has been moved.</span>
         </p>
 
         <div class="code-block">
-            <span class="line"><span class="line-number">1</span><span class="comment">// Route not found on the server</span></span>
-            <span class="line"><span class="line-number">2</span><span class="keyword">public</span> <span class="type">IActionResult</span> <span class="method">GetPage</span><span class="bracket">(</span><span class="keyword">string</span> path<span class="bracket">)</span></span>
-            <span class="line"><span class="line-number">3</span><span class="bracket">{</span></span>
-            <span class="line"><span class="line-number">4</span>    <span class="keyword">var</span> page <span class="bracket">=</span> _repository<span class="bracket">.</span><span class="method">FindByPath</span><span class="bracket">(</span>path<span class="bracket">);</span></span>
-            <span class="line"><span class="line-number">5</span>    </span>
-            <span class="line"><span class="line-number">6</span>    <span class="keyword">if</span> <span class="bracket">(</span>page <span class="keyword">is</span> <span class="keyword">null</span><span class="bracket">)</span></span>
-            <span class="line"><span class="line-number">7</span>        <span class="keyword">return</span> <span class="method">NotFound</span><span class="bracket">();</span> <span class="error-text">// ⚠️ 404 - You are here</span></span>
-            <span class="line"><span class="line-number">8</span>    </span>
-            <span class="line"><span class="line-number">9</span>    <span class="keyword">return</span> <span class="method">Ok</span><span class="bracket">(</span>page<span class="bracket">);</span></span>
-            <span class="line"><span class="line-number">10</span><span class="bracket">}</span></span>
+            <span class="line"><span class="line-number">1</span><span class="keyword">public</span> <span class="type">IActionResult</span> <span class="method">GetPage</span><span class="bracket">(</span><span class="keyword">string</span> path<span class="bracket">)</span></span>
+            <span class="line"><span class="line-number">2</span><span class="bracket">{</span></span>
+            <span class="line"><span class="line-number">3</span>    <span class="keyword">var</span> page <span class="bracket">=</span> _repository<span class="bracket">.</span><span class="method">FindByPath</span><span class="bracket">(</span>path<span class="bracket">);</span></span>
+            <span class="line"><span class="line-number">4</span>    </span>
+            <span class="line"><span class="line-number">5</span>    <span class="keyword">if</span> <span class="bracket">(</span>page <span class="keyword">is</span> <span class="keyword">null</span><span class="bracket">)</span></span>
+            <span class="line"><span class="line-number">6</span>        <span class="keyword">return</span> <span class="method">NotFound</span><span class="bracket">();</span></span>
+            <span class="line"><span class="line-number">7</span>    </span>
+            <span class="line"><span class="line-number">8</span>    <span class="keyword">return</span> <span class="method">Ok</span><span class="bracket">(</span>page<span class="bracket">);</span></span>
+            <span class="line"><span class="line-number">9</span><span class="bracket">}</span></span>
         </div>
 
         <div class="actions">
@@ -350,11 +329,50 @@
                 <i class="ph-bold ph-house"></i>
                 <span>Volver al inicio</span>
             </a>
-            <a href="index.html#contact" class="btn btn-secondary">
+            <a href="mailto:ezequielgarciagilabert@gmail.com" class="btn btn-secondary">
                 <i class="ph-bold ph-envelope-simple"></i>
-                <span>Contactame</span>
+                <span>Escribime</span>
             </a>
         </div>
-    </div>
+    </main>
+
+    <script src="assets/js/core/events.js"></script>
+    <script src="assets/js/core/dom.js"></script>
+    <script src="assets/js/cosmos/transition.js"></script>
+    <script src="assets/js/cosmos/state.js"></script>
+    <script src="assets/js/cosmos/fragments.js"></script>
+
+    <script src="assets/js/cosmos/planets/definitions.js"></script>
+    <script src="assets/js/cosmos/planets/physics.js"></script>
+    <script src="assets/js/cosmos/planets/draw-earth.js"></script>
+    <script src="assets/js/cosmos/planets/draw-moon.js"></script>
+    <script src="assets/js/cosmos/planets/draw-saturn.js"></script>
+    <script src="assets/js/cosmos/planets/draw-mars.js"></script>
+    <script src="assets/js/cosmos/planets/destruction.js"></script>
+    <script src="assets/js/cosmos/planets/index.js"></script>
+
+    <script src="assets/js/cosmos/asteroids/config.js"></script>
+    <script src="assets/js/cosmos/asteroids/belts.js"></script>
+    <script src="assets/js/cosmos/asteroids/draw-satellite.js"></script>
+    <script src="assets/js/cosmos/asteroids/draw-iss.js"></script>
+    <script src="assets/js/cosmos/asteroids/draw-spaceship.js"></script>
+    <script src="assets/js/cosmos/asteroids/collisions.js"></script>
+    <script src="assets/js/cosmos/asteroids/index.js"></script>
+
+    <script src="assets/js/cosmos/sun/em-waves.js"></script>
+    <script src="assets/js/cosmos/sun/coronal-loops.js"></script>
+    <script src="assets/js/cosmos/sun/flares.js"></script>
+    <script src="assets/js/cosmos/sun/red-giant.js"></script>
+    <script src="assets/js/cosmos/sun/white-dwarf.js"></script>
+    <script src="assets/js/cosmos/sun/index.js"></script>
+
+    <script src="assets/js/cosmos/shockwaves/waves.js"></script>
+    <script src="assets/js/cosmos/shockwaves/supernova.js"></script>
+    <script src="assets/js/cosmos/shockwaves/index.js"></script>
+    <script src="assets/js/cosmos/particles.js"></script>
+    <script src="assets/js/cosmos/engine.js"></script>
+    <script>
+        window.cosmos.init();
+    </script>
 </body>
 </html>

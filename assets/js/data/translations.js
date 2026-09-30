@@ -8,8 +8,9 @@ window.TRANSLATIONS = {
         meta_description: "Portfolio de Ezequiel Garcia Gilabert, desarrollador Senior .NET Full Stack en Buenos Aires.",
         bio: `Hola, soy <strong class="font-semibold text-zinc-900 dark:text-white">Ezequiel</strong>!<br><br>
         Desarrollador con más de 9 años de experiencia en el ecosistema <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span>, especializado principalmente en sectores como <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">Healthcare e Insurance</span>.<br><br>
-        Más allá de mi pasión por la ciencia y las nuevas tecnologías, lo que realmente me mueve es resolver problemas y ayudar a las personas: entender qué está pasando, descubrir por qué ocurre e intentar encontrar la solución.<br><br>
-        Soy curioso por naturaleza. Me encanta aprender sobre todo tipo de temas —desde cine y series hasta economía, marketing y geopolítica—. Disfruto mucho trabajar en equipo, aprender constantemente y estar ahí para dar una mano siempre que me necesiten.`,
+        Más allá de mi pasión por la ciencia y las nuevas tecnologías, lo que realmente me mueve es resolver problemas, que termina siendo ayudar a las personas: entender qué está pasando, descubrir por qué ocurre e intentar encontrar la mejor solución.<br><br>
+        Soy curioso por naturaleza. Me encantan un montón de temas: desde juegos, cine y series hasta economía, marketing y geopolítica. ¡Y podría seguir!<br><br>
+        Disfruto trabajar en equipo, enfrentar desafíos y estar ahí para ayudar cuando alguien lo necesita.`,
         cat_contact: "¡Contactame!",
         nav_exp: "Experiencia",
         nav_skills: "Habilidades",
@@ -91,8 +92,9 @@ window.TRANSLATIONS = {
         meta_description: "Portfolio of Ezequiel Garcia Gilabert, AI Software Engineer .NET based in Buenos Aires.",
         bio: `Hi, I'm <strong class="font-semibold text-zinc-900 dark:text-white">Ezequiel</strong>!<br><br>
         Developer with over 9 years of experience in the <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span> ecosystem, specializing primarily in sectors such as <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">Healthcare and Insurance</span>.<br><br>
-        Beyond my passion for science and new technologies, what truly drives me is solving problems and helping people: understanding what is happening, discovering why it occurs, and striving to find the right solution.<br><br>
-        I am naturally curious. I love learning about all kinds of subjects—from movies and TV series to economics, marketing, and geopolitics. I thoroughly enjoy teamwork, continuous learning, and lending a hand whenever needed.`,
+        Beyond my passion for science and new technologies, what truly drives me is solving problems, which ultimately means helping people: understanding what is happening, discovering why it occurs, and trying to find the best solution.<br><br>
+        I am naturally curious. I love a wide range of things, from games, movies, and TV shows to economics, marketing, and geopolitics. I could go on!<br><br>
+        I enjoy working as part of a team, taking on challenges, and being there to help when someone needs it.`,
         cat_contact: "Contact Me!",
         nav_exp: "Experience",
         nav_skills: "Skills",
