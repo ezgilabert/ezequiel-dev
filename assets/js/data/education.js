@@ -37,11 +37,13 @@ window.EDUCATION_DATA = [
         titleFallback: 'Título de Técnico Informático',
         titleIcon: 'ph-graduation-cap',
         subtitle: 'Instituto Técnico Industrial San Judas Tadeo',
-        subtitleIcon: 'ph-map-pin',
-        subtitleLink: null,
+        subtitleIcon: 'ph-globe',
+        subtitleLink: 'https://sanjudastadeo.edu.ar/nueva/index.php',
         badge: '12/2010 - 12/2016',
         descKey: 'degree_avg',
         descFallback: 'Promedio Académico: 8.0 / 10.0',
+        introKey: 'degree_intro',
+        introFallback: 'Formación técnica de 6 años en informática, con una sólida base en programación orientada a objetos, bases de datos, redes, software y hardware.',
         bulletsKey: 'lists.education.degree'
     }
 ];

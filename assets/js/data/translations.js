@@ -26,6 +26,7 @@ window.TRANSLATIONS = {
         title_edu: "Educación y Calificaciones",
         degree_title: "Título de Técnico Informático",
         degree_avg: "Promedio Académico: 8.0 / 10.0",
+        degree_intro: "Formación técnica de 6 años en informática, con una sólida base en programación orientada a objetos, bases de datos, redes, software y hardware.",
         course_badge: "Curso",
         course_angular_title: "Angular: De cero a experto (Edición 2024)",
         course_angular_desc: "Formación intensiva en Angular moderno: componentes, directivas, servicios, routing, formularios reactivos, HTTP, signals, standalone components, testing y despliegue en producción.",
@@ -66,8 +67,9 @@ window.TRANSLATIONS = {
             },
             education: {
                 degree: [
-                    "Prácticas profesionalizantes completadas (210 horas) y desarrollo de un proyecto final de videojuego interactivo con Unity y C#.",
-                    "Formación técnica de 6 años en informática, con una sólida base en programación orientada a objetos, bases de datos, redes, software y hardware."
+                    "Proyecto Final (POO + LINQ + Base de Datos): Desarrollo de un sistema de gestión completo aplicando Programación Orientada a Objetos, con acceso a datos mediante LINQ y persistencia en base de datos.",
+                    "Proyecto Final de Videojuego: Desarrollo de un videojuego interactivo con Unity y C#.",
+                    "Prácticas Profesionalizantes: 210 horas completadas."
                 ],
                 angularCourse: [
                     "Dominio de Angular CLI, componentes standalone, directivas y pipes personalizados.",
@@ -110,6 +112,7 @@ window.TRANSLATIONS = {
         title_edu: "Education & Qualifications",
         degree_title: "IT Technician Degree",
         degree_avg: "Academic GPA: 8.0 / 10.0",
+        degree_intro: "Six-year technical education in IT, with a solid foundation in object-oriented programming, databases, networking, software, and hardware.",
         course_badge: "Course",
         course_angular_title: "Angular: From Zero to Expert (2024 Edition)",
         course_angular_desc: "Intensive training in modern Angular: components, directives, services, routing, reactive forms, HTTP, signals, standalone components, testing, and production deployment.",
@@ -150,8 +153,9 @@ window.TRANSLATIONS = {
             },
             education: {
                 degree: [
-                    "Completed 210 hours of professional internship and developed a final capstone video game project using Unity and C#.",
-                    "Six-year technical education in IT, with a solid foundation in object-oriented programming, databases, networking, software, and hardware."
+                    "Final Project (OOP + LINQ + Database): Developed a complete management system using object-oriented programming, LINQ for data access, and database persistence.",
+                    "Final Video Game Project: Developed an interactive video game with Unity and C#.",
+                    "Professional Internship: Completed 210 hours."
                 ],
                 angularCourse: [
                     "Mastery of Angular CLI, standalone components, custom directives, and pipes.",

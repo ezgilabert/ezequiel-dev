@@ -48,6 +48,7 @@ const renderEducation = (() => {
             ${buildSubtitle(edu)}
             <div id="${detailsId}" class="profile-card-body" aria-hidden="true" inert>
                 <p data-i18n="${edu.descKey}" class="${descClass}">${edu.descFallback}</p>
+                ${edu.introKey ? `<p data-i18n="${edu.introKey}" class="edu-desc">${edu.introFallback}</p>` : ''}
                 <ul data-i18n-list="${edu.bulletsKey}" class="edu-bullets"></ul>
             </div>
         `;
