@@ -67,7 +67,7 @@ window.TRANSLATIONS = {
             education: {
                 degree: [
                     "Prácticas profesionalizantes completadas (210 horas) y desarrollo de un proyecto final de videojuego interactivo con Unity y C#.",
-                    "Formación técnica de 6 años enfocada en programación estructurada, orientada a objetos, bases de datos y redes."
+                    "Formación técnica de 6 años en informática, con una sólida base en programación orientada a objetos, bases de datos, redes, software y hardware."
                 ],
                 angularCourse: [
                     "Dominio de Angular CLI, componentes standalone, directivas y pipes personalizados.",
@@ -151,7 +151,7 @@ window.TRANSLATIONS = {
             education: {
                 degree: [
                     "Completed 210 hours of professional internship and developed a final capstone video game project using Unity and C#.",
-                    "6-year technical degree focused on structured, object-oriented programming, databases, and computer networks."
+                    "Six-year technical education in IT, with a solid foundation in object-oriented programming, databases, networking, software, and hardware."
                 ],
                 angularCourse: [
                     "Mastery of Angular CLI, standalone components, custom directives, and pipes.",
