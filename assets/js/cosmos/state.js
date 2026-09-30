@@ -14,6 +14,11 @@ window.CosmosState = {
     mouseY: 0,
     targetMouseX: 0,
     targetMouseY: 0,
+    pointerParallaxEnabled: true,
+    panX: 0,
+    panY: 0,
+    targetPanX: 0,
+    targetPanY: 0,
 
     // Animación general
     pulseAnim: 0,

@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="assets/css/components/contact-csharp.css">
     <link rel="stylesheet" href="assets/css/components/profile-sheet.css">
     <link rel="stylesheet" href="assets/css/cosmos.css">
+    <link rel="stylesheet" href="assets/css/components/cosmos-view.css">
 </head>
 <body class="app-body">
 
@@ -39,7 +40,6 @@
     <button id="profile-trigger" class="profile-trigger" aria-label="Abrir perfil">
         <img src="assets/img/perfil.jpg" alt="Ezequiel Garcia Gilabert">
     </button>
-
     <main class="glass-card">
 
         <div id="profile-backdrop" class="profile-backdrop"></div>
@@ -108,6 +108,9 @@
                             <button id="theme-toggle-btn" type="button" class="btn-toggle" title="Cosmic Switch">
                                 <i id="theme-icon" class="ph-bold ph-sun"></i>
                                 <span class="btn-toggle-label">Modo</span>
+                            </button>
+                            <button id="cosmos-view-toggle" class="btn-toggle cosmos-view-toggle" type="button" aria-label="Contemplar el fondo cósmico / View the cosmos" aria-pressed="false" title="Contemplar el fondo cósmico / View the cosmos">
+                                <i class="ph-bold ph-eye" aria-hidden="true"></i>
                             </button>
                         </div>
                     </nav>
@@ -271,6 +274,9 @@
 
         </div>
     </main>
+    <button id="cosmos-view-exit" class="cosmos-view-exit" type="button" aria-label="Volver al portfolio / Return to portfolio" title="Volver al portfolio / Return to portfolio" hidden>
+        <i class="ph-bold ph-eye-slash" aria-hidden="true"></i>
+    </button>
 
     <script src="assets/js/core/events.js"></script>
     <script src="assets/js/core/storage.js"></script>
@@ -330,6 +336,7 @@
     <script src="assets/js/cosmos/engine.js"></script>
 
     <script src="assets/js/ui/theme.js"></script>
+    <script src="assets/js/ui/cosmos-view.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>

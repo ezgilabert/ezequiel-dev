@@ -22,7 +22,7 @@ const renderSkills = (() => {
         return span;
     }
 
-    function buildCategory(category) {
+    function buildCategory(category, expanded) {
         const section = document.createElement('div');
         section.className = 'skills-category';
         const headingId = `skills-heading-${category.id}`;
@@ -34,7 +34,7 @@ const renderSkills = (() => {
         const toggle = document.createElement('button');
         toggle.className = 'skills-category-toggle';
         toggle.type = 'button';
-        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-expanded', String(expanded));
         toggle.setAttribute('aria-controls', pillsId);
 
         const title = document.createElement('span');
@@ -56,6 +56,8 @@ const renderSkills = (() => {
         pills.id = pillsId;
         pills.setAttribute('role', 'region');
         pills.setAttribute('aria-labelledby', headingId);
+        pills.hidden = !expanded;
+        section.classList.toggle('is-collapsed', !expanded);
         category.items.forEach(item => pills.appendChild(buildCapsule(item)));
         section.appendChild(pills);
 
@@ -74,7 +76,7 @@ const renderSkills = (() => {
         if (!container) return;
         container.className = 'skills-layout';
         container.replaceChildren();
-        window.SKILLS_DATA.forEach(cat => container.appendChild(buildCategory(cat)));
+        window.SKILLS_DATA.forEach((cat, index) => container.appendChild(buildCategory(cat, index === 0)));
     }
 
     function init() { render(); }

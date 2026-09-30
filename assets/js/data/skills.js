@@ -32,19 +32,6 @@ window.SKILLS_DATA = [
         ]
     },
     {
-        id: 'devops',
-        labelKey: 'cat_devops',
-        items: [
-            { name: 'Azure Cloud',         icon: 'azure' },
-            { name: 'TFS',                 icon: 'tfs' },
-            { name: 'Docker',              icon: 'docker' },
-            { name: 'Kubernetes',          icon: 'kubernetes' },
-            { name: 'Git',                 icon: 'git' },
-            { name: 'CI/CD Pipelines',     icon: 'cicd' },
-            { name: 'SonarQube',           icon: 'sonarqube' }
-        ]
-    },
-    {
         id: 'backend',
         labelKey: 'cat_backend',
         items: [
@@ -58,6 +45,19 @@ window.SKILLS_DATA = [
             { name: 'Node.js',                  icon: 'nodejs' },
             { name: 'Laravel / PHP',            icon: 'laravel' },
             { name: 'NHibernate',               icon: 'nhibernate' }
+        ]
+    },
+    {
+        id: 'devops',
+        labelKey: 'cat_devops',
+        items: [
+            { name: 'Azure Cloud',         icon: 'azure' },
+            { name: 'TFS',                 icon: 'tfs' },
+            { name: 'Docker',              icon: 'docker' },
+            { name: 'Kubernetes',          icon: 'kubernetes' },
+            { name: 'Git',                 icon: 'git' },
+            { name: 'CI/CD Pipelines',     icon: 'cicd' },
+            { name: 'SonarQube',           icon: 'sonarqube' }
         ]
     },
     {

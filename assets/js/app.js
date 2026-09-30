@@ -19,6 +19,7 @@
     window.i18n.apply('es');
 
     window.theme.init();
+    window.cosmosView.init();
 
     window.cosmos.init();
 })();

@@ -75,10 +75,12 @@ const asteroids = (() => {
         const isRewind  = FSM.is(FSM.STATES.REWIND);
         const isExplode = FSM.is(FSM.STATES.EXPLODE);
 
-        const startX = S.width * 0.45 + S.mouseX;
-        const startY = -80 + S.mouseY;
-        const endX = -120 + S.mouseX;
-        const endY = S.height * 0.9 + S.mouseY;
+        const viewX = S.mouseX + S.panX;
+        const viewY = S.mouseY + S.panY;
+        const startX = S.width * 0.45 + viewX;
+        const startY = -80 + viewY;
+        const endX = -120 + viewX;
+        const endY = S.height * 0.9 + viewY;
 
         const angle = Math.atan2(endY - startY, endX - startX);
         const perpAngle = angle + Math.PI / 2;
