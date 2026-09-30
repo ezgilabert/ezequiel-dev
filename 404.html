@@ -261,7 +261,7 @@
             }
 
             .code-block {
-                font-size: 0.7rem;
+                font-size: 0.75rem;
                 line-height: 1.6;
                 padding: 0.85rem 0.75rem;
                 margin-bottom: 1.5rem;
@@ -294,6 +294,13 @@
 
             .btn i { font-size: 0.9rem; }
         }
+
+        @media (max-width: 600px) and (min-height: 640px) {
+            body {
+                align-items: center;
+                padding-top: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="cosmos-page">
@@ -313,13 +320,13 @@
         </p>
 
         <div class="code-block">
-            <span class="line"><span class="line-number">1</span><span class="keyword">public</span> <span class="type">IActionResult</span> <span class="method">GetPage</span><span class="bracket">(</span><span class="keyword">string</span> path<span class="bracket">)</span></span>
-            <span class="line"><span class="line-number">2</span><span class="bracket">{</span></span>
-            <span class="line"><span class="line-number">3</span>    <span class="keyword">var</span> page <span class="bracket">=</span> _repository<span class="bracket">.</span><span class="method">FindByPath</span><span class="bracket">(</span>path<span class="bracket">);</span></span>
-            <span class="line"><span class="line-number">4</span>    </span>
-            <span class="line"><span class="line-number">5</span>    <span class="keyword">if</span> <span class="bracket">(</span>page <span class="keyword">is</span> <span class="keyword">null</span><span class="bracket">)</span></span>
-            <span class="line"><span class="line-number">6</span>        <span class="keyword">return</span> <span class="method">NotFound</span><span class="bracket">();</span></span>
-            <span class="line"><span class="line-number">7</span>    </span>
+            <span class="line"><span class="line-number">1</span><span class="keyword">public</span> <span class="type">IActionResult</span></span>
+            <span class="line"><span class="line-number">2</span><span class="method">GetPage</span><span class="bracket">(</span><span class="keyword">string</span> path<span class="bracket">)</span></span>
+            <span class="line"><span class="line-number">3</span><span class="bracket">{</span></span>
+            <span class="line"><span class="line-number">4</span>    <span class="keyword">var</span> page <span class="bracket">=</span> _repository</span>
+            <span class="line"><span class="line-number">5</span>        .<span class="method">FindByPath</span><span class="bracket">(</span>path<span class="bracket">);</span></span>
+            <span class="line"><span class="line-number">6</span>    <span class="keyword">if</span> <span class="bracket">(</span>page <span class="keyword">is</span> <span class="keyword">null</span><span class="bracket">)</span></span>
+            <span class="line"><span class="line-number">7</span>        <span class="keyword">return</span> <span class="method">NotFound</span><span class="bracket">();</span></span>
             <span class="line"><span class="line-number">8</span>    <span class="keyword">return</span> <span class="method">Ok</span><span class="bracket">(</span>page<span class="bracket">);</span></span>
             <span class="line"><span class="line-number">9</span><span class="bracket">}</span></span>
         </div>
