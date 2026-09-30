@@ -75,8 +75,8 @@ const asteroids = (() => {
         const isRewind  = FSM.is(FSM.STATES.REWIND);
         const isExplode = FSM.is(FSM.STATES.EXPLODE);
 
-        const viewX = S.mouseX + S.panX;
-        const viewY = S.mouseY + S.panY;
+        const viewX = S.mouseX;
+        const viewY = S.mouseY;
         const startX = S.width * 0.45 + viewX;
         const startY = -80 + viewY;
         const endX = -120 + viewX;

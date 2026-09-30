@@ -31,8 +31,8 @@ const cosmos = (() => {
         S.supernovaGlow = 0;
         S.dwarfProgress = 0;
 
-        const starX = S.width * 0.82 + S.mouseX + S.panX;
-        const starY = S.height * 0.5 + S.mouseY + S.panY;
+        const starX = S.width * 0.82 + S.mouseX;
+        const starY = S.height * 0.5 + S.mouseY;
 
         window.shockwaves.trigger(starX, starY);
         window.particles.expandAll();
@@ -71,6 +71,7 @@ const cosmos = (() => {
 
         ctx.save();
         ctx.translate(S.shakeX, S.shakeY);
+        ctx.translate(S.panX, S.panY);
 
         // Smooth mouse movement and advance the pulse animation.
         S.mouseX += (S.targetMouseX - S.mouseX) * 0.05;
@@ -80,8 +81,8 @@ const cosmos = (() => {
         S.pulseAnim += 0.03;
 
         const isDark = document.documentElement.classList.contains('dark');
-        const starX = S.width * 0.82 + S.mouseX + S.panX;
-        const starY = S.height * 0.5 + S.mouseY + S.panY;
+        const starX = S.width * 0.82 + S.mouseX;
+        const starY = S.height * 0.5 + S.mouseY;
 
         const isExplode = FSM.is(FSM.STATES.EXPLODE);
         const isRewind  = FSM.is(FSM.STATES.REWIND);

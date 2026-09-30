@@ -12,6 +12,10 @@ window.TRANSLATIONS = {
         Soy curioso por naturaleza. Me encantan un montón de temas: desde juegos, cine y series hasta economía, marketing y geopolítica. ¡Y podría seguir!<br><br>
         Disfruto trabajar en equipo, enfrentar desafíos y estar ahí para ayudar cuando alguien lo necesita.`,
         cat_contact: "¡Contactame!",
+        contact_title: "Hablemos",
+        contact_subtitle: "Elegí el canal que más te convenga",
+        contact_linkedin_desc: "Conectemos profesionalmente",
+        contact_whatsapp_desc: "Respuesta rápida",
         nav_exp: "Experiencia",
         nav_skills: "Habilidades",
         nav_edu: "Educación",
@@ -98,6 +102,10 @@ window.TRANSLATIONS = {
         I am naturally curious. I love a wide range of things, from games, movies, and TV shows to economics, marketing, and geopolitics. I could go on!<br><br>
         I enjoy working as part of a team, taking on challenges, and being there to help when someone needs it.`,
         cat_contact: "Contact Me!",
+        contact_title: "Let's talk",
+        contact_subtitle: "Choose the channel that works best for you",
+        contact_linkedin_desc: "Let's connect professionally",
+        contact_whatsapp_desc: "Quick response",
         nav_exp: "Experience",
         nav_skills: "Skills",
         nav_edu: "Education",

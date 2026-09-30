@@ -7,9 +7,7 @@
 .contact-links {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.75rem;
+    gap: 0.875rem;
     padding-top: 1.25rem;
     margin-top: 1.25rem;
     border-top: 1px solid rgba(0, 0, 0, 0.10);
@@ -19,105 +17,116 @@
     border-top-color: rgba(255, 255, 255, 0.10);
 }
 
+.contact-links-heading { text-align: left; }
+
 .contact-links-title {
-    font-size: 10px;
+    font-size: 1.125rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    line-height: 1.3;
+    color: #18181b;
+}
+
+.dark .contact-links-title { color: #ffffff; }
+
+.contact-links-subtitle {
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
     color: #71717a;
 }
 
-@media (min-width: 640px) {
-    .contact-links-title { font-size: 11px; }
-}
-
-.dark .contact-links-title { color: #a1a1aa; }
+.dark .contact-links-subtitle { color: #a1a1aa; }
 
 .contact-links-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    display: grid;
+    gap: 0.625rem;
 }
 
-/* --- Base button --- */
-.btn-link {
-    height: 2.25rem;
-    display: inline-flex;
+.contact-method {
+    display: grid;
+    grid-template-columns: 2.75rem minmax(0, 1fr) 1rem;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0 1rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 500;
+    gap: 0.75rem;
+    min-width: 0;
+    min-height: 4.25rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 0.875rem;
     color: #27272a;
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.10);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.46);
     text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.btn-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
-}
-
-.btn-link:active {
-    transform: scale(0.95);
-}
-
-.dark .btn-link {
+.dark .contact-method {
+    border-color: rgba(255, 255, 255, 0.10);
     color: #e4e4e7;
-    background: rgba(255, 255, 255, 0.10);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(15, 15, 20, 0.56);
 }
 
-.btn-link i {
-    font-size: 1rem;
+.contact-method:hover {
+    transform: translateY(-2px);
 }
 
-/* --- Icons only on mobile --- */
-@media (max-width: 480px) {
-    .btn-link {
-        width: 2.5rem;
-        height: 2.5rem;
-        padding: 0;
-        justify-content: center;
-        gap: 0;
-    }
-    .btn-link span {
-        display: none;
-    }
-    .btn-link i {
-        font-size: 1.15rem;
-    }
+.contact-method:focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 3px;
 }
 
-/* --- Variantes por red --- */
-.btn-link--linkedin i { color: #3b82f6; }
-.btn-link--linkedin:hover {
-    background: rgba(59, 130, 246, 0.10);
-    border-color: rgba(59, 130, 246, 0.40);
-    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.10);
+.contact-method-icon {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
 }
-.dark .btn-link--linkedin:hover { background: rgba(59, 130, 246, 0.20); }
 
-.btn-link--email i { color: #3b82f6; }
-.dark .btn-link--email i { color: #f59e0b; }
-
-.btn-link--email:hover {
-    background: rgba(245, 158, 11, 0.10);
-    border-color: rgba(245, 158, 11, 0.40);
-    box-shadow: 0 4px 8px rgba(245, 158, 11, 0.10);
+.contact-method--email .contact-method-icon {
+    color: #f97316;
+    background: rgba(249, 115, 22, 0.12);
 }
-.dark .btn-link--email:hover { background: rgba(245, 158, 11, 0.20); }
 
-.btn-link--whatsapp i { color: #10b981; }
-.btn-link--whatsapp:hover {
-    background: rgba(16, 185, 129, 0.10);
-    border-color: rgba(16, 185, 129, 0.40);
-    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.10);
+.contact-method--linkedin .contact-method-icon {
+    color: #0a66c2;
+    background: rgba(10, 102, 194, 0.12);
 }
-.dark .btn-link--whatsapp:hover { background: rgba(16, 185, 129, 0.20); }
+
+.contact-method--whatsapp .contact-method-icon {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.contact-method-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.contact-method-copy strong {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.contact-method-copy span {
+    overflow-wrap: anywhere;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: #71717a;
+}
+
+.dark .contact-method-copy span { color: #a1a1aa; }
+
+.contact-method-arrow {
+    color: #71717a;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease;
+}
+
+.contact-method:hover .contact-method-arrow { transform: translateX(3px); }
+
+.contact-method--email:hover { border-color: rgba(249, 115, 22, 0.45); }
+.contact-method--linkedin:hover { border-color: rgba(10, 102, 194, 0.45); }
+.contact-method--whatsapp:hover { border-color: rgba(34, 197, 94, 0.45); }
