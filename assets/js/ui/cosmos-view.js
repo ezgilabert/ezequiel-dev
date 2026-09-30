@@ -19,10 +19,11 @@ const cosmosView = (() => {
 
     function pan(event) {
         if (!isPanning) return;
-        const maxPanX = state.width * 0.65;
-        const maxPanY = state.height * 0.65;
-        state.targetPanX = Math.max(-maxPanX, Math.min(maxPanX, state.targetPanX + event.clientX - lastPointerX));
-        state.targetPanY = Math.max(-maxPanY, Math.min(maxPanY, state.targetPanY + event.clientY - lastPointerY));
+        const centeredPanX = state.width * (0.5 - state.sceneAnchorX);
+        const horizontalRange = state.width * 0.16;
+        const verticalRange = state.height * 0.2;
+        state.targetPanX = Math.max(centeredPanX - horizontalRange, Math.min(centeredPanX + horizontalRange, state.targetPanX + event.clientX - lastPointerX));
+        state.targetPanY = Math.max(-verticalRange, Math.min(verticalRange, state.targetPanY + event.clientY - lastPointerY));
         lastPointerX = event.clientX;
         lastPointerY = event.clientY;
         event.preventDefault();
@@ -41,9 +42,9 @@ const cosmosView = (() => {
             state.mouseY = 0;
             state.targetMouseX = 0;
             state.targetMouseY = 0;
-            state.panX = 0;
+            state.panX = state.width * (0.5 - state.sceneAnchorX);
             state.panY = 0;
-            state.targetPanX = 0;
+            state.targetPanX = state.panX;
             state.targetPanY = 0;
         }
         toggleButton.setAttribute('aria-pressed', String(viewing));

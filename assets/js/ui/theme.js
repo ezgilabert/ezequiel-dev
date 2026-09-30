@@ -43,13 +43,15 @@ const theme = (() => {
         const html = document.documentElement;
         const goingToLight = html.classList.contains('dark');
 
-        lock(true);
+        const started = goingToLight
+            ? window.cosmos.triggerSupernova()
+            : window.cosmos.triggerRewind();
+        if (!started) return;
 
+        lock(true);
         if (goingToLight) {
-            window.cosmos.triggerSupernova();
             setTimeout(igniteCard, 320);
         } else {
-            window.cosmos.triggerRewind();
             setTimeout(() => {
                 html.classList.add('dark');
                 setIcon(true);

@@ -23,7 +23,7 @@ const cosmos = (() => {
     // ============================================================
 
     function triggerSupernova() {
-        if (!FSM.tryStart(FSM.STATES.EXPLODE)) return;
+        if (!FSM.tryStart(FSM.STATES.EXPLODE)) return false;
 
         S.screenShake = 10;
         S.flashIntensity = 0.35;
@@ -31,17 +31,18 @@ const cosmos = (() => {
         S.supernovaGlow = 0;
         S.dwarfProgress = 0;
 
-        const starX = S.width * 0.82 + S.mouseX;
+        const starX = S.width * S.sceneAnchorX + S.mouseX;
         const starY = S.height * 0.5 + S.mouseY;
 
         window.shockwaves.trigger(starX, starY);
         window.particles.expandAll();
 
         Events.emit('transition:start', { type: 'explode' });
+        return true;
     }
 
     function triggerRewind() {
-        if (!FSM.tryStart(FSM.STATES.REWIND)) return;
+        if (!FSM.tryStart(FSM.STATES.REWIND)) return false;
 
         S.rewindFactor = 1.0;
         S.screenShake = 12;
@@ -52,12 +53,14 @@ const cosmos = (() => {
         window.particles.collapseAll();
 
         Events.emit('transition:start', { type: 'rewind' });
+        return true;
     }
 
     // ============================================================
     // LOOP PRINCIPAL
     // ============================================================
     function render() {
+        if (canvas.width !== window.innerWidth || canvas.height !== window.innerHeight) resize();
         ctx.clearRect(0, 0, S.width, S.height);
 
         // --- Shake ---
@@ -71,21 +74,29 @@ const cosmos = (() => {
 
         ctx.save();
         ctx.translate(S.shakeX, S.shakeY);
-        ctx.translate(S.panX, S.panY);
 
         // Smooth mouse movement and advance the pulse animation.
         S.mouseX += (S.targetMouseX - S.mouseX) * 0.05;
         S.mouseY += (S.targetMouseY - S.mouseY) * 0.05;
         S.panX += (S.targetPanX - S.panX) * 0.08;
         S.panY += (S.targetPanY - S.panY) * 0.08;
+        ctx.translate(S.panX, S.panY);
         S.pulseAnim += 0.03;
 
         const isDark = document.documentElement.classList.contains('dark');
-        const starX = S.width * 0.82 + S.mouseX;
+        const starX = S.width * S.sceneAnchorX + S.mouseX;
         const starY = S.height * 0.5 + S.mouseY;
 
         const isExplode = FSM.is(FSM.STATES.EXPLODE);
         const isRewind  = FSM.is(FSM.STATES.REWIND);
+
+        if (isRewind && !window.planets.planet1.isDestroyed) {
+            S.rewindFactor = Math.max(0, S.rewindFactor - 0.022);
+            if (S.rewindFactor === 0) {
+                window.asteroids.resetAllSatellites();
+                FSM.reset();
+            }
+        }
 
         // --- Progreso de supernova / rewind ---
         if (isExplode && S.supernovaProgress > 0.5) {

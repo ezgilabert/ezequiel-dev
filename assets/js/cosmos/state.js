@@ -10,6 +10,7 @@ window.CosmosState = {
     // Dimensiones y mouse
     width: 0,
     height: 0,
+    sceneAnchorX: 0.82,
     mouseX: 0,
     mouseY: 0,
     targetMouseX: 0,

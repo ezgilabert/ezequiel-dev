@@ -17,8 +17,12 @@ const sunRedGiant = (() => {
         // ============================================================
         // Layer 1: warm outer atmosphere.
         // ============================================================
+        ctx.save();
+        ctx.translate(-S.panX, -S.panY);
+        const screenStarX = starX + S.panX;
+        const screenStarY = starY + S.panY;
         const outerHeat = ctx.createRadialGradient(
-            starX, starY, 10, starX, starY,
+            screenStarX, screenStarY, 10, screenStarX, screenStarY,
             Math.max(S.width, S.height) * 1.2
         );
         outerHeat.addColorStop(0, `rgba(239, 68, 68, ${0.55 * heatAlpha})`);
@@ -28,16 +32,20 @@ const sunRedGiant = (() => {
         outerHeat.addColorStop(1, `rgba(40, 10, 15, ${0.05 * heatAlpha})`);
         ctx.fillStyle = outerHeat;
         ctx.fillRect(0, 0, S.width, S.height);
+        ctx.restore();
 
         // ============================================================
         // Layer 2: ambient light cast leftward from the sun.
         // ============================================================
-        const leftAmbientLight = ctx.createLinearGradient(S.width, starY, 0, starY);
+        ctx.save();
+        ctx.translate(-S.panX, -S.panY);
+        const leftAmbientLight = ctx.createLinearGradient(S.width, screenStarY, 0, screenStarY);
         leftAmbientLight.addColorStop(0, `rgba(249, 115, 22, ${0.20 * heatAlpha})`);
         leftAmbientLight.addColorStop(0.5, `rgba(220, 38, 38, ${0.12 * heatAlpha})`);
         leftAmbientLight.addColorStop(1, `rgba(180, 50, 20, ${0.06 * heatAlpha})`);
         ctx.fillStyle = leftAmbientLight;
         ctx.fillRect(0, 0, S.width, S.height);
+        ctx.restore();
 
         // ============================================================
         // Layer 3: electromagnetic waves.
