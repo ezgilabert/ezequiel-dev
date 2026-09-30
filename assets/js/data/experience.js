@@ -35,6 +35,9 @@ window.EXPERIENCE_DATA = [
     {
         role: 'Ssr Full Stack Developer',
         company: 'Software Arrow',
+        companyParts: [
+            { text: 'Software Arrow', href: 'https://www.linkedin.com/company/68165214' },
+        ],
         dates: '12/2019 - 12/2020',
         tech: '.NET Core 3.1, Angular 8, TypeScript, Entity Framework, Laravel, PostgreSQL, Bootstrap, Git',
         i18nKey: 'lists.experience.arrow'
