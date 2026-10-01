@@ -58,7 +58,7 @@ window.TRANSLATIONS = {
                     "Participación en reuniones técnicas con proveedores de APIs externas e incorporación de GitHub Copilot y herramientas MCP propias con subagentes."
                 ],
                 axonier: [
-                    "Desarrollo y mantenimiento de dos nuevos portales de ventas: uno global y otro para agencias de viaje según el país, utilizados por agentes y equipos internos.",
+                    "Desarrollo y mantenimiento de dos nuevos portales de ventas internacionales: uno interno y otro para agencias de viaje.",
                     "Implementación de funcionalidades de punta a punta.",
                     "Resolución de bugs en producción, refactorización de código y mejoras orientadas a la estabilidad y mantenibilidad de las aplicaciones.",
                     "Mantenimiento de bases de datos y procedimientos almacenados (SP), con ajustes y actualizaciones según las necesidades de las aplicaciones.",
@@ -151,19 +151,19 @@ window.TRANSLATIONS = {
                 kopius: [
                     "Maintained and evolved a monolithic .NET and WinForms healthcare application used for home care services in the United States.",
                     "Gradually migrated monolith features to embedded web modules (Pilets) developed with Angular.",
-                    "Developed and maintained .NET Core microservices and Blazor features integrated with existing and new databases.",
+                    "Developed and maintained .NET Core microservices and features in a Blazor frontend, integrated with existing and new databases.",
                     "Analyzed and resolved production incidents, refactored code, and improved application stability and maintainability.",
-                    "Maintained and optimized databases and stored procedures, and created and updated reports through direct SQL Server access without an ORM.",
+                    "Maintained and optimized databases and stored procedures, and created and updated reports through direct SQL Server access.",
                     "Collaborated in a Scrum environment across multiple IT teams, providing support and technical guidance to teammates.",
                     "Participated in technical discussions with external API providers and adopted GitHub Copilot and custom MCP tools with subagents."
                 ],
                 axonier: [
-                    "Developed and maintained two new sales portals: a global portal and country-specific portals for travel agencies, used by travel agents and internal teams.",
+                    "Developed and maintained two new international sales portals: one for internal users and one for travel agencies.",
                     "Delivered end-to-end features.",
                     "Resolved production bugs, refactored code, and improved application stability and maintainability.",
                     "Maintained databases and stored procedures (SPs), making adjustments and updates to support application needs.",
                     "Contributed to other parts of the company ecosystem, including a .NET payment gateway and a core system developed in Java.",
-                    "Collaborated in an Agile environment and supported teammates joining the project."
+                    "Collaborated in an Agile environment, supporting and guiding teammates as they joined the project."
                 ],
                 arrow: [
                     "Design and development of custom web applications using .NET Core, Angular 8, and Entity Framework Core.",
@@ -171,7 +171,7 @@ window.TRANSLATIONS = {
                     "Deployment automation and distributed version control using Git."
                 ],
                 octubre: [
-                    "Worked as a Full Stack .NET developer on OSPeRyH and Grupo Octubre's insurance management systems, while supporting other group solutions.",
+                    "Primarily worked as a Full Stack .NET developer on the management systems for OSPeRyH and Edificar, Grupo Octubre's insurance company, while also supporting other group solutions.",
                     "Maintained multiple instances of a solution using vanilla JavaScript on the frontend, .NET Framework on the backend, and SQL Server.",
                     "Resolved bugs, refactored code, and developed or modified frontend and backend CRUD modules, working from tickets and team priorities.",
                     "Worked closely with functional analysts to clarify requirements and validate tickets, with occasional direct user support.",

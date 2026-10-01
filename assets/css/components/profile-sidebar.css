@@ -68,5 +68,9 @@
 }
 
 @media (min-width: 768px) {
-    .profile-sidebar-inner { padding: 2.5rem; }
+    .profile-sidebar-inner {
+        height: auto;
+        justify-content: flex-start;
+        padding: 2.5rem;
+    }
 }
