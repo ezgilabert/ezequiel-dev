@@ -76,7 +76,7 @@ window.TRANSLATIONS = {
                     "Desarrollo y mantenimiento de dos nuevos portales de ventas internacionales: uno interno y otro para agencias de viaje.",
                     "Implementación de funcionalidades de punta a punta.",
                     "Resolución de bugs en producción, refactorización de código y mejoras orientadas a la estabilidad y mantenibilidad de las aplicaciones.",
-                    "Mantenimiento de bases de datos y procedimientos almacenados (SP), con ajustes y actualizaciones según las necesidades de las aplicaciones.",
+                    "Mantenimiento de bases de datos y procedimientos almacenados, con ajustes y actualizaciones según las necesidades de las aplicaciones.",
                     "Participación en otros proyectos de la empresa, incluido un gateway de pagos en .NET y un sistema core desarrollado en Java.",
                     "Trabajo colaborativo en un entorno ágil, con soporte y orientación a compañeros que se incorporaban al proyecto."
                 ],
@@ -192,7 +192,7 @@ window.TRANSLATIONS = {
                     "Developed and maintained two new international sales portals: one for internal users and one for travel agencies.",
                     "Delivered end-to-end features.",
                     "Resolved production bugs, refactored code, and improved application stability and maintainability.",
-                    "Maintained databases and stored procedures (SPs), making adjustments and updates to support application needs.",
+                    "Maintained databases and stored procedures, making adjustments and updates to support application needs.",
                     "Also contributed to other company projects, including a .NET payment gateway and a Java-based core system.",
                     "Collaborated in an Agile environment, supporting and guiding teammates as they joined the project."
                 ],
