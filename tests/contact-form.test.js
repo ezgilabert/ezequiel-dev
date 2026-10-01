@@ -17,16 +17,17 @@ function createContactHarness(fetchImpl) {
         reset: () => { form.wasReset = true; }
     };
     const button = { disabled: false };
-    const message = { value: 'Hello from the portfolio' };
+    const message = { id: 'contact-message', value: 'Hello from the portfolio', maxLength: 150 };
     const feedback = { classList: { add() {}, remove() {} } };
+    const counter = { textContent: '', classList: { toggle() {}, remove() {} } };
     const elements = {
         '#contact-form': form,
-        '#contact-name': { value: 'Ada Lovelace' },
-        '#contact-email': { value: 'ada@example.com' },
+        '#contact-name': { id: 'contact-name', value: 'Ada Lovelace', maxLength: 45 },
+        '#contact-email': { id: 'contact-email', value: 'ada@example.com', maxLength: 45 },
         '#contact-message': message,
         '#contact-output': feedback,
         '#contact-out-text': { textContent: '' },
-        '#contact-counter': { textContent: '', classList: { toggle() {} } }
+        '#contact-counter': counter
     };
     const window = {
         DOM: { $: selector => elements[selector], on() {} },
@@ -42,8 +43,25 @@ function createContactHarness(fetchImpl) {
     };
 
     vm.runInNewContext(source, { window, fetch: fetchImpl, setTimeout() {} });
-    return { contact: window.contact, form, button, toasts };
+    return { contact: window.contact, form, button, toasts, elements };
 }
+
+test('updates the counter value and total for the active field', () => {
+    const harness = createContactHarness(async () => ({ ok: true, json: async () => ({ success: true }) }));
+    harness.elements['#contact-name'].value = 'Ada';
+
+    harness.contact.updateCounter(harness.elements['#contact-name']);
+
+    assert.equal(harness.elements['#contact-counter'].textContent, '3 / 45');
+
+    harness.elements['#contact-email'].value = 'ada@';
+    harness.contact.updateCounter(harness.elements['#contact-email']);
+    assert.equal(harness.elements['#contact-counter'].textContent, '4 / 45');
+
+    harness.elements['#contact-message'].value = 'Hello';
+    harness.contact.updateCounter(harness.elements['#contact-message']);
+    assert.equal(harness.elements['#contact-counter'].textContent, '5 / 150');
+});
 
 test('sends a Web3Forms request and resets the form only after success', async () => {
     let request;

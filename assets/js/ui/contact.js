@@ -6,9 +6,10 @@
 const contact = (() => {
     const { $, on } = window.DOM;
     const MAX_CHARS = 150;
-    const NEAR_LIMIT = 135;
+    const NEAR_LIMIT_RATIO = 0.9;
     const WEB3FORMS_ACCESS_KEY = '1541835c-c017-486b-a9a5-5a510b5e51e5';
     let inputMeasureCanvas;
+    let counterField;
 
     function resizeInlineInput(input) {
         const line = input.closest('.contact-ide__line-content');
@@ -20,7 +21,7 @@ const contact = (() => {
 
         const style = window.getComputedStyle(input);
         context.font = style.font;
-        const text = input.value || input.placeholder;
+        const text = input.value || input.placeholder || '';
         const textWidth = context.measureText(text).width + 8;
         const lineRect = line.getBoundingClientRect();
         const punctuationWidth = input.nextElementSibling?.getBoundingClientRect().width || 0;
@@ -34,7 +35,9 @@ const contact = (() => {
         const availableWidth = Math.max(0, lineRect.right - prefixRight - punctuationWidth);
         if (availableWidth === 0) return;
 
-        input.style.width = `${Math.min(textWidth, availableWidth)}px`;
+        const minWidth = input.id === 'contact-name' || input.id === 'contact-email' ? 72 : 48;
+        const maxWidth = Math.min(180, availableWidth);
+        input.style.width = `${Math.min(Math.max(textWidth, minWidth), maxWidth)}px`;
     }
 
     function resizeInlineInputs(form) {
@@ -59,15 +62,37 @@ const contact = (() => {
         }
     }
 
-    function updateCounter() {
-        const textarea = $('#contact-message');
+    function updateCounter(field = counterField || $('#contact-message')) {
         const counter = $('#contact-counter');
-        if (!textarea || !counter) return;
+        const target = field || $('#contact-message');
+        if (!target || !counter) return;
 
-        const len = textarea.value.length;
-        counter.textContent = `${len} / ${MAX_CHARS}`;
-        counter.classList.toggle('is-near', len >= NEAR_LIMIT && len < MAX_CHARS);
-        counter.classList.toggle('is-max', len >= MAX_CHARS);
+        const len = target.value.length;
+        const maxLength = target.maxLength > 0 ? target.maxLength : MAX_CHARS;
+        counter.textContent = `${len} / ${maxLength}`;
+        counter.classList.toggle('is-near', len >= Math.ceil(maxLength * NEAR_LIMIT_RATIO) && len < maxLength);
+        counter.classList.toggle('is-max', len >= maxLength);
+    }
+
+    function resetCounter() {
+        const counter = $('#contact-counter');
+        if (!counter) return;
+
+        counterField = null;
+        counter.textContent = '0 / 0';
+        counter.classList.remove('is-near', 'is-max');
+    }
+
+    function syncFieldLength(input) {
+        if (!input || input.type === 'checkbox') return;
+
+        if (input.maxLength < 0) {
+            input.setAttribute('maxlength', String(MAX_CHARS));
+        }
+
+        if (input.value.length > input.maxLength) {
+            input.value = input.value.slice(0, input.maxLength);
+        }
     }
 
     function resizeMessage(textarea) {
@@ -121,7 +146,7 @@ const contact = (() => {
             outputBox.classList.remove('hidden');
             window.toast.show(t.toast_send);
             form.reset();
-            updateCounter();
+            resetCounter();
             resizeMessage($('#contact-message'));
             setTimeout(() => {
                 outputBox.classList.add('hidden');
@@ -141,25 +166,43 @@ const contact = (() => {
         const form = $('#contact-form');
         if (form) {
             on(form, 'submit', handleSubmit);
-            form.querySelectorAll('.contact-ide__input').forEach(input => {
-                on(input, 'input', () => resizeInlineInput(input));
+
+            const trackedInputs = [
+                ...form.querySelectorAll('.contact-ide__input'),
+                $('#contact-message')
+            ].filter(Boolean);
+
+            trackedInputs.forEach(input => {
+                syncFieldLength(input);
+                on(input, 'focus', () => {
+                    counterField = input;
+                    updateCounter(input);
+                });
+                on(input, 'input', () => {
+                    counterField = input;
+                    syncFieldLength(input);
+                    updateCounter(input);
+                    if (input.id === 'contact-message') resizeMessage(input);
+                    resizeInlineInput(input);
+                });
+                on(input, 'blur', () => {
+                    counterField = $('#contact-message');
+                    updateCounter(counterField);
+                });
             });
+
             resizeInlineInputs(form);
             on(window, 'resize', () => resizeInlineInputs(form));
         }
 
         const textarea = $('#contact-message');
         if (textarea) {
-            on(textarea, 'input', () => {
-                updateCounter();
-                resizeMessage(textarea);
-            });
-            updateCounter();
+            resetCounter();
             resizeMessage(textarea);
         }
     }
 
-    return { init, copyEmail, handleSubmit };
+    return { init, copyEmail, handleSubmit, updateCounter };
 })();
 
 window.contact = contact;
