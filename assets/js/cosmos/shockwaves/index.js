@@ -3,7 +3,7 @@
  * Coordinate shock waves and the supernova overlay.
  *
  * Reemplaza al antiguo shockwaves.js.
- * API pública idéntica:
+ * Public API:
  *   - init()
  *   - trigger(impactX, impactY)
  *   - draw(isDark)

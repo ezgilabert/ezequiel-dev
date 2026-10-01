@@ -107,11 +107,11 @@ const mobileSheet = (() => {
         closeBtn  = $('#profile-close');
 
         if (!sheet || !backdrop || !trigger) {
-            console.warn('[sheet] elementos no encontrados');
+            console.warn('[sheet] Required elements were not found.');
             return;
         }
 
-        // Eventos del sheet
+        // Sheet events
         trigger.addEventListener('click', onTriggerClick);
         backdrop.addEventListener('click', close);
         if (closeBtn) closeBtn.addEventListener('click', close);

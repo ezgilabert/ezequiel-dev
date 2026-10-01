@@ -83,7 +83,7 @@ const particles = (() => {
         ctx.globalAlpha = 1.0;
     }
 
-    function init() { /* nada especial */ }
+    function init() {}
 
     return { init, draw, expandAll, collapseAll };
 })();

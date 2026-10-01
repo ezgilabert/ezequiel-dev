@@ -9,7 +9,7 @@ const planetPhysics = (() => {
     const D = window.planetDefs;
 
     /**
-     * Calcula posiciones elípticas de los 4 cuerpos + flags de profundidad.
+     * Calculate elliptical positions for the four bodies and their depth flags.
      */
     function computePositions(starX, starY) {
         const p1 = D.planet1, m = D.moon, p2 = D.planet2, p3 = D.planet3;
@@ -44,7 +44,7 @@ const planetPhysics = (() => {
     }
 
     /**
-     * Avanza los ángulos. direction=1 normal, -2.5 en rewind.
+     * Advance the angles. direction=1 is normal; -2.5 is rewind.
      */
     function update(direction) {
         const D_ = window.planetDefs;

@@ -18,7 +18,7 @@ const storage = {
         try {
             localStorage.setItem(key, JSON.stringify(value));
         } catch {
-            /* modo privado o cuota llena: fallo silencioso */
+            /* Storage may be unavailable in private browsing or when the quota is full. */
         }
     }
 };

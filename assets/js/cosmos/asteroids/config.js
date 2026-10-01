@@ -45,15 +45,15 @@ window.AsteroidConfig = {
         metalD: 'rgba(71, 85, 105, 0.62)'
     },
 
-    // Colisión
+    // Collision
     COLLISION_PADDING: 12,
 
-    // Velocidades base
+    // Base speeds
     SOLAR_SPEED_MIN: 0.0003,
     SOLAR_SPEED_MAX: 0.0013,
     LINEAR_SPEED_MIN: 0.0003,
     LINEAR_SPEED_MAX: 0.0011,
 
-    // Rotación
+    // Rotation
     VROT_RANGE: 0.02
 };

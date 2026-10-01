@@ -2,13 +2,13 @@
  * events.js
  * Global pub/sub event bus for decoupled modules.
  *
- * Uso:
+ * Usage:
  *   Events.on('card:impact', () => { ... });
  *   Events.emit('card:impact', { foo: 'bar' });
  *   const off = Events.on('x', fn);
- *   off(); // desuscribe
+ *   off(); // Unsubscribe.
  *
- * Convención de nombres: 'dominio:accion' (ej: 'theme:commit', 'wave:hit').
+ * Naming convention: 'domain:action' (e.g. 'theme:commit', 'wave:hit').
  */
 
 const events = (() => {
@@ -16,10 +16,10 @@ const events = (() => {
     let listeners = {};
 
     /**
-     * Suscribe un handler a un evento.
+     * Subscribe a handler to an event.
      * @param {string} event
      * @param {(payload?: any) => void} handler
-     * @returns {() => void} función para desuscribir
+     * @returns {() => void} An unsubscribe function.
      */
     function on(event, handler) {
         if (!listeners[event]) listeners[event] = [];
@@ -28,7 +28,7 @@ const events = (() => {
     }
 
     /**
-     * Desuscribe un handler específico.
+     * Unsubscribe a specific handler.
      */
     function off(event, handler) {
         if (!listeners[event]) return;
@@ -36,23 +36,23 @@ const events = (() => {
     }
 
     /**
-     * Emite un evento. Los errores de un handler no rompen a los demás.
+     * Emit an event. A handler error does not prevent other handlers from running.
      */
     function emit(event, payload) {
         if (!listeners[event]) return;
-        // Copia defensiva: si un handler desuscribe durante el emit, no afecta el loop
+        // Iterate over a snapshot so unsubscriptions during emit do not affect this loop.
         const handlers = listeners[event].slice();
         for (const fn of handlers) {
             try {
                 fn(payload);
             } catch (err) {
-                console.error(`[Events] handler error en "${event}":`, err);
+                console.error(`[Events] Handler error in "${event}":`, err);
             }
         }
     }
 
     /**
-     * Limpia handlers. Sin argumento limpia TODO.
+     * Clear handlers. With no argument, clear all handlers.
      */
     function clear(event) {
         if (event) delete listeners[event];
@@ -60,7 +60,7 @@ const events = (() => {
     }
 
     /**
-     * Debug: lista cuántos handlers tiene cada evento.
+     * Return the number of handlers registered for each event.
      */
     function debug() {
         const out = {};

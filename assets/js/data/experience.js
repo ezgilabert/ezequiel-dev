@@ -1,6 +1,6 @@
 /**
  * experience.js
- * i18nKey apunta a TRANSLATIONS[lang][i18nKey] que contiene el array de bullets.
+ * i18nKey references the bullet array in TRANSLATIONS[lang][i18nKey].
  * Used by: render-experience.js.
  */
 

@@ -12,7 +12,7 @@ const drawSatellite = (() => {
     * Draws centered at (0, 0).
      */
     function draw(size, panelSpan, isDark, blinkPhase) {
-        // Cuerpo
+        // Satellite body
         ctx.fillStyle = isDark ? 'rgba(226, 232, 240, 0.9)' : 'rgba(71, 85, 105, 0.85)';
         ctx.fillRect(-size * 0.45, -size * 0.35, size * 0.9, size * 0.7);
 
@@ -37,7 +37,7 @@ const drawSatellite = (() => {
         ctx.fillRect(-size * 0.45 - panelW, -panelH * 0.5, panelW, panelH);
         ctx.fillRect(size * 0.45, -panelH * 0.5, panelW, panelH);
 
-        // Grid de paneles
+        // Solar panel grid
         ctx.strokeStyle = isDark ? 'rgba(96, 165, 250, 0.5)' : 'rgba(147, 197, 253, 0.45)';
         ctx.lineWidth = 0.6;
         for (let k = 1; k < 3; k++) {

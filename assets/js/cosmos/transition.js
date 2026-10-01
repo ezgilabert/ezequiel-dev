@@ -5,16 +5,16 @@
  *
  * Valid states:
  *   - 'idle'    → no active transition
- *   - 'explode' → supernova en curso (dark → light)
- *   - 'rewind'  → rewinding en curso (light → dark)
+ *   - 'explode' → supernova in progress (dark → light)
+ *   - 'rewind'  → rewind in progress (light → dark)
  *
- * Uso:
- *   transition.goTo('explode');         // dispara enter/exit
- *   transition.is('explode');           // booleano
- *   transition.on('enter:explode', fn); // suscribirse
+ * Usage:
+ *   transition.goTo('explode');         // Emit enter/exit events.
+ *   transition.is('explode');           // Check the active state.
+ *   transition.on('enter:explode', fn); // Subscribe to an event.
  *   transition.on('exit:explode', fn);
  *
- * Eventos emitidos (nombres):
+ * Emitted event names:
  *   - 'transition:change'         → { from, to }
  *   - 'enter:idle' / 'exit:idle'
  *   - 'enter:explode' / 'exit:explode'
@@ -51,12 +51,12 @@ const transition = (() => {
 
     /**
     * Change state; do nothing if the requested state is already active.
-     * Emite 'exit:X' y luego 'enter:Y'.
+     * Emits 'exit:X' followed by 'enter:Y'.
      */
     function goTo(next) {
         if (next === current) return false;
         if (!Object.values(STATES).includes(next)) {
-            console.warn(`[transition] estado inválido: "${next}"`);
+            console.warn(`[transition] Invalid state: "${next}"`);
             return false;
         }
 
@@ -76,13 +76,12 @@ const transition = (() => {
         return goTo(target);
     }
 
-    /** Return to idle. */
     function reset() {
         return goTo(STATES.IDLE);
     }
 
     /**
-     * Suscribe un handler a un evento de la FSM.
+     * Subscribe a handler to an FSM event.
     * Return an unsubscribe function.
      */
     function on(event, handler) {
@@ -90,11 +89,10 @@ const transition = (() => {
     }
 
     // ============================================================
-    // Helpers de compatibilidad (evitan tocar TODO de una)
+    // Compatibility helpers
     // ============================================================
     // Keep `isTransitioning` and `transitionType` for legacy consumers.
-    // como PROXIES de lectura para no romper código existente.
-    // Eventualmente se eliminan.
+    // Keep legacy properties available as read-only proxies until consumers are migrated.
     function legacyType() {
         return current === STATES.IDLE ? 'none' : current;
     }

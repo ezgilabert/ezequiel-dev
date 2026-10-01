@@ -37,14 +37,14 @@ const fragments = (() => {
     }
 
     /**
-     * @param {object} target - objeto con posición y config
+     * @param {object} target - Object containing the position and configuration.
      * @param {number} impactX
      * @param {number} impactY
      * @param {number} baseSize
      * @param {'satellite'|'iss'|'spaceship'} kind
      */
     function createSatelliteFragments(target, impactX, impactY, baseSize, kind = 'satellite') {
-        // Compatibilidad con la firma vieja (isISS boolean)
+        // Support the legacy signature where the kind was passed as an isISS boolean.
         if (kind === true) kind = 'iss';
         if (kind === false) kind = 'satellite';
 
@@ -110,7 +110,6 @@ const fragments = (() => {
                 }
             }
 
-            // Trail
             for (let t = frag.trail.length - 1; t >= 0; t--) {
                 const tr = frag.trail[t];
                 tr.alpha -= 0.06;
@@ -121,7 +120,6 @@ const fragments = (() => {
                 ctx.fill();
             }
 
-            // Dibujo
             ctx.save();
             ctx.globalAlpha = Math.max(0.3, Math.min(1, frag.life));
             ctx.translate(frag.x, frag.y);
@@ -175,7 +173,6 @@ const fragments = (() => {
                 ctx.lineTo(-s * 0.6, s * 0.3);
                 ctx.closePath();
                 ctx.fill(); ctx.stroke();
-                // Reflejo
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
                 ctx.beginPath();
                 ctx.arc(-s * 0.15, -s * 0.15, s * 0.15, 0, Math.PI * 2);
@@ -202,7 +199,6 @@ const fragments = (() => {
                 ctx.beginPath();
                 ctx.rect(-s * 0.6, -s * 0.6, s * 1.2, s * 1.2);
                 ctx.fill(); ctx.stroke();
-                // Brillo interno
                 const pulse = 0.6 + 0.4 * Math.sin(S.pulseAnim * 15 + frag.sparklePhase);
                 ctx.fillStyle = `rgba(255, 240, 150, ${pulse})`;
                 ctx.beginPath();

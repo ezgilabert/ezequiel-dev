@@ -25,7 +25,7 @@
 }
 
 /* =====================================================
- * GLASS CARD (contenedor principal)
+ * GLASS CARD (main container)
  * ===================================================== */
 .glass-card {
     width: 100%;
@@ -118,7 +118,7 @@
 .dark .tab-subtitle { color: #a1a1aa; }
 
 /* =====================================================
- * TAB PANELS (contenido)
+ * TAB PANELS (content)
  * ===================================================== */
 .tab-panel {
     display: none;

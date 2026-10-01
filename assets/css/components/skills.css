@@ -1,7 +1,7 @@
 /* =====================================================
  * components/skills.css
- * Layout del tab de skills + cápsulas + categorías.
- * Iconos desde Simple Icons CDN con color de marca.
+ * Skills tab layout, skill pills, and categories.
+ * Brand-colored icons from Simple Icons.
  * ===================================================== */
 
 .skills-layout {
@@ -138,7 +138,7 @@
 }
 
 /* ============================================================
- * ICONO en chip circular
+ * Icon in a circular chip
  * ============================================================ */
 .tech-capsule img {
     width: 1.125rem;
@@ -177,7 +177,7 @@
 .dark .tech-capsule__icon { color: #d4d4d8; }
 .tech-capsule:hover .tech-capsule__icon { transform: scale(1.15) rotate(-3deg); }
 
-/* Fallback */
+/* Fallback styles */
 .tech-capsule i.ph-question {
     width: 1.125rem;
     height: 1.125rem;
@@ -196,7 +196,7 @@
 }
 
 /* ============================================================
- * MOBILE: cápsulas casi opacas (muy poco translúcidas)
+ * MOBILE: skill pills are nearly opaque
  * ============================================================ */
 @media (max-width: 767px) {
     .tech-capsule {

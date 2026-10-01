@@ -3,7 +3,7 @@
  * Dispatch between the red giant (dark) and white dwarf (light) renderers.
  *
  * Reemplaza al antiguo sun.js.
- * API pública idéntica: draw(starX, starY, isDark).
+ * Public API: draw(starX, starY, isDark).
  */
 
 const sun = (() => {

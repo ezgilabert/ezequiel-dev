@@ -21,7 +21,7 @@ const drawISS = (() => {
         ctx.shadowColor = isDark ? 'rgba(56, 189, 248, 0.35)' : 'rgba(30, 64, 175, 0.25)';
         ctx.shadowBlur = 8;
 
-        // Viga principal
+        // Main truss
         ctx.fillStyle = body;
         ctx.fillRect(-size * 0.7, -size * 0.12, size * 1.4, size * 0.24);
 
@@ -36,7 +36,7 @@ const drawISS = (() => {
             ctx.stroke();
         }
 
-        // Módulos
+        // Modules
         ctx.shadowBlur = 4;
         ctx.fillStyle = module;
         ctx.beginPath();
@@ -57,7 +57,7 @@ const drawISS = (() => {
         ctx.arc(-size * 0.12, size * 0.08, size * 0.07, 0, Math.PI * 2);
         ctx.fill();
 
-        // Brazo robótico
+        // Robotic arm
         ctx.strokeStyle = isDark ? 'rgba(226, 232, 240, 0.85)' : 'rgba(148, 163, 184, 0.8)';
         ctx.lineWidth = 2;
         ctx.lineCap = 'round';
@@ -81,7 +81,7 @@ const drawISS = (() => {
         ctx.fillRect(size * 0.7, -ph - size * 0.08, pw, ph * 0.9);
         ctx.fillRect(size * 0.7, size * 0.12, pw, ph * 0.9);
 
-        // Grid de paneles
+        // Solar panel grid
         ctx.shadowBlur = 0;
         ctx.strokeStyle = panelLine;
         ctx.lineWidth = 0.6;

@@ -10,7 +10,7 @@ const drawMars = (() => {
     function draw(starX, starY, isDark, planetX, planetY) {
         const p = D.planet3;
 
-        // Órbita guía
+        // Guide orbit
         ctx.beginPath();
         ctx.ellipse(starX, starY, p.orbitRadiusX, p.orbitRadiusY, -0.2, 0, Math.PI * 2);
         ctx.strokeStyle = isDark ? 'rgba(249, 115, 22, 0.10)' : 'rgba(194, 65, 12, 0.08)';
@@ -31,7 +31,7 @@ const drawMars = (() => {
         ctx.fillStyle = haloGrad;
         ctx.fill();
 
-        // Cuerpo (clip circular)
+        // Planet body (circular clipping)
         ctx.beginPath();
         ctx.arc(0, 0, p.radius, 0, Math.PI * 2);
         ctx.clip();

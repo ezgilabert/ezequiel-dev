@@ -7,7 +7,7 @@
  */
 
 window.CosmosState = {
-    // Dimensiones y mouse
+    // Viewport dimensions and pointer position
     width: 0,
     height: 0,
     sceneAnchorX: 0.82,
@@ -20,21 +20,22 @@ window.CosmosState = {
     panY: 0,
     targetPanX: 0,
     targetPanY: 0,
+    sceneZoom: 1,
 
-    // Animación general
+    // General animation state
     pulseAnim: 0,
     screenShake: 0,
     shakeX: 0,
     shakeY: 0,
     flashIntensity: 0,
 
-    // Progresos de la supernova / rewind (datos animados)
+    // Supernova and rewind progress
     rewindFactor: 0,
     supernovaProgress: 0,
     supernovaGlow: 0,
     dwarfProgress: 0,
 
-    // Colecciones
+    // Entity collections
     shockwaves: [],
     explosionSparks: []
 };

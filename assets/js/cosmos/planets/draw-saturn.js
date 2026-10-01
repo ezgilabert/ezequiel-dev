@@ -10,7 +10,7 @@ const drawSaturn = (() => {
     function draw(starX, starY, isDark, planetX, planetY) {
         const p = D.planet2;
 
-        // Órbita guía
+        // Guide orbit
         ctx.beginPath();
         ctx.ellipse(starX, starY, p.orbitRadiusX, p.orbitRadiusY, -0.2, 0, Math.PI * 2);
         ctx.strokeStyle = isDark ? 'rgba(168, 85, 247, 0.15)' : 'rgba(147, 51, 234, 0.12)';
@@ -22,14 +22,14 @@ const drawSaturn = (() => {
         ctx.save();
         ctx.translate(planetX, planetY);
 
-        // Anillo trasero (mitad de arriba)
+        // Back half of the ring
         ctx.beginPath();
         ctx.ellipse(0, 0, p.ringRadiusX, p.ringRadiusY, 0.3, Math.PI, Math.PI * 2);
         ctx.strokeStyle = isDark ? 'rgba(216, 180, 254, 0.3)' : 'rgba(168, 85, 247, 0.25)';
         ctx.lineWidth = 3;
         ctx.stroke();
 
-        // Cuerpo
+        // Planet body
         const planetGrad = ctx.createRadialGradient(
             -p.radius * 0.3, -p.radius * 0.3, p.radius * 0.1,
             0, 0, p.radius
@@ -44,7 +44,7 @@ const drawSaturn = (() => {
         ctx.fillStyle = planetGrad;
         ctx.fill();
 
-        // Anillo frontal (mitad de abajo)
+        // Front half of the ring
         ctx.beginPath();
         ctx.ellipse(0, 0, p.ringRadiusX, p.ringRadiusY, 0.3, 0, Math.PI);
         ctx.strokeStyle = isDark ? 'rgba(216, 180, 254, 0.5)' : 'rgba(168, 85, 247, 0.4)';

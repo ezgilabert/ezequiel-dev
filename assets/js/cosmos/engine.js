@@ -57,7 +57,7 @@ const cosmos = (() => {
     }
 
     // ============================================================
-    // LOOP PRINCIPAL
+    // MAIN LOOP
     // ============================================================
     function render() {
         if (canvas.width !== window.innerWidth || canvas.height !== window.innerHeight) resize();
@@ -81,6 +81,9 @@ const cosmos = (() => {
         S.panX += (S.targetPanX - S.panX) * 0.08;
         S.panY += (S.targetPanY - S.panY) * 0.08;
         ctx.translate(S.panX, S.panY);
+        ctx.translate(S.width / 2, S.height / 2);
+        ctx.scale(S.sceneZoom, S.sceneZoom);
+        ctx.translate(-S.width / 2, -S.height / 2);
         S.pulseAnim += 0.03;
 
         const isDark = document.documentElement.classList.contains('dark');
@@ -99,7 +102,7 @@ const cosmos = (() => {
             }
         }
 
-        // --- Progreso de supernova / rewind ---
+        // --- Supernova and rewind progress ---
         if (isExplode && S.supernovaProgress > 0.5) {
             S.dwarfProgress = Math.min(1, S.dwarfProgress + 0.012);
         } else if (isRewind) {
@@ -116,7 +119,7 @@ const cosmos = (() => {
         const waveX = S.shockwaves[0]?.x ?? starX;
         const waveY = S.shockwaves[0]?.y ?? starY;
 
-        // --- Física de planetas ---
+        // --- Planet physics ---
         window.planets.update(isRewind ? -2.5 : 1);
 
         // ============================================================
@@ -130,7 +133,7 @@ const cosmos = (() => {
         window.particles.draw(isDark, starX, starY);
 
         // ============================================================
-        // PROGRESO GLOBAL DE SUPERNOVA
+        // GLOBAL SUPERNOVA PROGRESS
         // ============================================================
         if (isExplode && S.shockwaves.length > 0) {
             let maxR = 0, maxMax = 1;
@@ -176,8 +179,8 @@ const cosmos = (() => {
 
             if (S.supernovaGlow > 0.01) {
                 window.shockwaves.drawSupernovaOverlay(
-                    starX + S.panX + S.shakeX,
-                    starY + S.panY + S.shakeY
+                    S.width / 2 + (starX - S.width / 2) * S.sceneZoom + S.panX + S.shakeX,
+                    S.height / 2 + (starY - S.height / 2) * S.sceneZoom + S.panY + S.shakeY
                 );
             }
 

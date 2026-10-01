@@ -1,7 +1,7 @@
 /**
  * education.js
- * - title: si usa i18nKey, se traduce; si no, usa title literal.
- * - link: opcional, URL externa (ej: curso Udemy).
+ * - title: translated when titleKey is set; otherwise, uses the literal title.
+ * - link: optional external URL (e.g. a Udemy course).
  * Used by: render-education.js.
  */
 

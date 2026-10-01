@@ -19,7 +19,7 @@ const drawSpaceship = (() => {
         const engine = isDark ? 'rgba(251, 146, 60, 0.9)' : 'rgba(234, 88, 12, 0.85)';
 
         // ============================================================
-        // Estela del motor (detrás)
+        // Engine trail (behind the ship)
         // ============================================================
         const flameLen = size * (1.2 + 0.4 * Math.sin(S.pulseAnim * 8 + blinkPhase));
         const flameGrad = ctx.createLinearGradient(0, size * 0.5, 0, size * 0.5 + flameLen);
@@ -58,7 +58,7 @@ const drawSpaceship = (() => {
         ctx.fill();
 
         // ============================================================
-        // Cuerpo principal (fuselaje)
+        // Main body (fuselage)
         // ============================================================
         ctx.fillStyle = body;
         ctx.beginPath();
@@ -87,25 +87,25 @@ const drawSpaceship = (() => {
         ctx.ellipse(0, -size * 0.15, size * 0.22, size * 0.35, 0, 0, Math.PI * 2);
         ctx.fill();
 
-        // Reflejo en la cabina
+        // Cockpit reflection
         ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
         ctx.beginPath();
         ctx.ellipse(-size * 0.08, -size * 0.3, size * 0.05, size * 0.12, 0, 0, Math.PI * 2);
         ctx.fill();
 
         // ============================================================
-        // Detalles del fuselaje
+        // Fuselage details
         // ============================================================
         ctx.strokeStyle = accent;
         ctx.lineWidth = Math.max(0.4, size * 0.04);
 
-        // Línea central
+        // Center line
         ctx.beginPath();
         ctx.moveTo(0, size * 0.05);
         ctx.lineTo(0, size * 0.45);
         ctx.stroke();
 
-        // Paneles laterales
+        // Side panels
         ctx.beginPath();
         ctx.moveTo(-size * 0.2, size * 0.2);
         ctx.lineTo(size * 0.2, size * 0.2);

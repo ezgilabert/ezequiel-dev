@@ -52,7 +52,7 @@
     opacity: 1;
 }
 
-/* Contenido interno: acá vive el flex column */
+/* Inner content uses a flex column. */
 .profile-sidebar-inner {
     position: relative;
     z-index: 1;

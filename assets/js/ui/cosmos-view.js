@@ -8,6 +8,8 @@ const cosmosView = (() => {
     let isPanning = false;
     let lastPointerX = 0;
     let lastPointerY = 0;
+    const MIN_ZOOM = 1;
+    const MAX_ZOOM = 3;
 
     function startPan(event) {
         if (!document.body.classList.contains('cosmos-viewing') || event.button !== 0) return;
@@ -20,15 +22,31 @@ const cosmosView = (() => {
 
     function pan(event) {
         if (!isPanning) return;
-        const centeredPanX = state.width * (0.5 - state.sceneAnchorX);
+        const centeredPanX = state.width * (0.5 - state.sceneAnchorX) * state.sceneZoom;
         const isMobile = window.matchMedia('(max-width: 767px)').matches;
-        const horizontalRange = state.width * (isMobile ? 0.42 : 0.16);
-        const verticalRange = state.height * (isMobile ? 0.35 : 0.2);
+        const horizontalRange = state.width * (isMobile ? 0.42 : 0.16) * state.sceneZoom;
+        const verticalRange = state.height * (isMobile ? 0.35 : 0.2) * state.sceneZoom;
         state.targetPanX = Math.max(centeredPanX - horizontalRange, Math.min(centeredPanX + horizontalRange, state.targetPanX + event.clientX - lastPointerX));
         state.targetPanY = Math.max(-verticalRange, Math.min(verticalRange, state.targetPanY + event.clientY - lastPointerY));
         lastPointerX = event.clientX;
         lastPointerY = event.clientY;
         event.preventDefault();
+    }
+
+    function zoom(event) {
+        if (!document.body.classList.contains('cosmos-viewing')) return;
+        event.preventDefault();
+
+        const nextZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, state.sceneZoom * Math.exp(-event.deltaY * 0.001)));
+        if (nextZoom === state.sceneZoom) return;
+
+        state.sceneZoom = nextZoom;
+        const centeredPanX = state.width * (0.5 - state.sceneAnchorX) * state.sceneZoom;
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+        const horizontalRange = state.width * (isMobile ? 0.42 : 0.16) * state.sceneZoom;
+        const verticalRange = state.height * (isMobile ? 0.35 : 0.2) * state.sceneZoom;
+        state.targetPanX = Math.max(centeredPanX - horizontalRange, Math.min(centeredPanX + horizontalRange, state.targetPanX));
+        state.targetPanY = Math.max(-verticalRange, Math.min(verticalRange, state.targetPanY));
     }
 
     function stopPan() {
@@ -44,6 +62,7 @@ const cosmosView = (() => {
             state.mouseY = 0;
             state.targetMouseX = 0;
             state.targetMouseY = 0;
+            state.sceneZoom = 1;
             state.panX = state.width * (0.5 - state.sceneAnchorX);
             state.panY = 0;
             state.targetPanX = state.panX;
@@ -58,6 +77,7 @@ const cosmosView = (() => {
         themeButton.hidden = !viewing;
         if (!viewing) {
             stopPan();
+            state.sceneZoom = 1;
             state.targetPanX = 0;
             state.targetPanY = 0;
         }
@@ -72,6 +92,7 @@ const cosmosView = (() => {
         document.addEventListener('pointermove', pan, { passive: false });
         document.addEventListener('pointerup', stopPan);
         document.addEventListener('pointercancel', stopPan);
+        document.addEventListener('wheel', zoom, { passive: false });
         window.addEventListener('blur', stopPan);
         document.addEventListener('keydown', event => {
             if (event.key === 'Escape' && toggleButton.getAttribute('aria-pressed') === 'true') setViewing(false);

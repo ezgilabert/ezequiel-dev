@@ -11,7 +11,7 @@ const drawEarth = (() => {
         const p = D.planet1;
         const withered = p.isWithered;
 
-        // Órbita guía
+        // Guide orbit
         ctx.beginPath();
         ctx.ellipse(starX, starY, p.orbitRadiusX, p.orbitRadiusY, -0.2, 0, Math.PI * 2);
         ctx.strokeStyle = isDark ? 'rgba(59, 130, 246, 0.20)' : 'rgba(99, 102, 241, 0.15)';
@@ -32,7 +32,7 @@ const drawEarth = (() => {
         ctx.fillStyle = haloGrad;
         ctx.fill();
 
-        // Cuerpo (clip circular)
+        // Planet body (circular clipping)
         ctx.beginPath();
         ctx.arc(0, 0, p.radius, 0, Math.PI * 2);
         ctx.clip();
@@ -49,7 +49,7 @@ const drawEarth = (() => {
         ctx.fillStyle = oceanGrad;
         ctx.fillRect(-p.radius, -p.radius, p.radius * 2, p.radius * 2);
 
-        // Continentes (rotan con el ángulo)
+        // Continents (rotate with the planet)
         const rot = p.angle * 2.2;
         ctx.beginPath();
         ctx.arc(Math.cos(rot) * 6 - 2, Math.sin(rot) * 4 - 3, 5.8, 0, Math.PI * 2);

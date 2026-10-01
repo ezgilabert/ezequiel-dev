@@ -1,7 +1,7 @@
 /* =====================================================
  * components/app-nav.css
- * - Desktop: tabs + toggles en una fila arriba.
- * - Mobile: toggles arriba (barra fija full-width), tabs abajo (barra fija).
+ * - Desktop: tabs and toggles share a row at the top.
+ * - Mobile: fixed full-width toggles at the top and fixed tabs at the bottom.
  * ===================================================== */
 
 .app-nav {
@@ -134,7 +134,7 @@
 }
 
 /* ============================================================
- * MOBILE (< 768px): barra superior + barra inferior
+ * MOBILE (< 768px): top bar + bottom bar
  * ============================================================ */
 @media (max-width: 767px) {
 
@@ -142,7 +142,7 @@
         display: contents;
     }
 
-    /* --- TOGGLES: barra fija ARRIBA (full width) --- */
+    /* --- TOGGLES: fixed bar at the top (full width) --- */
     .app-nav-toggles {
         position: fixed;
         top: 0;
@@ -173,7 +173,7 @@
 
     #theme-toggle-btn .btn-toggle-label { display: none; }
 
-    /* --- TABS: barra fija ABAJO --- */
+    /* --- TABS: fixed bar at the bottom --- */
     .app-nav-tabs {
         position: fixed;
         bottom: 0;
@@ -248,7 +248,7 @@
     }
 
     /* ============================================================
-     * ESPACIO para las 2 barras
+     * Space for both bars
      * ============================================================ */
     .panel-right {
         padding-top: 4.5rem !important;
@@ -279,7 +279,7 @@
 }
 
 /* ============================================================
- * FIX: navbar inferior siempre pegado al fondo del viewport
+ * Keep the bottom navigation fixed to the viewport.
  * ============================================================ */
 @media (max-width: 767px) {
     html, body {

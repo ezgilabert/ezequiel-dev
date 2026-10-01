@@ -10,7 +10,7 @@ const drawMoon = (() => {
     function draw(earthX, earthY, starX, isDark, moonX, moonY) {
         const m = D.moon;
 
-        // Órbita guía
+        // Guide orbit
         ctx.beginPath();
         ctx.ellipse(earthX, earthY, m.orbitRadiusX, m.orbitRadiusY, -0.1, 0, Math.PI * 2);
         ctx.strokeStyle = isDark ? 'rgba(226, 232, 240, 0.18)' : 'rgba(100, 116, 139, 0.15)';
@@ -28,7 +28,7 @@ const drawMoon = (() => {
         ctx.fillStyle = 'rgba(226, 232, 240, 0.2)';
         ctx.fill();
 
-        // Cuerpo
+        // Moon body
         const moonGrad = ctx.createRadialGradient(
             -m.radius * 0.3, -m.radius * 0.3, m.radius * 0.1,
             0, 0, m.radius
@@ -43,7 +43,7 @@ const drawMoon = (() => {
         ctx.fillStyle = moonGrad;
         ctx.fill();
 
-        // Cráteres
+        // Craters
         ctx.fillStyle = 'rgba(71, 85, 105, 0.45)';
         ctx.beginPath();
         ctx.arc(-1.2, -1, 1.1, 0, Math.PI * 2);
