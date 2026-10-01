@@ -68,8 +68,9 @@ window.TRANSLATIONS = {
                     "Desarrollo y mantenimiento de microservicios en .NET Core y funcionalidades en un frontend Blazor, integrados con bases de datos existentes y nuevas.",
                     "Análisis y resolución de incidencias en producción, refactorización y mejoras de código enfocadas en la estabilidad y mantenibilidad de las aplicaciones.",
                     "Mantenimiento y optimización de bases de datos y stored procedures, además de creación y ajuste de reportes mediante Microsoft Report Builder.",
+                    "Participación activa en reuniones con Product Owners y múltiples equipos de negocio y tecnología para alinear requisitos y soluciones.",
                     "Trabajo colaborativo en Scrum con múltiples equipos de IT, brindando soporte y orientación técnica a compañeros.",
-                    "Participación en reuniones técnicas con proveedores de APIs externas e incorporación de GitHub Copilot y herramientas MCP propias con subagentes."
+                    "Participación en reuniones técnicas con proveedores de APIs externas, demos internas y adopción de GitHub Copilot y herramientas MCP propias con subagentes."
                 ],
                 axonier: [
                     "Desarrollo y mantenimiento de dos nuevos portales de ventas internacionales: uno interno y otro para agencias de viaje.",
@@ -183,8 +184,9 @@ window.TRANSLATIONS = {
                     "Developed and maintained .NET Core microservices and features in a Blazor frontend, integrated with existing and new databases.",
                     "Analyzed and resolved production incidents, refactored code, and improved application stability and maintainability.",
                     "Maintained and optimized databases and stored procedures, and created and adjusted reports using Microsoft Report Builder.",
+                    "Actively participated in meetings with Product Owners and multiple business and technology teams to align requirements and solutions.",
                     "Collaborated in a Scrum environment across multiple IT teams, providing support and technical guidance to teammates.",
-                    "Participated in technical discussions with external API providers and adopted GitHub Copilot and custom MCP tools with subagents."
+                    "Participated in technical discussions with external API providers, internal demos, and the adoption of GitHub Copilot and custom MCP tools with subagents."
                 ],
                 axonier: [
                     "Developed and maintained two new international sales portals: one for internal users and one for travel agencies.",
