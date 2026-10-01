@@ -1,6 +1,7 @@
 const cosmosView = (() => {
     const toggleButton = document.getElementById('cosmos-view-toggle');
     const exitButton = document.getElementById('cosmos-view-exit');
+    const themeButton = document.getElementById('cosmos-view-theme-toggle');
     const card = document.querySelector('main.glass-card');
     const profileTrigger = document.getElementById('profile-trigger');
     const state = window.CosmosState;
@@ -53,6 +54,7 @@ const cosmosView = (() => {
         profileTrigger.inert = viewing;
         profileTrigger.setAttribute('aria-hidden', String(viewing));
         exitButton.hidden = !viewing;
+        themeButton.hidden = !viewing;
         if (!viewing) {
             stopPan();
             state.targetPanX = 0;

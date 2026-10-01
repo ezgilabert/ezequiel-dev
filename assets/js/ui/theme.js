@@ -17,15 +17,19 @@ const theme = (() => {
 
     function lock(value) {
         locked = !!value;
-        const btn = $('#theme-toggle-btn');
-        if (btn) btn.disabled = locked;
+        ['#theme-toggle-btn', '#cosmos-view-theme-toggle'].forEach(selector => {
+            const btn = $(selector);
+            if (btn) btn.disabled = locked;
+        });
     }
 
     function setIcon(goingToDark) {
-        const icon = $('#theme-icon');
-        if (!icon) return;
-        icon.classList.toggle('ph-sun', goingToDark);
-        icon.classList.toggle('ph-moon', !goingToDark);
+        ['#theme-icon', '#cosmos-view-theme-icon'].forEach(selector => {
+            const icon = $(selector);
+            if (!icon) return;
+            icon.classList.toggle('ph-sun', goingToDark);
+            icon.classList.toggle('ph-moon', !goingToDark);
+        });
     }
 
     function igniteCard() {
@@ -89,8 +93,10 @@ const theme = (() => {
 
         Events.on('card:impact',        onShockwaveReachesCard);
         Events.on('theme:commit-light', commitLightTheme);
+        Events.on('transition:start',   () => lock(true));
         Events.on('transition:end',     onTransitionEnd);
         on($('#theme-toggle-btn'), 'click', toggle);
+        on($('#cosmos-view-theme-toggle'), 'click', toggle);
     }
 
     return { init, toggle, igniteCard, onShockwaveReachesCard, commitLightTheme, onTransitionEnd };

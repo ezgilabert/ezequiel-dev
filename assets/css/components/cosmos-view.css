@@ -29,8 +29,17 @@
 .cosmos-view-exit[hidden] { display: none; }
 .cosmos-view-exit i { font-size: 1.25rem; }
 
+.cosmos-view-theme-toggle {
+    right: 5.25rem;
+}
+
 .cosmos-view-exit:hover { transform: translateY(-2px); }
 .cosmos-view-exit:active { transform: scale(0.94); }
+.cosmos-view-exit:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
 .cosmos-view-exit:focus-visible { outline: 2px solid #f97316; outline-offset: 3px; }
 
 .dark .cosmos-view-exit {
@@ -64,6 +73,10 @@ body.cosmos-viewing .cosmos-view-exit {
         bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
         width: 2.75rem;
         height: 2.75rem;
+    }
+
+    .cosmos-view-theme-toggle {
+        right: 4rem;
     }
 }
 
