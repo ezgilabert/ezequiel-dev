@@ -21,8 +21,9 @@ const cosmosView = (() => {
     function pan(event) {
         if (!isPanning) return;
         const centeredPanX = state.width * (0.5 - state.sceneAnchorX);
-        const horizontalRange = state.width * 0.16;
-        const verticalRange = state.height * 0.2;
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+        const horizontalRange = state.width * (isMobile ? 0.42 : 0.16);
+        const verticalRange = state.height * (isMobile ? 0.35 : 0.2);
         state.targetPanX = Math.max(centeredPanX - horizontalRange, Math.min(centeredPanX + horizontalRange, state.targetPanX + event.clientX - lastPointerX));
         state.targetPanY = Math.max(-verticalRange, Math.min(verticalRange, state.targetPanY + event.clientY - lastPointerY));
         lastPointerX = event.clientX;

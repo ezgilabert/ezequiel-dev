@@ -169,17 +169,24 @@ const cosmos = (() => {
         // ============================================================
         // OVERLAY SUPERNOVA
         // ============================================================
-        if (S.supernovaGlow > 0.01) {
-            window.shockwaves.drawSupernovaOverlay(starX, starY);
-        }
+        if (S.supernovaGlow > 0.01 || S.flashIntensity > 0.01) {
+            ctx.save();
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
 
-        // ============================================================
-        // FLASH FINAL
-        // ============================================================
-        if (S.flashIntensity > 0.01) {
-            ctx.fillStyle = `rgba(255, 240, 200, ${S.flashIntensity})`;
-            ctx.fillRect(0, 0, S.width, S.height);
-            S.flashIntensity *= 0.9;
+            if (S.supernovaGlow > 0.01) {
+                window.shockwaves.drawSupernovaOverlay(
+                    starX + S.panX + S.shakeX,
+                    starY + S.panY + S.shakeY
+                );
+            }
+
+            // These effects cover the viewport, independent of the scene pan.
+            if (S.flashIntensity > 0.01) {
+                ctx.fillStyle = `rgba(255, 240, 200, ${S.flashIntensity})`;
+                ctx.fillRect(0, 0, S.width, S.height);
+                S.flashIntensity *= 0.9;
+            }
+            ctx.restore();
         }
 
         ctx.restore();
