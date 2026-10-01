@@ -89,7 +89,7 @@ const contact = (() => {
         const botcheck = form.querySelector('[name="botcheck"]');
         const t = window.TRANSLATIONS[window.i18n.getCurrent()];
 
-        if (form.dataset.submitting === 'true') return;
+        if (form.dataset.submitting === 'true' || form.dataset.sent === 'true') return;
         if (!form.reportValidity()) return;
         if (WEB3FORMS_ACCESS_KEY === 'YOUR_ACCESS_KEY_HERE') {
             window.toast.show(t.toast_send_config);
@@ -116,6 +116,7 @@ const contact = (() => {
 
             if (!response.ok || !result.success) throw new Error('Web3Forms rejected the submission');
 
+            form.dataset.sent = 'true';
             outText.textContent = t.toast_send;
             outputBox.classList.remove('hidden');
             window.toast.show(t.toast_send);
@@ -129,7 +130,7 @@ const contact = (() => {
             window.toast.show(t.toast_send_error);
         } finally {
             delete form.dataset.submitting;
-            submitButton.disabled = false;
+            submitButton.disabled = form.dataset.sent === 'true';
         }
     }
 

@@ -68,7 +68,23 @@ test('sends a Web3Forms request and resets the form only after success', async (
     });
     assert.equal(harness.form.wasReset, true);
     assert.deepEqual(harness.toasts, ['Mensaje enviado.']);
-    assert.equal(harness.button.disabled, false);
+    assert.equal(harness.form.dataset.sent, 'true');
+    assert.equal(harness.button.disabled, true);
+});
+
+test('does not send another message after the first successful submission', async () => {
+    let requestCount = 0;
+    const harness = createContactHarness(async () => {
+        requestCount += 1;
+        return { ok: true, json: async () => ({ success: true }) };
+    });
+
+    await harness.contact.handleSubmit({ preventDefault() {} });
+    await harness.contact.handleSubmit({ preventDefault() {} });
+
+    assert.equal(requestCount, 1);
+    assert.equal(harness.button.disabled, true);
+    assert.deepEqual(harness.toasts, ['Mensaje enviado.']);
 });
 
 test('keeps the form contents and reports an error when Web3Forms rejects the request', async () => {
