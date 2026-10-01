@@ -7,6 +7,7 @@
 window.EXPERIENCE_DATA = [
     {
         role: 'Senior .NET Full Stack Developer',
+        roleKey: 'role_kopius',
         company: 'Kopius Tech (Home Care & Home Base)',
         companyParts: [
             { text: 'Kopius Tech', href: 'https://kopiustech.com/' },
@@ -22,6 +23,7 @@ window.EXPERIENCE_DATA = [
     },
     {
         role: 'Ssr Full Stack Developer',
+        roleKey: 'role_axonier',
         company: 'Axonier Consulting (Assist-Card)',
         companyParts: [
             { text: 'Axonier Consulting', href: 'https://axonier.com/' },
@@ -35,6 +37,7 @@ window.EXPERIENCE_DATA = [
     },
     {
         role: 'Ssr Full Stack Developer',
+        roleKey: 'role_arrow',
         company: 'Software Arrow',
         companyParts: [
             { text: 'Software Arrow', href: 'https://www.linkedin.com/company/68165214' },
@@ -45,6 +48,7 @@ window.EXPERIENCE_DATA = [
     },
     {
         role: 'Jr. Full Stack Developer',
+        roleKey: 'role_octubre',
         company: 'Grupo Octubre',
         companyParts: [
             { text: 'Grupo Octubre', href: 'https://octubre.com/' }

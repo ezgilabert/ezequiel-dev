@@ -6,7 +6,21 @@
 window.TRANSLATIONS = {
     es: {
         meta_description: "Portfolio de Ezequiel Garcia Gilabert, desarrollador Senior .NET Full Stack en Buenos Aires.",
+        profile_open: "Abrir perfil",
+        profile_close: "Cerrar perfil",
+        location_map_title: "Ver Buenos Aires en Google Maps",
+        tablist_label: "Secciones del portfolio",
+        language_toggle_title: "Cambiar idioma",
+        theme_toggle_title: "Cambiar tema",
+        theme_toggle_label: "Modo",
+        cosmos_toggle_label: "Contemplar el fondo cósmico",
+        cosmos_theme_toggle_label: "Cambiar modo oscuro o claro",
+        cosmos_exit_label: "Volver al portfolio",
         experience_language_english: "Trabajo en inglés",
+        role_kopius: "Senior .NET Full Stack Developer",
+        role_axonier: "Ssr Full Stack Developer",
+        role_arrow: "Ssr Full Stack Developer",
+        role_octubre: "Jr. Full Stack Developer",
         bio: `Hola, soy <strong class="font-semibold text-zinc-900 dark:text-white">Ezequiel</strong>!<br><br>
         Desarrollador con más de 9 años de experiencia en el ecosistema <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span>, especializado principalmente en sectores como <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">Healthcare e Insurance</span>.<br><br>
         Más allá de mi pasión por la ciencia y las nuevas tecnologías, lo que realmente me mueve es resolver problemas, que termina siendo ayudar a las personas: entender qué está pasando, descubrir por qué ocurre e intentar encontrar la mejor solución.<br><br>
@@ -106,11 +120,25 @@ window.TRANSLATIONS = {
         }
     },
     en: {
-        meta_description: "Portfolio of Ezequiel Garcia Gilabert, AI Software Engineer .NET based in Buenos Aires.",
+        meta_description: "Portfolio of Ezequiel Garcia Gilabert, a Senior .NET Full Stack Developer based in Buenos Aires.",
+        profile_open: "Open profile",
+        profile_close: "Close profile",
+        location_map_title: "View Buenos Aires on Google Maps",
+        tablist_label: "Portfolio sections",
+        language_toggle_title: "Change language",
+        theme_toggle_title: "Change theme",
+        theme_toggle_label: "Theme",
+        cosmos_toggle_label: "View the cosmic background",
+        cosmos_theme_toggle_label: "Toggle dark or light mode",
+        cosmos_exit_label: "Return to portfolio",
         experience_language_english: "English-speaking role",
+        role_kopius: "Senior .NET Full Stack Developer",
+        role_axonier: "Mid-level Full Stack Developer",
+        role_arrow: "Mid-level Full Stack Developer",
+        role_octubre: "Junior Full Stack Developer",
         bio: `Hi, I'm <strong class="font-semibold text-zinc-900 dark:text-white">Ezequiel</strong>!<br><br>
-        Developer with over 9 years of experience in the <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span> ecosystem, specializing primarily in sectors such as <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">Healthcare and Insurance</span>.<br><br>
-        Beyond my passion for science and new technologies, what truly drives me is solving problems, which ultimately means helping people: understanding what is happening, discovering why it occurs, and trying to find the best solution.<br><br>
+        I'm a developer with over 9 years of experience in the <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span> ecosystem, specializing mainly in <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">healthcare and insurance</span>.<br><br>
+        I'm passionate about science and new technologies, but what drives me most is solving problems and helping people. I enjoy understanding what is happening, figuring out why, and finding the best solution.<br><br>
         I am naturally curious. I love a wide range of things, from games, movies, and TV shows to economics, marketing, and geopolitics. I could go on!<br><br>
         I enjoy working as part of a team, taking on challenges, and being there to help when someone needs it.`,
         cat_contact: "Contact Me!",
@@ -151,10 +179,10 @@ window.TRANSLATIONS = {
             experience: {
                 kopius: [
                     "Maintained and evolved a monolithic .NET and WinForms healthcare application used for home care services in the United States.",
-                    "Gradually migrated monolith features to embedded web modules (Pilets) developed with Angular.",
+                    "Gradually migrated features from the monolith to embedded web modules (Pilets) built with Angular.",
                     "Developed and maintained .NET Core microservices and features in a Blazor frontend, integrated with existing and new databases.",
                     "Analyzed and resolved production incidents, refactored code, and improved application stability and maintainability.",
-                    "Maintained and optimized databases and stored procedures, and created and updated reports through direct SQL Server access.",
+                    "Maintained and optimized databases and stored procedures, and created or updated reports by querying SQL Server directly.",
                     "Collaborated in a Scrum environment across multiple IT teams, providing support and technical guidance to teammates.",
                     "Participated in technical discussions with external API providers and adopted GitHub Copilot and custom MCP tools with subagents."
                 ],
@@ -163,11 +191,11 @@ window.TRANSLATIONS = {
                     "Delivered end-to-end features.",
                     "Resolved production bugs, refactored code, and improved application stability and maintainability.",
                     "Maintained databases and stored procedures (SPs), making adjustments and updates to support application needs.",
-                    "Contributed to other parts of the company ecosystem, including a .NET payment gateway and a core system developed in Java.",
+                    "Also contributed to other company projects, including a .NET payment gateway and a Java-based core system.",
                     "Collaborated in an Agile environment, supporting and guiding teammates as they joined the project."
                 ],
                 arrow: [
-                    "Worked as a Dev Lead at a startup, selecting the technology stack, speaking with clients, supporting teammates, and developing features.",
+                    "As a development lead at a startup, I helped choose the technology stack, worked with clients, supported teammates, and developed features.",
                     "Assisted with the development of a desktop management system using WinForms and PostgreSQL.",
                     "Supported the development of custom e-commerce applications using Angular, .NET Core, Entity Framework, and PostgreSQL.",
                     "Contributed to the development of an e-commerce application with Laravel."

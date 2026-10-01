@@ -43,6 +43,16 @@ const i18n = (() => {
             if (t[key]) el.placeholder = t[key];
         });
 
+        $$('[data-i18n-title]').forEach(el => {
+            const key = el.getAttribute('data-i18n-title');
+            if (t[key]) el.title = t[key];
+        });
+
+        $$('[data-i18n-aria-label]').forEach(el => {
+            const key = el.getAttribute('data-i18n-aria-label');
+            if (t[key]) el.setAttribute('aria-label', t[key]);
+        });
+
         // The bio translations intentionally contain inline markup.
         const bioEl = $('#bio-text');
         if (bioEl) bioEl.innerHTML = t.bio;

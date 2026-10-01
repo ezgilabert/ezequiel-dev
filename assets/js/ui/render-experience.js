@@ -17,7 +17,7 @@ const renderExperience = (() => {
                 <div class="flex-1 min-w-0">
                     <div class="exp-header-row">
                         <div class="exp-title-block">
-                            <h3 class="exp-role">${exp.role}</h3>
+                            <h3 class="exp-role" data-i18n="${exp.roleKey}">${exp.role}</h3>
                         </div>
                         <span class="exp-dates">${exp.dates}</span>
                     </div>

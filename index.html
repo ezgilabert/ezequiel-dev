@@ -29,7 +29,7 @@
     <canvas id="space-canvas"></canvas>
 
     <!-- Keep the fixed avatar outside the main layout container. -->
-    <button id="profile-trigger" class="profile-trigger" aria-label="Abrir perfil">
+    <button id="profile-trigger" class="profile-trigger" aria-label="Abrir perfil" data-i18n-aria-label="profile_open">
         <img src="assets/img/perfil.jpg" alt="Ezequiel Garcia Gilabert">
     </button>
     <main class="glass-card">
@@ -40,7 +40,7 @@
 
             <aside class="profile-sidebar col-left" id="profile-sidebar">
                 <div class="profile-sheet-handle"></div>
-                <button id="profile-close" class="profile-close" aria-label="Cerrar perfil">
+                <button id="profile-close" class="profile-close" aria-label="Cerrar perfil" data-i18n-aria-label="profile_close">
                     <i class="ph-bold ph-x"></i>
                 </button>
 
@@ -53,7 +53,7 @@
                             <h1 class="profile-name">Ezequiel Garcia Gilabert</h1>
                             <p class="profile-role">AI Software Engineer | .NET</p>
                             <p class="profile-location">
-                                <a href="https://www.google.com/maps/place/Buenos+Aires" target="_blank" rel="noopener noreferrer" class="profile-location-link" title="Ver Buenos Aires en Google Maps">
+                                <a href="https://www.google.com/maps/place/Buenos+Aires" target="_blank" rel="noopener noreferrer" class="profile-location-link" title="Ver Buenos Aires en Google Maps" data-i18n-title="location_map_title">
                                     <i class="ph-bold ph-map-pin"></i>
                                     <span>Buenos Aires, Argentina</span>
                                 </a>
@@ -94,7 +94,7 @@
                 <div class="panel-content">
 
                     <nav class="app-nav">
-                        <div class="app-nav-tabs" role="tablist" aria-label="Secciones del portfolio">
+                        <div class="app-nav-tabs" role="tablist" aria-label="Secciones del portfolio" data-i18n-aria-label="tablist_label">
                             <button id="tab-btn-experience" class="app-nav-tab active" type="button" role="tab" aria-selected="true" aria-controls="tab-experience" tabindex="0" data-tab="experience" data-i18n="nav_exp">Experiencia</button>
                             <button id="tab-btn-skills" class="app-nav-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-skills" tabindex="-1" data-tab="skills" data-i18n="nav_skills">Habilidades</button>
                             <button id="tab-btn-education" class="app-nav-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-education" tabindex="-1" data-tab="education" data-i18n="nav_edu">Educación</button>
@@ -102,15 +102,15 @@
                         </div>
 
                         <div class="app-nav-toggles">
-                            <button id="lang-toggle-btn" type="button" class="btn-toggle" title="Cambiar Idioma / Change Language">
+                            <button id="lang-toggle-btn" type="button" class="btn-toggle" title="Cambiar idioma" data-i18n-title="language_toggle_title">
                                 <i class="ph-bold ph-globe"></i>
                                 <span id="lang-label">ES / EN</span>
                             </button>
-                            <button id="theme-toggle-btn" type="button" class="btn-toggle" title="Cosmic Switch">
+                            <button id="theme-toggle-btn" type="button" class="btn-toggle" title="Cambiar tema" data-i18n-title="theme_toggle_title">
                                 <i id="theme-icon" class="ph-bold ph-sun"></i>
-                                <span class="btn-toggle-label">Modo</span>
+                                <span class="btn-toggle-label" data-i18n="theme_toggle_label">Modo</span>
                             </button>
-                            <button id="cosmos-view-toggle" class="btn-toggle cosmos-view-toggle" type="button" aria-label="Contemplar el fondo cósmico / View the cosmos" aria-pressed="false" title="Contemplar el fondo cósmico / View the cosmos">
+                            <button id="cosmos-view-toggle" class="btn-toggle cosmos-view-toggle" type="button" aria-label="Contemplar el fondo cósmico" data-i18n-aria-label="cosmos_toggle_label" aria-pressed="false" title="Contemplar el fondo cósmico" data-i18n-title="cosmos_toggle_label">
                                 <i class="ph-bold ph-eye" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -253,7 +253,7 @@
 
                                 <div id="contact-output" class="contact-ide__feedback hidden">
                                     <i class="ph-bold ph-check-circle"></i>
-                                    <span id="contact-out-text">Mensaje enviado correctamente.</span>
+                                    <span id="contact-out-text" data-i18n="toast_send">Mensaje enviado correctamente.</span>
                                 </div>
 
                                 <div class="contact-ide__footer">
@@ -275,10 +275,10 @@
 
         </div>
     </main>
-    <button id="cosmos-view-theme-toggle" class="cosmos-view-exit cosmos-view-theme-toggle" type="button" aria-label="Cambiar modo oscuro o claro / Toggle dark or light mode" title="Cambiar modo oscuro o claro / Toggle dark or light mode" hidden>
+    <button id="cosmos-view-theme-toggle" class="cosmos-view-exit cosmos-view-theme-toggle" type="button" aria-label="Cambiar modo oscuro o claro" data-i18n-aria-label="cosmos_theme_toggle_label" title="Cambiar modo oscuro o claro" data-i18n-title="cosmos_theme_toggle_label" hidden>
         <i id="cosmos-view-theme-icon" class="ph-bold ph-sun" aria-hidden="true"></i>
     </button>
-    <button id="cosmos-view-exit" class="cosmos-view-exit" type="button" aria-label="Volver al portfolio / Return to portfolio" title="Volver al portfolio / Return to portfolio" hidden>
+    <button id="cosmos-view-exit" class="cosmos-view-exit" type="button" aria-label="Volver al portfolio" data-i18n-aria-label="cosmos_exit_label" title="Volver al portfolio" data-i18n-title="cosmos_exit_label" hidden>
         <i class="ph-bold ph-eye-slash" aria-hidden="true"></i>
     </button>
 
