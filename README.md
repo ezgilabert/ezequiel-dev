@@ -6,9 +6,9 @@ A responsive personal portfolio for a AI Software Engineer .NET. It presents pro
 
 - Experience, skills, education, and contact sections.
 - Spanish and English UI text, including localized experience and education lists.
-- Light and dark themes with a canvas-based cosmic animation.
+- Light and dark themes with a canvas-based cosmic animation; spectator mode supports panning and mouse-wheel zoom.
 - Responsive profile sidebar and expandable experience and education cards.
-- Contact details with email copying and a character counter.
+- Contact details with email copying and a field-specific character counter for the contact form.
 
 ## Run Locally
 
