@@ -48,6 +48,18 @@ window.SKILLS_DATA = [
         ]
     },
     {
+        id: 'db',
+        labelKey: 'cat_db',
+        items: [
+            { name: 'SQL Server',               icon: 'sqlserver' },
+            { name: 'PostgreSQL',               icon: 'postgres' },
+            { name: 'MongoDB',                  icon: 'mongodb' },
+            { name: 'T-SQL & Tuning',           icon: 'tsql' },
+            { name: 'Microsoft Report Builder', icon: 'reportBuilder' },
+            { name: 'Crystal Reports',          icon: 'crystalReports' }
+        ]
+    },
+    {
         id: 'devops',
         labelKey: 'cat_devops',
         items: [
@@ -58,18 +70,6 @@ window.SKILLS_DATA = [
             { name: 'Git',                 icon: 'git' },
             { name: 'CI/CD Pipelines',     icon: 'cicd' },
             { name: 'SonarQube',           icon: 'sonarqube' }
-        ]
-    },
-    {
-        id: 'db',
-        labelKey: 'cat_db',
-        items: [
-            { name: 'SQL Server',               icon: 'sqlserver' },
-            { name: 'PostgreSQL',               icon: 'postgres' },
-            { name: 'MongoDB',                  icon: 'mongodb' },
-            { name: 'T-SQL & Tuning',           icon: 'tsql' },
-            { name: 'Microsoft Report Builder', icon: 'reportBuilder' },
-            { name: 'Crystal Reports',          icon: 'crystalReports' }
         ]
     }
 ];

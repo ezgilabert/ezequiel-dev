@@ -76,7 +76,7 @@ const renderSkills = (() => {
         if (!container) return;
         container.className = 'skills-layout';
         container.replaceChildren();
-        window.SKILLS_DATA.forEach((cat, index) => container.appendChild(buildCategory(cat, index === 0)));
+        window.SKILLS_DATA.forEach(category => container.appendChild(buildCategory(category, true)));
     }
 
     function init() { render(); }
