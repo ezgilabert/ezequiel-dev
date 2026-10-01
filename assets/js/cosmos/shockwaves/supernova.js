@@ -7,7 +7,7 @@
 const supernovaOverlay = (() => {
     const S = window.CosmosState;
 
-    function draw(starX, starY) {
+    function draw(starX, starY, zoomScale = 1) {
         const p = S.supernovaProgress;
         const g = S.supernovaGlow;
         if (g <= 0.01) return;
@@ -18,7 +18,7 @@ const supernovaOverlay = (() => {
                 ? Math.max(...S.shockwaves.map(sw => sw.radius))
                 : Math.hypot(S.width, S.height) * 0.95),
             80
-        );
+        ) * zoomScale;
 
         // Fases de color
         const coolP = Math.max(0, (p - 0.70) / 0.30);

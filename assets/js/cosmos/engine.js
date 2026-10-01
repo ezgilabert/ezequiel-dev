@@ -178,10 +178,9 @@ const cosmos = (() => {
             ctx.setTransform(1, 0, 0, 1, 0, 0);
 
             if (S.supernovaGlow > 0.01) {
-                window.shockwaves.drawSupernovaOverlay(
-                    S.width / 2 + (starX - S.width / 2) * S.sceneZoom + S.panX + S.shakeX,
-                    S.height / 2 + (starY - S.height / 2) * S.sceneZoom + S.panY + S.shakeY
-                );
+                const overlayStarX = S.width / 2 + (starX - S.width / 2) * S.sceneZoom + S.panX + S.shakeX;
+                const overlayStarY = S.height / 2 + (starY - S.height / 2) * S.sceneZoom + S.panY + S.shakeY;
+                window.shockwaves.drawSupernovaOverlay(overlayStarX, overlayStarY, S.sceneZoom);
             }
 
             // These effects cover the viewport, independent of the scene pan.

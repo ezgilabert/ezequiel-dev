@@ -7,7 +7,7 @@
  *   - init()
  *   - trigger(impactX, impactY)
  *   - draw(isDark)
- *   - drawSupernovaOverlay(starX, starY)
+ *   - drawSupernovaOverlay(starX, starY, zoomScale)
  */
 
 const shockwaves = (() => {
@@ -21,8 +21,8 @@ const shockwaves = (() => {
         window.shockWaves.draw(isDark);
     }
 
-    function drawSupernovaOverlay(starX, starY) {
-        window.supernovaOverlay.draw(starX, starY);
+    function drawSupernovaOverlay(starX, starY, zoomScale = 1) {
+        window.supernovaOverlay.draw(starX, starY, zoomScale);
     }
 
     return { init, trigger, draw, drawSupernovaOverlay };

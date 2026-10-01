@@ -13,14 +13,14 @@ const sunRedGiant = (() => {
         const pulseRadius = Math.sin(S.pulseAnim) * 8;
         const baseRadius = (115 + pulseRadius) * (1 - dwarfProgress * 0.25);
         const heatAlpha = 1 - dwarfProgress;
+        const screenStarX = S.width / 2 + (starX - S.width / 2) * S.sceneZoom + S.panX + S.shakeX;
+        const screenStarY = S.height / 2 + (starY - S.height / 2) * S.sceneZoom + S.panY + S.shakeY;
 
         // ============================================================
         // Layer 1: warm outer atmosphere.
         // ============================================================
         ctx.save();
-        ctx.translate(-S.panX, -S.panY);
-        const screenStarX = starX + S.panX;
-        const screenStarY = starY + S.panY;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
         const outerHeat = ctx.createRadialGradient(
             screenStarX, screenStarY, 10, screenStarX, screenStarY,
             Math.max(S.width, S.height) * 1.2
@@ -38,7 +38,7 @@ const sunRedGiant = (() => {
         // Layer 2: ambient light cast leftward from the sun.
         // ============================================================
         ctx.save();
-        ctx.translate(-S.panX, -S.panY);
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
         const leftAmbientLight = ctx.createLinearGradient(S.width, screenStarY, 0, screenStarY);
         leftAmbientLight.addColorStop(0, `rgba(249, 115, 22, ${0.20 * heatAlpha})`);
         leftAmbientLight.addColorStop(0.5, `rgba(220, 38, 38, ${0.12 * heatAlpha})`);
