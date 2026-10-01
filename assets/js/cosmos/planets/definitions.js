@@ -12,8 +12,7 @@ const planetDefs = (() => {
         angle: Math.random() * Math.PI * 2,
         speed: 0.006,
         radius: 16,
-        isDestroyed: false,
-        fragments: []
+        isWithered: false
     };
 
     // Moon.
@@ -37,13 +36,15 @@ const planetDefs = (() => {
         ringRadiusY: 10
     };
 
-    // Mars survives the supernova because it is farther away.
+    // Mars is destroyed by the supernova.
     const planet3 = {
         orbitRadiusX: 900,
         orbitRadiusY: 310,
         angle: Math.random() * Math.PI * 2 + 4.0,
         speed: 0.0016,
-        radius: 14
+        radius: 14,
+        isDestroyed: false,
+        fragments: []
     };
 
     return {

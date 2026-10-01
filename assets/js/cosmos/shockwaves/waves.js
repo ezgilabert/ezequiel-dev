@@ -116,10 +116,14 @@ const shockWaves = (() => {
                 if (isExplode) {
                     const pos = window.planets.computePositions(sw.x, sw.y);
                     const distToEarth = Math.hypot(pos.p1X - sw.x, pos.p1Y - sw.y);
+                    const distToMars = Math.hypot(pos.p3X - sw.x, pos.p3Y - sw.y);
 
-                    if (!window.planets.planet1.isDestroyed && sw.radius >= distToEarth - 10) {
-                        window.planets.destroyEarth(pos.p1X, pos.p1Y, pos.mX, pos.mY);
-                        createExplosionSparks(pos.p1X, pos.p1Y);
+                    if (!window.planetDefs.planet1.isWithered && sw.radius >= distToEarth - 10) {
+                        window.planets.witherEarth();
+                    }
+                    if (!window.planets.planet3.isDestroyed && sw.radius >= distToMars - 10) {
+                        window.planets.destroyMars(pos.p3X, pos.p3Y);
+                        createExplosionSparks(pos.p3X, pos.p3Y);
                     }
                 }
 

@@ -70,20 +70,23 @@ const asteroids = (() => {
         }
     }
 
-    function drawLinearBelt(isDark, waveRadius, waveX, waveY) {
-        const linearBelt = Belts.getLinearBelt();
-        const isRewind  = FSM.is(FSM.STATES.REWIND);
-        const isExplode = FSM.is(FSM.STATES.EXPLODE);
-
+    function getLinearBeltPath() {
         const viewX = S.mouseX;
         const viewY = S.mouseY;
         const startX = S.width * 0.45 + viewX;
         const startY = -80 + viewY;
         const endX = -120 + viewX;
         const endY = S.height * 0.9 + viewY;
-
         const angle = Math.atan2(endY - startY, endX - startX);
-        const perpAngle = angle + Math.PI / 2;
+
+        return { startX, startY, endX, endY, perpAngle: angle + Math.PI / 2 };
+    }
+
+    function drawLinearBelt(isDark, waveRadius, waveX, waveY) {
+        const linearBelt = Belts.getLinearBelt();
+        const isRewind  = FSM.is(FSM.STATES.REWIND);
+        const isExplode = FSM.is(FSM.STATES.EXPLODE);
+        const { startX, startY, endX, endY, perpAngle } = getLinearBeltPath();
 
         ctx.beginPath();
         ctx.moveTo(startX, startY);
@@ -150,7 +153,19 @@ const asteroids = (() => {
         Belts.resetAll();
     }
 
-    return { draw, resetAllSatellites };
+    function destroyAllTargets() {
+        const starX = S.width * S.sceneAnchorX + S.mouseX;
+        const starY = S.height * 0.5 + S.mouseY;
+        const { startX, startY, endX, endY, perpAngle } = getLinearBeltPath();
+
+        Collisions.checkSolar(Belts.getSolarBelt(), starX, starY, Infinity, starX, starY);
+        Collisions.checkLinear(
+            Belts.getLinearBelt(), startX, startY, endX, endY,
+            perpAngle, Infinity, starX, starY
+        );
+    }
+
+    return { draw, resetAllSatellites, destroyAllTargets };
 })();
 
 window.asteroids = asteroids;

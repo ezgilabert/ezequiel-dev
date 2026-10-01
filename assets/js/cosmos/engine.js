@@ -90,10 +90,11 @@ const cosmos = (() => {
         const isExplode = FSM.is(FSM.STATES.EXPLODE);
         const isRewind  = FSM.is(FSM.STATES.REWIND);
 
-        if (isRewind && !window.planets.planet1.isDestroyed) {
+        if (isRewind && !window.planets.planet3.isDestroyed) {
             S.rewindFactor = Math.max(0, S.rewindFactor - 0.022);
             if (S.rewindFactor === 0) {
                 window.asteroids.resetAllSatellites();
+                window.planets.resetPostSupernova();
                 FSM.reset();
             }
         }
@@ -202,6 +203,14 @@ const cosmos = (() => {
         window.ctx = ctx;
 
         resize();
+        if (!document.documentElement.classList.contains('dark')) {
+            const starX = S.width * S.sceneAnchorX;
+            const starY = S.height * 0.5;
+            const positions = window.planets.computePositions(starX, starY);
+            window.planets.witherEarth();
+            window.planets.destroyMars(positions.p3X, positions.p3Y);
+            window.asteroids.destroyAllTargets();
+        }
         window.addEventListener('resize', resize);
 
         window.addEventListener('mousemove', (e) => {

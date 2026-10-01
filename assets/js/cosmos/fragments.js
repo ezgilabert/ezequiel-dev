@@ -226,6 +226,7 @@ const fragments = (() => {
     // ============================================================
     const EARTH_COLORS = ['#38bdf8', '#1d4ed8', '#15803d', '#a16207', '#f8fafc', '#15803d'];
     const MOON_COLORS  = ['#f8fafc', '#cbd5e1', '#94a3b8', '#64748b'];
+    const MARS_COLORS  = ['#fb923c', '#ea580c', '#c2410c', '#7c2d12', '#a16207'];
 
     function buildParticles(impactX, impactY, baseRadius, count, colors, blastFactor) {
         const out = [];
@@ -272,6 +273,10 @@ const fragments = (() => {
         const planetFrags = buildParticles(impactX, impactY, planetRadius, 55, EARTH_COLORS, 0.045);
         const moonFrags   = buildParticles(moonX,   moonY,   moonRadius,   28, MOON_COLORS,  0.045);
         return { planetFrags, moonFrags };
+    }
+
+    function createMarsFragments(impactX, impactY, radius) {
+        return buildParticles(impactX, impactY, radius, 48, MARS_COLORS, 0.045);
     }
 
     function drawFragments(frags, baseX, baseY, rewindRate, dustChance) {
@@ -335,6 +340,7 @@ const fragments = (() => {
         createSatelliteFragments,
         drawSatelliteFragments,
         createPlanetFragments,
+        createMarsFragments,
         drawFragments,
         EARTH_COLORS,
         MOON_COLORS
