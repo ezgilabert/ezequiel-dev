@@ -67,7 +67,7 @@ window.TRANSLATIONS = {
                     "Migración progresiva de funcionalidades del monolito a módulos web embebidos (Pilets) con Angular dentro del mismo sistema.",
                     "Desarrollo y mantenimiento de microservicios en .NET Core y funcionalidades en un frontend Blazor, integrados con bases de datos existentes y nuevas.",
                     "Análisis y resolución de incidencias en producción, refactorización y mejoras de código enfocadas en la estabilidad y mantenibilidad de las aplicaciones.",
-                    "Mantenimiento y optimización de bases de datos y stored procedures, además de creación y ajuste de reportes mediante acceso directo a SQL Server.",
+                    "Mantenimiento y optimización de bases de datos y stored procedures, además de creación y ajuste de reportes mediante Microsoft Report Builder.",
                     "Trabajo colaborativo en Scrum con múltiples equipos de IT, brindando soporte y orientación técnica a compañeros.",
                     "Participación en reuniones técnicas con proveedores de APIs externas e incorporación de GitHub Copilot y herramientas MCP propias con subagentes."
                 ],
@@ -182,7 +182,7 @@ window.TRANSLATIONS = {
                     "Gradually migrated features from the monolith to embedded web modules (Pilets) built with Angular.",
                     "Developed and maintained .NET Core microservices and features in a Blazor frontend, integrated with existing and new databases.",
                     "Analyzed and resolved production incidents, refactored code, and improved application stability and maintainability.",
-                    "Maintained and optimized databases and stored procedures, and created or updated reports by querying SQL Server directly.",
+                    "Maintained and optimized databases and stored procedures, and created and adjusted reports using Microsoft Report Builder.",
                     "Collaborated in a Scrum environment across multiple IT teams, providing support and technical guidance to teammates.",
                     "Participated in technical discussions with external API providers and adopted GitHub Copilot and custom MCP tools with subagents."
                 ],
