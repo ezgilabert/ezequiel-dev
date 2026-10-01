@@ -15,7 +15,8 @@ window.EXPERIENCE_DATA = [
             { text: ')' }
         ],
         dates: '06/2022 - 07/2026',
-        tech: '.NET Core 8, Blazor, Angular, WinForms, TypeScript, SQL Server, Azure, GitHub Copilot, MCP',
+        tech: '.NET Core 8, WinForms, Angular (Pilets), Blazor, Microservices, SQL Server, Stored Procedures, Scrum, GitHub Copilot, MCP',
+        languageKey: 'experience_language_english',
         i18nKey: 'lists.experience.kopius',
         expanded: true
     },
@@ -43,13 +44,13 @@ window.EXPERIENCE_DATA = [
         i18nKey: 'lists.experience.arrow'
     },
     {
-        role: 'Full Stack Developer',
+        role: 'Jr. Full Stack Developer',
         company: 'Grupo Octubre',
         companyParts: [
             { text: 'Grupo Octubre', href: 'https://octubre.com/' }
         ],
         dates: '02/2017 - 12/2019',
-        tech: '.NET Framework, SQL Server, PostgreSQL, Angular, JavaScript, NHibernate, Crystal Reports',
+        tech: '.NET Framework, JavaScript (Vanilla), SQL Server, Crystal Reports',
         i18nKey: 'lists.experience.octubre'
     }
 ];

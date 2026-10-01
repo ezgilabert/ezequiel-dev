@@ -6,6 +6,7 @@
 window.TRANSLATIONS = {
     es: {
         meta_description: "Portfolio de Ezequiel Garcia Gilabert, desarrollador Senior .NET Full Stack en Buenos Aires.",
+        experience_language_english: "Trabajo en inglés",
         bio: `Hola, soy <strong class="font-semibold text-zinc-900 dark:text-white">Ezequiel</strong>!<br><br>
         Desarrollador con más de 9 años de experiencia en el ecosistema <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span>, especializado principalmente en sectores como <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">Healthcare e Insurance</span>.<br><br>
         Más allá de mi pasión por la ciencia y las nuevas tecnologías, lo que realmente me mueve es resolver problemas, que termina siendo ayudar a las personas: entender qué está pasando, descubrir por qué ocurre e intentar encontrar la mejor solución.<br><br>
@@ -48,15 +49,21 @@ window.TRANSLATIONS = {
         lists: {
             experience: {
                 kopius: [
-                    "Liderazgo técnico en el diseño y migración de sistemas legacy .NET WinForms hacia arquitecturas modernas web con .NET Core 8, Blazor y Angular.",
-                    "Implementación de patrones Domain-Driven Design (DDD), Clean Architecture y microservicios en Azure Cloud.",
-                    "Optimización masiva de consultas en SQL Server, reduciendo tiempos de respuesta en reportes críticos de healthcare.",
-                    "Integración de IA con GitHub Copilot y MCP (Model Context Protocol) para acelerar pipelines de desarrollo."
+                    "Mantenimiento y evolución de una aplicación monolítica de healthcare en .NET y WinForms, utilizada para servicios de atención médica domiciliaria en Estados Unidos.",
+                    "Migración progresiva de funcionalidades del monolito a módulos web embebidos (Pilets) con Angular dentro del mismo sistema.",
+                    "Desarrollo y mantenimiento de microservicios en .NET Core y funcionalidades en un frontend Blazor, integrados con bases de datos existentes y nuevas.",
+                    "Análisis y resolución de incidencias en producción, refactorización y mejoras de código enfocadas en la estabilidad y mantenibilidad de las aplicaciones.",
+                    "Mantenimiento y optimización de bases de datos y stored procedures, además de creación y ajuste de reportes mediante acceso directo a SQL Server.",
+                    "Trabajo colaborativo en Scrum con múltiples equipos de IT, brindando soporte y orientación técnica a compañeros.",
+                    "Participación en reuniones técnicas con proveedores de APIs externas e incorporación de GitHub Copilot y herramientas MCP propias con subagentes."
                 ],
                 axonier: [
-                    "Desarrollo e integración de mejoras continuas sobre plataformas asistenciales y portales web para Assist-Card.",
-                    "Construcción e integración de APIs RESTful resilientes con .NET Core y Razor Pages.",
-                    "Gestión y tuning de base de datos SQL Server, procedimientos almacenados y optimización de indexación."
+                    "Desarrollo y mantenimiento de dos nuevos portales de ventas: uno global y otro para agencias de viaje según el país, utilizados por agentes y equipos internos.",
+                    "Implementación de funcionalidades de punta a punta.",
+                    "Resolución de bugs en producción, refactorización de código y mejoras orientadas a la estabilidad y mantenibilidad de las aplicaciones.",
+                    "Mantenimiento de bases de datos y procedimientos almacenados (SP), con ajustes y actualizaciones según las necesidades de las aplicaciones.",
+                    "Participación en otros proyectos de la empresa, incluido un gateway de pagos en .NET y un sistema core desarrollado en Java.",
+                    "Trabajo colaborativo en un entorno ágil, con soporte y orientación a compañeros que se incorporaban al proyecto."
                 ],
                 arrow: [
                     "Diseño y desarrollo de aplicaciones web a medida utilizando .NET Core, Angular 8 y Entity Framework Core.",
@@ -64,9 +71,12 @@ window.TRANSLATIONS = {
                     "Automatización de despliegues y control de versiones distribuido con Git."
                 ],
                 octubre: [
-                    "Desarrollo e implementación de sistemas de gestión interna con .NET Framework, NHibernate y Angular.",
-                    "Diseño e impresión de reportes corporativos avanzados utilizando Crystal Reports.",
-                    "Administración y modelado relacional en bases de datos SQL Server y PostgreSQL."
+                    "Desarrollo Full Stack .NET principalmente para los sistemas de gestión de OSPeRyH y la aseguradora Edificar del Grupo Octubre, dando soporte también a otras soluciones del grupo.",
+                    "Mantenimiento de distintas instancias de una solución con JavaScript Vanilla en el frontend, .NET Framework en el backend y SQL Server como base de datos.",
+                    "Resolución de bugs, refactorización y desarrollo o modificación de ABMs en frontend y backend, trabajando mediante tickets y prioridades del equipo.",
+                    "Trabajo conjunto con analistas funcionales para aclarar requerimientos y validar tickets, con contacto ocasional con usuarios para resolver problemas.",
+                    "Acceso ocasional a bases de datos productivas para realizar tareas puntuales de soporte.",
+                    "Creación y modificación de reportes según las necesidades del equipo."
                 ]
             },
             education: {
@@ -96,6 +106,7 @@ window.TRANSLATIONS = {
     },
     en: {
         meta_description: "Portfolio of Ezequiel Garcia Gilabert, AI Software Engineer .NET based in Buenos Aires.",
+        experience_language_english: "English-speaking role",
         bio: `Hi, I'm <strong class="font-semibold text-zinc-900 dark:text-white">Ezequiel</strong>!<br><br>
         Developer with over 9 years of experience in the <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span> ecosystem, specializing primarily in sectors such as <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">Healthcare and Insurance</span>.<br><br>
         Beyond my passion for science and new technologies, what truly drives me is solving problems, which ultimately means helping people: understanding what is happening, discovering why it occurs, and trying to find the best solution.<br><br>
@@ -138,15 +149,21 @@ window.TRANSLATIONS = {
         lists: {
             experience: {
                 kopius: [
-                    "Technical leadership in designing and migrating legacy .NET WinForms systems to modern web architectures with .NET Core 8, Blazor, and Angular.",
-                    "Implementation of Domain-Driven Design (DDD), Clean Architecture, and microservices in Azure Cloud.",
-                    "Massive optimization of SQL Server queries, reducing response times for critical healthcare reports.",
-                    "AI integration using GitHub Copilot and MCP (Model Context Protocol) to accelerate development pipelines."
+                    "Maintained and evolved a monolithic .NET and WinForms healthcare application used for home care services in the United States.",
+                    "Gradually migrated monolith features to embedded web modules (Pilets) developed with Angular.",
+                    "Developed and maintained .NET Core microservices and Blazor features integrated with existing and new databases.",
+                    "Analyzed and resolved production incidents, refactored code, and improved application stability and maintainability.",
+                    "Maintained and optimized databases and stored procedures, and created and updated reports through direct SQL Server access without an ORM.",
+                    "Collaborated in a Scrum environment across multiple IT teams, providing support and technical guidance to teammates.",
+                    "Participated in technical discussions with external API providers and adopted GitHub Copilot and custom MCP tools with subagents."
                 ],
                 axonier: [
-                    "Full Stack development and continuous feature engineering on assistance platforms and web portals for Assist-Card.",
-                    "Building and integrating resilient RESTful APIs with .NET Core and Razor Pages.",
-                    "SQL Server database management and tuning, stored procedures, and index optimization."
+                    "Developed and maintained two new sales portals: a global portal and country-specific portals for travel agencies, used by travel agents and internal teams.",
+                    "Delivered end-to-end features.",
+                    "Resolved production bugs, refactored code, and improved application stability and maintainability.",
+                    "Maintained databases and stored procedures (SPs), making adjustments and updates to support application needs.",
+                    "Contributed to other parts of the company ecosystem, including a .NET payment gateway and a core system developed in Java.",
+                    "Collaborated in an Agile environment and supported teammates joining the project."
                 ],
                 arrow: [
                     "Design and development of custom web applications using .NET Core, Angular 8, and Entity Framework Core.",
@@ -154,9 +171,12 @@ window.TRANSLATIONS = {
                     "Deployment automation and distributed version control using Git."
                 ],
                 octubre: [
-                    "Development and implementation of internal management systems with .NET Framework, NHibernate, and Angular.",
-                    "Design and rendering of advanced corporate reports using Crystal Reports.",
-                    "Administration and relational modeling in SQL Server and PostgreSQL databases."
+                    "Worked as a Full Stack .NET developer on OSPeRyH and Grupo Octubre's insurance management systems, while supporting other group solutions.",
+                    "Maintained multiple instances of a solution using vanilla JavaScript on the frontend, .NET Framework on the backend, and SQL Server.",
+                    "Resolved bugs, refactored code, and developed or modified frontend and backend CRUD modules, working from tickets and team priorities.",
+                    "Worked closely with functional analysts to clarify requirements and validate tickets, with occasional direct user support.",
+                    "Occasionally accessed production databases to carry out specific support tasks.",
+                    "Created and modified reports based on the team's needs."
                 ]
             },
             education: {

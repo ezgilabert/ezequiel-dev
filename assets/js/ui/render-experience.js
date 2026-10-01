@@ -46,6 +46,22 @@ const renderExperience = (() => {
             link.textContent = part.text;
             company.appendChild(link);
         });
+
+        if (exp.languageKey) {
+            const languageTag = document.createElement('span');
+            languageTag.className = 'exp-language';
+
+            const icon = document.createElement('i');
+            icon.className = 'ph-bold ph-globe';
+            icon.setAttribute('aria-hidden', 'true');
+
+            const label = document.createElement('span');
+            label.dataset.i18n = exp.languageKey;
+            label.textContent = window.TRANSLATIONS.es[exp.languageKey];
+
+            languageTag.append(icon, label);
+            company.appendChild(languageTag);
+        }
         card.querySelector('.experience-header').appendChild(company);
 
         return card;
