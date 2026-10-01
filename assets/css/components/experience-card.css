@@ -25,9 +25,15 @@
 .dark .exp-role { color: #ffffff; }
 
 .exp-company {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
     font-size: 0.75rem;
     color: #52525b;
-    margin-top: 0.1rem;
+    margin-top: 0.2rem;
+    min-width: 0;
+    line-height: 1.5;
 }
 
 .exp-company a {
@@ -44,7 +50,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    margin-left: 0.5rem;
+    margin-left: 0;
     padding: 0.125rem 0.5rem;
     border: 1px solid rgba(37, 99, 235, 0.16);
     border-radius: 9999px;
