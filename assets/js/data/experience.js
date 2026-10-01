@@ -15,7 +15,7 @@ window.EXPERIENCE_DATA = [
             { text: ')' }
         ],
         dates: '06/2022 - 07/2026',
-        tech: '.NET Core 8, WinForms, Angular (Pilets), Blazor, Microservices, SQL Server, Stored Procedures, Scrum, GitHub Copilot, MCP',
+        tech: 'GitHub Copilot, MCP, Blazor WebAssembly, Angular, TypeScript, WinForms, .NET Core 8, .NET Framework 4.6.2, Dapper, SQL Server, Git, Azure, Kubernetes',
         languageKey: 'experience_language_english',
         i18nKey: 'lists.experience.kopius',
         expanded: true
@@ -30,7 +30,7 @@ window.EXPERIENCE_DATA = [
             { text: ')' }
         ],
         dates: '03/2021 - 06/2022',
-        tech: '.NET Core 5.0, Razor, JavaScript, jQuery, Bootstrap, SQL Server, Azure, GIT, TFS',
+        tech: 'Razor, jQuery, JavaScript, .NET Core 5.0, .NET Framework 4.6.2, SQL Server, Git, TFS, Azure',
         i18nKey: 'lists.experience.axonier'
     },
     {
@@ -40,7 +40,7 @@ window.EXPERIENCE_DATA = [
             { text: 'Software Arrow', href: 'https://www.linkedin.com/company/68165214' },
         ],
         dates: '12/2019 - 12/2020',
-        tech: '.NET Core 3.1, Angular 8, TypeScript, Entity Framework, Laravel, PostgreSQL, Bootstrap, Git',
+        tech: 'Angular 8, TypeScript, Laravel, .NET Core 3.1, Entity Framework, PostgreSQL, Bootstrap, Git, GitLab',
         i18nKey: 'lists.experience.arrow'
     },
     {
@@ -50,7 +50,7 @@ window.EXPERIENCE_DATA = [
             { text: 'Grupo Octubre', href: 'https://octubre.com/' }
         ],
         dates: '02/2017 - 12/2019',
-        tech: '.NET Framework, JavaScript (Vanilla), SQL Server, Crystal Reports',
+        tech: 'JavaScript (Vanilla), Angular 2, .NET Framework, NHibernate, PostgreSQL, SQL Server, Crystal Reports, Git, GitLab',
         i18nKey: 'lists.experience.octubre'
     }
 ];

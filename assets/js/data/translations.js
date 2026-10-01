@@ -66,9 +66,10 @@ window.TRANSLATIONS = {
                     "Trabajo colaborativo en un entorno ágil, con soporte y orientación a compañeros que se incorporaban al proyecto."
                 ],
                 arrow: [
-                    "Diseño y desarrollo de aplicaciones web a medida utilizando .NET Core, Angular 8 y Entity Framework Core.",
-                    "Mantenimiento y desarrollo en stack secundario PHP Laravel / PostgreSQL.",
-                    "Automatización de despliegues y control de versiones distribuido con Git."
+                    "Me desempeñé como Dev Lead en una startup, definiendo el stack tecnológico, conversando con clientes, acompañando al equipo y desarrollando funcionalidades.",
+                    "Colaboré en el desarrollo de un sistema de gestión de escritorio con WinForms y PostgreSQL.",
+                    "Brindé apoyo en el desarrollo de e-commerce a medida con Angular, .NET Core, Entity Framework y PostgreSQL.",
+                    "Colaboré en el desarrollo de un e-commerce con Laravel."
                 ],
                 octubre: [
                     "Desarrollo Full Stack .NET principalmente para los sistemas de gestión de OSPeRyH y la aseguradora Edificar del Grupo Octubre, dando soporte también a otras soluciones del grupo.",
@@ -166,9 +167,10 @@ window.TRANSLATIONS = {
                     "Collaborated in an Agile environment, supporting and guiding teammates as they joined the project."
                 ],
                 arrow: [
-                    "Design and development of custom web applications using .NET Core, Angular 8, and Entity Framework Core.",
-                    "Maintenance and development on secondary PHP Laravel / PostgreSQL stack.",
-                    "Deployment automation and distributed version control using Git."
+                    "Worked as a Dev Lead at a startup, selecting the technology stack, speaking with clients, supporting teammates, and developing features.",
+                    "Assisted with the development of a desktop management system using WinForms and PostgreSQL.",
+                    "Supported the development of custom e-commerce applications using Angular, .NET Core, Entity Framework, and PostgreSQL.",
+                    "Contributed to the development of an e-commerce application with Laravel."
                 ],
                 octubre: [
                     "Primarily worked as a Full Stack .NET developer on the management systems for OSPeRyH and Edificar, Grupo Octubre's insurance company, while also supporting other group solutions.",
