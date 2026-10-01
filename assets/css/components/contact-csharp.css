@@ -5,7 +5,7 @@
 
 .contact-ide {
     width: 100%;
-    max-width: 34rem;
+    max-width: 100%;
     margin-inline: auto;
     border-radius: 12px;
     overflow: hidden;
@@ -167,7 +167,7 @@
     border: 1px solid rgba(86, 156, 214, 0.2);
     border-radius: 8px;
     width: calc(100% - 5.5rem - 1rem);
-    max-width: 42ch;
+    max-width: none;
     box-sizing: border-box;
     transition: all 0.2s ease;
     vertical-align: top;
