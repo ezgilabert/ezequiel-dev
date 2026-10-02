@@ -77,35 +77,42 @@
  * ============================================================ */
 @media (max-width: 767px) {
 
-    /* ============================================================
-     * Critical fix: the body is no longer flex and fills the full width.
-     * ============================================================ */
+    /* Keep the document still; scroll the frame internally on mobile. */
     body.app-body {
+        position: fixed !important;
+        inset: 0 !important;
         display: block !important;
         align-items: stretch !important;
         justify-content: flex-start !important;
         padding: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        min-height: 100vh !important;
-        min-height: 100svh !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
     }
 
-    /* Glass card fills the full viewport width. */
+    /* Keep the frame anchored while its content scrolls inside it. */
     .glass-card {
+        position: fixed !important;
+        inset: 0 !important;
         width: 100vw !important;
         max-width: 100vw !important;
-        min-height: 100vh !important;
-        min-height: 100svh !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        min-height: 0 !important;
         border-radius: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        overscroll-behavior-y: contain;
+        -webkit-overflow-scrolling: touch;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         background: rgba(12, 10, 20, 0.94) !important;
         border: none !important;
         box-shadow: none !important;
-        position: relative !important;
         color: #eceeed !important;
     }
 
