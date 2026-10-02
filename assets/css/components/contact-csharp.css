@@ -415,6 +415,9 @@ html:not(.dark) .contact-ide__feedback {
         font-size: 0.62rem;
     }
 
+    #contact-name { width: 10ch; }
+    #contact-email { width: 14ch; }
+
     .contact-ide__textarea-wrap {
         width: calc(100% - 3.5rem - 0.3rem);
         max-width: 100%;
