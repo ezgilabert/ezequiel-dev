@@ -88,7 +88,7 @@
         width: 100% !important;
         max-width: 100% !important;
         min-height: 100vh !important;
-        min-height: 100dvh !important;
+        min-height: 100svh !important;
     }
 
     /* Glass card fills the full viewport width. */
@@ -96,6 +96,7 @@
         width: 100vw !important;
         max-width: 100vw !important;
         min-height: 100vh !important;
+        min-height: 100svh !important;
         border-radius: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
@@ -126,7 +127,7 @@
         width: 100% !important;
         max-width: 100% !important;
         min-height: 100vh;
-        min-height: 100dvh;
+        min-height: 100svh;
     }
 
     /* Panel fills the full width. */
@@ -147,6 +148,7 @@
         max-width: 100% !important;
         box-sizing: border-box !important;
         min-height: 100vh;
+        min-height: 100svh;
     }
 
     /* ============================================================
@@ -211,6 +213,7 @@
         width: 100vw !important;
         max-width: 100vw !important;
         max-height: 85vh !important;
+        max-height: 85svh !important;
         overflow-y: auto;
         overscroll-behavior: contain;
         grid-column: auto !important;

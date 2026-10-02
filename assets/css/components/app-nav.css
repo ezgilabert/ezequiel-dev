@@ -286,6 +286,7 @@
         overflow-x: hidden;
         height: auto;
         min-height: 100vh;
+        min-height: 100svh;
     }
 
     /* Keep the bottom navigation fixed to the viewport. */
