@@ -8,6 +8,7 @@ A responsive personal portfolio for a AI Software Engineer .NET. It presents pro
 - Spanish and English UI text, including localized experience and education lists.
 - Light and dark themes with a canvas-based cosmic animation; spectator mode supports panning and mouse-wheel zoom.
 - Responsive profile sidebar and expandable experience and education cards.
+- Loading screen stays visible for at least three seconds and remains until the page has fully loaded.
 - Contact details with email copying and a field-specific character counter for the contact form.
 
 ## Run Locally
@@ -33,7 +34,7 @@ The tests use Node.js built-in modules. From the project root, run:
 npm test
 ```
 
-The tests check local script paths and dependency order, verify both language translations, and cover successful and rejected contact form submissions.
+The tests check local script paths and dependency order, verify the loading screen timing and page-readiness behavior, validate both language translations, and cover successful and rejected contact form submissions.
 
 ## Project Structure
 

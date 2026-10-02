@@ -6,7 +6,7 @@
     "build:assets": "node scripts/copy-assets.js",
     "build:css": "tailwindcss --config ./tailwind.config.js --input ./assets/css/tailwind.input.css --output ./assets/css/tailwind.generated.css --minify",
     "build": "npm run build:assets && npm run build:css && node scripts/build-site.js",
-    "test": "node --test tests/script-order.test.js tests/translation-lists.test.js tests/contact-form.test.js"
+    "test": "node --test tests/app-loading.test.js tests/script-order.test.js tests/translation-lists.test.js tests/contact-form.test.js"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",

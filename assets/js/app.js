@@ -9,25 +9,31 @@
     const loadingScreen = document.getElementById('loading-screen');
     const loadingText = document.getElementById('loading-text');
     const loadingStartedAt = performance.now();
+    const minimumLoadingDuration = 3000;
     const savedLanguage = window.Storage.get('lang', document.documentElement.lang);
     const initialLanguage = window.TRANSLATIONS[savedLanguage] ? savedLanguage : 'es';
 
     if (loadingText) loadingText.textContent = window.TRANSLATIONS[initialLanguage].loading_text;
 
     function hideLoadingScreen() {
-        const remainingTime = Math.max(0, 500 - (performance.now() - loadingStartedAt));
-        window.setTimeout(() => {
-            if (!loadingScreen) return;
-            loadingScreen.classList.add('is-hidden');
-            loadingScreen.setAttribute('aria-hidden', 'true');
-        }, remainingTime);
+        if (!loadingScreen) return;
+        loadingScreen.classList.add('is-hidden');
+        loadingScreen.setAttribute('aria-hidden', 'true');
     }
 
-    if (document.readyState === 'complete') {
-        hideLoadingScreen();
-    } else {
-        window.addEventListener('load', hideLoadingScreen, { once: true });
+    function waitForPageAndHideLoadingScreen() {
+        const remainingTime = minimumLoadingDuration - (performance.now() - loadingStartedAt);
+
+        if (document.readyState === 'complete' && remainingTime <= 0) {
+            hideLoadingScreen();
+            return;
+        }
+
+        const nextCheckDelay = document.readyState === 'complete' ? remainingTime : 100;
+        window.setTimeout(waitForPageAndHideLoadingScreen, nextCheckDelay);
     }
+
+    waitForPageAndHideLoadingScreen();
 
     window.renderSkills.init();
     window.renderExperience.init();
