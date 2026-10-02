@@ -64,7 +64,8 @@ window.TRANSLATIONS = {
         lists: {
             experience: {
                 kopius: [
-                    "Desarrollé y mantuve una aplicación Blazor WebAssembly responsive para gestión de referidos de healthcare, integrada en una arquitectura de micro-frontends con Piral.",
+                    "Desarrollé y mantuve una aplicación Blazor WebAssembly responsive para gestión de referidos de healthcare, integrada en una arquitectura de micro-frontends con Piral, trabajando en su preparación para el pre-release.",
+                    "Trabajo en bases de datos, realizando cambios de esquema y tareas relacionadas con replicación, además de crear, modificar y optimizar procedimientos almacenados; también desarrollé y ajusté reportes en Microsoft Report Builder.",
                     "Contribuí al desarrollo y mantenimiento de microservicios RESTful consumidos vía Refit, e implementé capacidades de extracción de datos asistida por IA para documentos clínicos.",
                     "Optimicé capas de datos multi-tenant con Dapper, procedimientos almacenados complejos en SQL Server y scripts SSDT (dacpac) para despliegues CI/CD idempotentes.",
                     "Mantuve la aplicación legacy WinForms (arquitectura MVP) de sistemas de healthcare, desarrollando reportes SSRS y procedimientos almacenados para módulos clínicos y de facturación.",
@@ -180,7 +181,8 @@ window.TRANSLATIONS = {
         lists: {
             experience: {
                 kopius: [
-                    "Built and maintained a responsive Blazor WebAssembly application for healthcare referral intake management, seamlessly integrated into a Piral micro-frontend architecture.",
+                    "Built and maintained a responsive Blazor WebAssembly application for healthcare referral intake management, seamlessly integrated into a Piral micro-frontend architecture while preparing it for pre-release.",
+                    "Worked with databases, handling schema changes and replication-related work, as well as creating, modifying, and optimizing stored procedures; also created and updated reports using Microsoft Report Builder.",
                     "Contributed to the development and maintenance of RESTful microservices consumed via Refit HTTP clients, and implemented AI-assisted data extraction capabilities for clinical documents.",
                     "Optimized multi-tenant data layers using Dapper, complex SQL Server stored procedures, and SSDT (dacpac) for idempotent CI/CD deployment scripts.",
                     "Maintained legacy enterprise WinForms application (MVP architecture) for healthcare systems, developing SSRS reports and SQL Server stored procedures for clinical and billing modules.",
