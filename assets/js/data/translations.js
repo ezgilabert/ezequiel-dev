@@ -67,7 +67,7 @@ window.TRANSLATIONS = {
                     "Migración progresiva de funcionalidades del monolito a módulos web embebidos (Pilets) con Angular dentro del mismo sistema.",
                     "Desarrollo y mantenimiento de microservicios en .NET Core y funcionalidades en una nueva aplicación Blazor en reemplazo del monolito, trabajando en su preparación para el pre-release.",
                     "Análisis y resolución de incidencias en producción, refactorización y mejoras de código enfocadas en la estabilidad y mantenibilidad de las aplicaciones.",
-                    "Trabajo con bases de datos, realizando cambios de esquema y tareas relacionadas con replicación, además de crear, modificar y optimizar procedimientos almacenados; también desarrollé y ajusté reportes en Microsoft Report Builder.",
+                    "Trabajo en bases de datos, realizando cambios de esquema y tareas relacionadas con replicación, además de crear, modificar y optimizar procedimientos almacenados; también desarrollé y ajusté reportes en Microsoft Report Builder.",
                     "Colaboración en Scrum con Product Owners y equipos de negocio y tecnología para alinear requisitos, definir soluciones y brindar orientación técnica.",
                     "Participación en reuniones técnicas con proveedores de APIs externas, demos internas y adopción de GitHub Copilot y herramientas MCP propias con subagentes."
                 ],
@@ -76,7 +76,8 @@ window.TRANSLATIONS = {
                     "Implementación de funcionalidades de punta a punta.",
                     "Resolución de bugs en producción, refactorización de código y mejoras orientadas a la estabilidad y mantenibilidad de las aplicaciones.",
                     "Mantenimiento de bases de datos y procedimientos almacenados, con ajustes y actualizaciones según las necesidades de las aplicaciones.",
-                    "Participación en otros proyectos de la empresa, incluido un gateway de pagos en .NET y un sistema core desarrollado en Java.",
+                    "Desarrollo y mantenimiento de microservicios en .NET Core para migrar un sistema core existente desarrollado en Java.",
+                    "Colaboración en otros proyectos de la empresa, incluido un gateway de pagos en .NET y un sistema core desarrollado en Java.",
                     "Trabajo colaborativo en un entorno ágil, con soporte y orientación a compañeros que se incorporaban al proyecto."
                 ],
                 arrow: [
@@ -182,7 +183,7 @@ window.TRANSLATIONS = {
                     "Gradually migrated features from the monolith to embedded web modules (Pilets) built with Angular.",
                     "Developed and maintained .NET Core microservices and features in a new Blazor application replacing the monolith, preparing it for pre-release.",
                     "Analyzed and resolved production incidents, refactored code, and improved application stability and maintainability.",
-                    "Worked across databases, handling schema changes and replication-related work, as well as creating, modifying, and optimizing stored procedures; also created and updated reports using Microsoft Report Builder.",
+                    "Worked with databases, handling schema changes and replication-related work, as well as creating, modifying, and optimizing stored procedures; also created and updated reports using Microsoft Report Builder.",
                     "Collaborated in Scrum with Product Owners and business and technology teams to align requirements, define solutions, and provide technical guidance.",
                     "Participated in technical discussions with external API providers, internal demos, and the adoption of GitHub Copilot and custom MCP tools with subagents."
                 ],
@@ -191,7 +192,8 @@ window.TRANSLATIONS = {
                     "Delivered end-to-end features.",
                     "Resolved production bugs, refactored code, and improved application stability and maintainability.",
                     "Maintained databases and stored procedures, making adjustments and updates to support application needs.",
-                    "Also contributed to other company projects, including a .NET payment gateway and a Java-based core system.",
+                    "Developed and maintained .NET Core microservices to migrate an existing Java-based core system.",
+                    "Contributed to other company projects, including a .NET payment gateway and a core system developed in Java.",
                     "Collaborated in an Agile environment, supporting and guiding teammates as they joined the project."
                 ],
                 arrow: [

@@ -49,8 +49,16 @@ test('Kopius experience includes Blazor pre-release and multi-database work in b
 
     assert.match(spanishBullets.join(' '), /Blazor.*pre-release/i);
     assert.match(englishBullets.join(' '), /Blazor.*pre-release/i);
-    assert.match(spanishBullets.join(' '), /múltiples bases de datos.*cambios de esquema.*replicación.*crear, modificar y optimizar procedimientos almacenados/i);
-    assert.match(englishBullets.join(' '), /multiple databases.*schema changes.*replication.*creating, modifying, and optimizing stored procedures/i);
+    assert.match(spanishBullets.join(' '), /Trabajo en bases de datos.*cambios de esquema.*replicación.*crear, modificar y optimizar procedimientos almacenados/i);
+    assert.match(englishBullets.join(' '), /Worked with databases.*schema changes.*replication.*creating, modifying, and optimizing stored procedures/i);
+});
+
+test('Axonier experience includes the .NET Core microservices migration in both languages', () => {
+    const spanishBullets = getAtPath(translations.es, 'lists.experience.axonier');
+    const englishBullets = getAtPath(translations.en, 'lists.experience.axonier');
+
+    assert.match(spanishBullets.join(' '), /(?=.*\.NET Core)(?=.*microservicios)(?=.*migrar)(?=.*sistema core)(?=.*Java)/i);
+    assert.match(englishBullets.join(' '), /(?=.*\.NET Core)(?=.*microservices)(?=.*migrate)(?=.*core system)(?=.*Java)/i);
 });
 
 test('i18n renders nested list translations as text content', () => {
