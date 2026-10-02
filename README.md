@@ -7,6 +7,7 @@ A responsive personal portfolio for a AI Software Engineer .NET. It presents pro
 - Experience, skills, education, and contact sections.
 - Spanish and English UI text, including localized experience and education lists.
 - Light and dark themes with a canvas-based cosmic animation; spectator mode supports panning and mouse-wheel zoom.
+- Applies the saved theme before stylesheets load to prevent a flash of the wrong theme on refresh.
 - Responsive profile sidebar and expandable experience and education cards.
 - Loading screen stays visible for at least three seconds and remains until the page has fully loaded.
 - Contact details with email copying and a field-specific character counter for the contact form.
@@ -34,7 +35,7 @@ The tests use Node.js built-in modules. From the project root, run:
 npm test
 ```
 
-The tests check local script paths and dependency order, verify the loading screen timing and page-readiness behavior, validate both language translations, and cover successful and rejected contact form submissions.
+The tests check local script paths and dependency order, verify early theme initialization and loading screen timing and page-readiness behavior, validate both language translations, and cover successful and rejected contact form submissions.
 
 ## Project Structure
 
@@ -44,14 +45,14 @@ assets/
   icons/     Technology and social icons
   img/       Profile imagery
   js/
-    core/    DOM, storage, and event helpers
+    core/    DOM, storage, event helpers, and early theme initialization
     data/    Portfolio content, icons, and translations
     ui/      Tabs, profile cards, contact, theme, and renderers
     cosmos/  Canvas animation and its visual systems
 tests/       Node.js checks for script loading and translations
 ```
 
-Application scripts are classic browser scripts listed in dependency order at the end of `index.html`. Keep that order intact when adding or moving scripts; the script-order test checks key dependencies.
+Most application scripts are classic browser scripts listed in dependency order at the end of `index.html`. The early theme initializer is loaded in the document head before stylesheets to prevent a theme flash. Keep the application script order intact when adding or moving scripts; the script-order test checks key dependencies.
 
 ## Contact Form
 

@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const { existsSync, readFileSync } = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
+const vm = require('node:vm');
 
 const projectRoot = path.resolve(__dirname, '..');
 const html = readFileSync(path.join(projectRoot, 'index.html'), 'utf8');
@@ -47,6 +48,27 @@ test('index includes the accessible local loading screen', () => {
     assert.match(html, /id="loading-screen" role="status" aria-live="polite"/);
     assert.match(html, /class="loading-ring"/);
     assert.match(html, /id="loading-text" class="loading-text"/);
+});
+
+test('index applies the saved theme before loading stylesheets', () => {
+    const themeScript = 'assets/js/core/theme-init.js';
+    const themeScriptIndex = html.indexOf(`<script src="${themeScript}"></script>`);
+    assert.notEqual(themeScriptIndex, -1, 'Expected a theme initialization script');
+    assert.ok(themeScriptIndex < html.indexOf('assets/css/'), 'Theme must initialize before stylesheets');
+    const source = readFileSync(path.join(projectRoot, themeScript), 'utf8');
+
+    const htmlElement = {
+        classes: new Set(['dark']),
+        classList: {
+            remove(className) { htmlElement.classes.delete(className); }
+        }
+    };
+    vm.runInNewContext(source, {
+        document: { documentElement: htmlElement },
+        localStorage: { getItem: () => '"light"' }
+    });
+
+    assert.equal(htmlElement.classes.has('dark'), false);
 });
 
 test('index uses local fonts and icons without runtime CDNs', () => {
