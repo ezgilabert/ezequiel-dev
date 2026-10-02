@@ -12,11 +12,24 @@
     const minimumLoadingDuration = 3000;
     const savedLanguage = window.Storage.get('lang', document.documentElement.lang);
     const initialLanguage = window.TRANSLATIONS[savedLanguage] ? savedLanguage : 'es';
+    const loadingMessages = ['LOADING...', 'CARGANDO...'];
+    let loadingMessageIndex = 0;
+    let loadingMessageInterval = null;
 
-    if (loadingText) loadingText.textContent = window.TRANSLATIONS[initialLanguage].loading_text;
+    if (loadingText) {
+        loadingText.textContent = loadingMessages[loadingMessageIndex];
+        loadingMessageInterval = window.setInterval(() => {
+            loadingMessageIndex = (loadingMessageIndex + 1) % loadingMessages.length;
+            loadingText.textContent = loadingMessages[loadingMessageIndex];
+        }, 1500);
+    }
 
     function hideLoadingScreen() {
         if (!loadingScreen) return;
+        if (loadingMessageInterval !== null) {
+            window.clearInterval(loadingMessageInterval);
+            loadingMessageInterval = null;
+        }
         loadingScreen.classList.add('is-hidden');
         loadingScreen.setAttribute('aria-hidden', 'true');
     }
