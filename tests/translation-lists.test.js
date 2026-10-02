@@ -43,6 +43,16 @@ test('every experience role has a translation in both languages', () => {
     }
 });
 
+test('Kopius experience includes Blazor pre-release and multi-database work in both languages', () => {
+    const spanishBullets = getAtPath(translations.es, 'lists.experience.kopius');
+    const englishBullets = getAtPath(translations.en, 'lists.experience.kopius');
+
+    assert.match(spanishBullets.join(' '), /Blazor.*pre-release/i);
+    assert.match(englishBullets.join(' '), /Blazor.*pre-release/i);
+    assert.match(spanishBullets.join(' '), /múltiples bases de datos.*cambios de esquema.*replicación.*crear, modificar y optimizar procedimientos almacenados/i);
+    assert.match(englishBullets.join(' '), /multiple databases.*schema changes.*replication.*creating, modifying, and optimizing stored procedures/i);
+});
+
 test('i18n renders nested list translations as text content', () => {
     const list = {
         dataset: { i18nList: experiences[0].i18nKey },

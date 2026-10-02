@@ -65,11 +65,10 @@ window.TRANSLATIONS = {
                 kopius: [
                     "Mantenimiento y evolución de una aplicación monolítica de healthcare en .NET y WinForms, utilizada para servicios de atención médica domiciliaria en Estados Unidos.",
                     "Migración progresiva de funcionalidades del monolito a módulos web embebidos (Pilets) con Angular dentro del mismo sistema.",
-                    "Desarrollo y mantenimiento de microservicios en .NET Core y funcionalidades en un frontend Blazor, integrados con bases de datos existentes y nuevas.",
+                    "Desarrollo y mantenimiento de microservicios en .NET Core y funcionalidades en una nueva aplicación Blazor en reemplazo del monolito, trabajando en su preparación para el pre-release.",
                     "Análisis y resolución de incidencias en producción, refactorización y mejoras de código enfocadas en la estabilidad y mantenibilidad de las aplicaciones.",
-                    "Mantenimiento y optimización de bases de datos y stored procedures, además de creación y ajuste de reportes mediante Microsoft Report Builder.",
-                    "Participación activa en reuniones con Product Owners y múltiples equipos de negocio y tecnología para alinear requisitos y soluciones.",
-                    "Trabajo colaborativo en Scrum con múltiples equipos de IT, brindando soporte y orientación técnica a compañeros.",
+                    "Trabajo con bases de datos, realizando cambios de esquema y tareas relacionadas con replicación, además de crear, modificar y optimizar procedimientos almacenados; también desarrollé y ajusté reportes en Microsoft Report Builder.",
+                    "Colaboración en Scrum con Product Owners y equipos de negocio y tecnología para alinear requisitos, definir soluciones y brindar orientación técnica.",
                     "Participación en reuniones técnicas con proveedores de APIs externas, demos internas y adopción de GitHub Copilot y herramientas MCP propias con subagentes."
                 ],
                 axonier: [
@@ -181,11 +180,10 @@ window.TRANSLATIONS = {
                 kopius: [
                     "Maintained and evolved a monolithic .NET and WinForms healthcare application used for home care services in the United States.",
                     "Gradually migrated features from the monolith to embedded web modules (Pilets) built with Angular.",
-                    "Developed and maintained .NET Core microservices and features in a Blazor frontend, integrated with existing and new databases.",
+                    "Developed and maintained .NET Core microservices and features in a new Blazor application replacing the monolith, preparing it for pre-release.",
                     "Analyzed and resolved production incidents, refactored code, and improved application stability and maintainability.",
-                    "Maintained and optimized databases and stored procedures, and created and adjusted reports using Microsoft Report Builder.",
-                    "Actively participated in meetings with Product Owners and multiple business and technology teams to align requirements and solutions.",
-                    "Collaborated in a Scrum environment across multiple IT teams, providing support and technical guidance to teammates.",
+                    "Worked across databases, handling schema changes and replication-related work, as well as creating, modifying, and optimizing stored procedures; also created and updated reports using Microsoft Report Builder.",
+                    "Collaborated in Scrum with Product Owners and business and technology teams to align requirements, define solutions, and provide technical guidance.",
                     "Participated in technical discussions with external API providers, internal demos, and the adoption of GitHub Copilot and custom MCP tools with subagents."
                 ],
                 axonier: [
