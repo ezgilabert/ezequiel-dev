@@ -1,0 +1,157 @@
+#loading-screen {
+    --loading-bg: #1a0505;
+    --loading-red: #4a0e0e;
+    --loading-orange: #ff6b35;
+    --loading-hot: #ff2a2a;
+    --loading-planet-core: #ffcc00;
+    --loading-ring-primary: rgba(255, 107, 53, 0.3);
+    --loading-ring-secondary: rgba(255, 42, 42, 0.3);
+    --loading-ring-tertiary: rgba(255, 204, 0, 0.2);
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #f0e6e6;
+    background: radial-gradient(circle at center, var(--loading-red) 0%, var(--loading-bg) 100%);
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.45s ease, visibility 0s linear 0.45s;
+}
+
+#loading-screen.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+html:not(.dark) #loading-screen {
+    --loading-bg: #f3f0f7;
+    --loading-red: #ffffff;
+    --loading-orange: #7c3aed;
+    --loading-hot: #2563eb;
+    --loading-planet-core: #dbeafe;
+    --loading-ring-primary: rgba(37, 99, 235, 0.35);
+    --loading-ring-secondary: rgba(124, 58, 237, 0.3);
+    --loading-ring-tertiary: rgba(96, 165, 250, 0.3);
+    color: #27272a;
+}
+
+html:not(.dark) .loading-stars {
+    opacity: 0.2;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, #2563eb, transparent),
+        radial-gradient(1px 1px at 40% 60%, #7c3aed, transparent),
+        radial-gradient(2px 2px at 80% 30%, #2563eb, transparent),
+        radial-gradient(1px 1px at 90% 80%, #7c3aed, transparent),
+        radial-gradient(1px 1px at 30% 90%, #2563eb, transparent);
+}
+
+.loading-stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1px 1px at 40% 60%, white, transparent),
+        radial-gradient(2px 2px at 80% 30%, white, transparent),
+        radial-gradient(1px 1px at 90% 80%, white, transparent),
+        radial-gradient(1px 1px at 30% 90%, white, transparent);
+    opacity: 0.5;
+    animation: loading-twinkle 4s infinite alternate;
+}
+
+.loading-core {
+    position: relative;
+    display: grid;
+    width: 10rem;
+    height: 10rem;
+    place-items: center;
+}
+
+.loading-planet {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--loading-planet-core), var(--loading-hot));
+    box-shadow: 0 0 30px var(--loading-hot), 0 0 60px var(--loading-orange);
+    animation: loading-pulse 2s infinite alternate;
+}
+
+.loading-ring {
+    position: absolute;
+    border: 2px solid var(--loading-ring-primary);
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    animation: loading-spin 1.5s linear infinite;
+}
+
+.loading-ring:nth-child(1) {
+    width: 6.25rem;
+    height: 6.25rem;
+    animation-duration: 2s;
+}
+
+.loading-ring:nth-child(2) {
+    width: 8.125rem;
+    height: 8.125rem;
+    border-color: var(--loading-ring-secondary);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    animation-duration: 3s;
+    animation-direction: reverse;
+}
+
+.loading-ring:nth-child(3) {
+    width: 10rem;
+    height: 10rem;
+    border-color: var(--loading-ring-tertiary);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    animation-duration: 4s;
+}
+
+.loading-text {
+    margin-top: 2.5rem;
+    color: var(--loading-orange);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+    animation: loading-blink 1.5s infinite alternate;
+}
+
+@keyframes loading-twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 0.7; }
+}
+
+@keyframes loading-pulse {
+    from { transform: scale(1); box-shadow: 0 0 20px var(--loading-hot); }
+    to { transform: scale(1.1); box-shadow: 0 0 50px var(--loading-hot), 0 0 80px var(--loading-orange); }
+}
+
+@keyframes loading-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes loading-blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #loading-screen,
+    .loading-stars,
+    .loading-planet,
+    .loading-ring,
+    .loading-text {
+        animation: none;
+        transition: none;
+    }
+}

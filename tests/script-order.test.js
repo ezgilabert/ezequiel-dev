@@ -41,6 +41,14 @@ test('index loads the generated local Tailwind stylesheet', () => {
     assert.doesNotMatch(html, /cdn\.tailwindcss\.com/);
 });
 
+test('index includes the accessible local loading screen', () => {
+    assert.match(html, /href="assets\/css\/components\/loading-screen\.css"/);
+    assert.ok(existsSync(path.join(projectRoot, 'assets/css/components/loading-screen.css')));
+    assert.match(html, /id="loading-screen" role="status" aria-live="polite"/);
+    assert.match(html, /class="loading-ring"/);
+    assert.match(html, /id="loading-text" class="loading-text"/);
+});
+
 test('index uses local fonts and icons without runtime CDNs', () => {
     const localAssets = [
         'assets/css/fonts.css',

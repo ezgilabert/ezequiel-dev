@@ -25,8 +25,20 @@
     <link rel="stylesheet" href="assets/css/components/profile-sheet.css">
     <link rel="stylesheet" href="assets/css/cosmos.css">
     <link rel="stylesheet" href="assets/css/components/cosmos-view.css">
+    <link rel="stylesheet" href="assets/css/components/loading-screen.css">
 </head>
 <body class="app-body">
+
+    <div id="loading-screen" role="status" aria-live="polite">
+        <div class="loading-stars" aria-hidden="true"></div>
+        <div class="loading-core" aria-hidden="true">
+            <div class="loading-ring"></div>
+            <div class="loading-ring"></div>
+            <div class="loading-ring"></div>
+            <div class="loading-planet"></div>
+        </div>
+        <div id="loading-text" class="loading-text">CARGANDO...</div>
+    </div>
 
     <canvas id="space-canvas"></canvas>
 
