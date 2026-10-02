@@ -108,6 +108,8 @@
         overflow-y: auto !important;
         overscroll-behavior-y: contain;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         background: rgba(12, 10, 20, 0.94) !important;
@@ -115,6 +117,8 @@
         box-shadow: none !important;
         color: #eceeed !important;
     }
+
+    .glass-card::-webkit-scrollbar { display: none; }
 
     /* Light mode */
     html:not(.dark) .glass-card {
