@@ -66,6 +66,7 @@ window.TRANSLATIONS = {
                 kopius: [
                     "Desarrollé y mantuve una aplicación Blazor WebAssembly responsive para gestión de admisiones/referidos de atención médica domiciliaria (Home Care US), impulsando la migración desde una arquitectura monolítica legacy hacia su puesta en producción.",
                     "Integré módulos micro-frontend (pilets) en Angular utilizando Piral dentro de la aplicación monolítica como estrategia para modernizar componentes UI legacy.",
+                    "Trabajo en bases de datos, realizando cambios de esquema y tareas relacionadas con replicación, además de crear, modificar y optimizar procedimientos almacenados; también desarrollé y ajusté reportes en Microsoft Report Builder.",
                     "Contribuí al desarrollo y mantenimiento de microservicios RESTful consumidos mediante clientes HTTP Refit, e implementé capacidades de extracción de datos asistida por IA para documentos clínicos.",
                     "Optimicé capas de datos multi-tenant mediante Dapper, procedimientos almacenados complejos en SQL Server y scripts de despliegue SSDT (dacpac).",
                     "Mantuve una aplicación empresarial WinForms legacy (arquitectura MVP), desarrollando reportes SSRS y procedimientos almacenados en SQL Server para módulos clínicos y de facturación.",
@@ -186,6 +187,7 @@ window.TRANSLATIONS = {
                 kopius: [
                     "Built and maintained a responsive Blazor WebAssembly application for healthcare referral intake management (US Home Care), driving a gradual migration from a legacy monolithic architecture towards system go-live.",
                     "Integrated Angular micro-frontend modules (pilets) using Piral into the monolithic application as a strategy to modernize legacy UI components.",
+                    "Worked with databases, handling schema changes and replication-related work, as well as creating, modifying, and optimizing stored procedures; also created and updated reports using Microsoft Report Builder.",
                     "Contributed to RESTful microservices consumed via Refit HTTP clients and implemented AI-assisted data extraction capabilities for clinical documents.",
                     "Optimized multi-tenant data layers using Dapper, complex SQL Server stored procedures, and SSDT (dacpac) deployment scripts.",
                     "Maintained a legacy enterprise WinForms application (MVP architecture) for healthcare systems, developing SSRS reports and SQL Server stored procedures for clinical and billing modules.",
