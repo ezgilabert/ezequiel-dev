@@ -18,10 +18,10 @@ window.TRANSLATIONS = {
         cosmos_exit_label: "Volver al portfolio",
         loading_text: "CARGANDO...",
         experience_language_english: "Trabajo en inglés",
-        role_kopius: "Senior .NET Full Stack Developer",
-        role_axonier: "Ssr Full Stack Developer",
-        role_arrow: "Ssr Full Stack Developer",
-        role_octubre: "Jr. Full Stack Developer",
+        role_kopius: "Senior Full Stack Engineer (.NET / Blazor / Angular)",
+        role_axonier: "Full Stack .NET Developer",
+        role_arrow: "Full Stack Tech Lead",
+        role_octubre: "Full Stack Developer",
         bio: `Hola, soy <strong class="font-semibold text-zinc-900 dark:text-white">Ezequiel</strong>!<br><br>
         Desarrollador con más de 9 años de experiencia en el ecosistema <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span>, especializado principalmente en sectores como <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">Healthcare e Insurance</span>.<br><br>
         Más allá de mi pasión por la ciencia y las nuevas tecnologías, lo que realmente me mueve es resolver problemas, que termina siendo ayudar a las personas: entender qué está pasando, descubrir por qué ocurre e intentar encontrar la mejor solución.<br><br>
@@ -64,36 +64,39 @@ window.TRANSLATIONS = {
         lists: {
             experience: {
                 kopius: [
-                    "Desarrollé y mantuve una aplicación Blazor WebAssembly responsive para gestión de referidos de healthcare, integrada en una arquitectura de micro-frontends con Piral, trabajando en su preparación para el pre-release.",
-                    "Trabajo en bases de datos, realizando cambios de esquema y tareas relacionadas con replicación, además de crear, modificar y optimizar procedimientos almacenados; también desarrollé y ajusté reportes en Microsoft Report Builder.",
-                    "Contribuí al desarrollo y mantenimiento de microservicios RESTful consumidos vía Refit, e implementé capacidades de extracción de datos asistida por IA para documentos clínicos.",
-                    "Optimicé capas de datos multi-tenant con Dapper, procedimientos almacenados complejos en SQL Server y scripts SSDT (dacpac) para despliegues CI/CD idempotentes.",
-                    "Mantuve la aplicación legacy WinForms (arquitectura MVP) de sistemas de healthcare, desarrollando reportes SSRS y procedimientos almacenados para módulos clínicos y de facturación.",
-                    "Orquesté el despliegue de microservicios en Microsoft Azure, gestionando configuraciones, recursos y pipelines de release.",
-                    "Colaboré con múltiples equipos de ingeniería para gestionar dependencias técnicas, alinear cronogramas de release y coordinar integraciones en sprints Scrum.",
-                    "Resolví incidentes críticos de producción, bugs y problemas de performance en microservicios y sistemas legacy, asegurando alta disponibilidad.",
-                    "Aproveché GitHub Copilot y migrá a una solución interna MCP propia para optimizar la velocidad de desarrollo y automatizar flujos de trabajo diarios."
+                    "Desarrollé y mantuve una aplicación Blazor WebAssembly responsive para gestión de admisiones/referidos de atención médica domiciliaria (Home Care US), impulsando la migración desde una arquitectura monolítica legacy hacia su puesta en producción.",
+                    "Integré módulos micro-frontend (pilets) en Angular utilizando Piral dentro de la aplicación monolítica como estrategia para modernizar componentes UI legacy.",
+                    "Contribuí al desarrollo y mantenimiento de microservicios RESTful consumidos mediante clientes HTTP Refit, e implementé capacidades de extracción de datos asistida por IA para documentos clínicos.",
+                    "Optimicé capas de datos multi-tenant mediante Dapper, procedimientos almacenados complejos en SQL Server y scripts de despliegue SSDT (dacpac).",
+                    "Mantuve una aplicación empresarial WinForms legacy (arquitectura MVP), desarrollando reportes SSRS y procedimientos almacenados en SQL Server para módulos clínicos y de facturación.",
+                    "Gestioné configuraciones en Azure, variables de entorno, despliegue de microservicios y pipelines de release.",
+                    "Investigué y optimicé problemas de rendimiento en microservicios y sistemas legacy, resolviendo incidentes de producción y mejorando la estabilidad del sistema.",
+                    "Utilicé GitHub Copilot y posteriormente una solución interna de MCP (Model Context Protocol) con sub-agentes para elevar la productividad de desarrollo y automatizar flujos de trabajo.",
+                    "Colaboré con equipos de ingeniería multidisciplinarios (+250 personas en IT) gestionando dependencias técnicas, revisiones de código e integraciones en sprints bajo metodología Scrum."
                 ],
                 axonier: [
-                    "Desarrollé y mantuve dos portales de ventas Razor para Assist-Card: un motor de ventas interno (B2E) y un portal multi-tenant B2B para agencias, localizado para mercados regionales.",
-                    "Brindé mantenimiento continuo, optimizaciones de performance y corrección de bugs críticos en plataformas de ventas de seguros y servicios web/APIs, asegurando alta disponibilidad.",
-                    "Implementé lógica de base de datos combinando procedimientos almacenados de SQL Server y consultas inline de alto rendimiento, optimizando la velocidad de recuperación de datos.",
-                    "Utilicé Azure DevOps para gestión de repositorios y ciclo de vida, ejecutando despliegues manuales a ambientes inferiores.",
-                    "Gestioné control de código fuente y pipelines de release con Azure, Git y TFS, participando activamente en ceremonias Scrum y entregas de sprint."
+                    "Continué el desarrollo de dos portales web Razor para Assist Card: una plataforma interna de ventas (B2E) y un portal multi-tenant B2B para agencias, localizado para diversos mercados regionales.",
+                    "Desarrollé y mantuve microservicios REST y servicios de API Gateway (incluyendo componentes de traducción y acceso a datos) en .NET utilizando Refit, resolviendo bugs y cuellos de botella de rendimiento.",
+                    "Colaboré en sistemas core de negocio desarrollados en Java y .NET para garantizar un procesamiento de transacciones estable y la correcta ejecución de la lógica de negocio.",
+                    "Implementé lógica de base de datos combinando procedimientos almacenados en SQL Server y consultas inline optimizadas para la recuperación rápida de datos y flujos transaccionales.",
+                    "Gestioné el control de código fuente y procesos de release a través de Azure DevOps, Git y TFS, ejecutando despliegues manuales a entornos inferiores.",
+                    "Brindé soporte a compañeros de equipo en bloqueos técnicos, integración de código y flujos diarios de trabajo dentro de sprints Scrum."
                 ],
                 arrow: [
-                    "Me desempeñé como Development Lead en una startup: definí el stack tecnológico, trabajé con clientes, mentoreé al equipo y desarrollé funcionalidades clave.",
-                    "Contribuí al desarrollo de aplicaciones enterprise usando .NET Core 3.1 en el backend y Angular 8 para SPAs.",
-                    "Integré Entity Framework con PostgreSQL, diseñando esquemas y optimizando consultas ORM.",
-                    "Desarrollé y mantuve una plataforma e-commerce en Laravel, incluyendo panel de administración para productos y contenido.",
-                    "Mentoreé a desarrolladores junior y mid-level, realicé code reviews y fomenté buenas prácticas en el equipo."
+                    "Me desempeñé como Full Stack Tech Lead en un entorno startup: lideré la toma de decisiones técnicas, la selección del stack, la comunicación directa con clientes y el mentoreo del equipo.",
+                    "Me comuniqué directamente con los clientes para definir requerimientos técnicos, alcance de entregables y dar seguimiento al progreso de los proyectos.",
+                    "Desarrollé aplicaciones web enterprise utilizando .NET Core 3.1 en el backend y Angular 8 para Single Page Applications (SPAs).",
+                    "Integré Entity Framework Core con bases de datos PostgreSQL, diseñando esquemas y optimizando consultas ORM.",
+                    "Desarrollé y mantuve una plataforma de e-commerce a medida en Laravel, incluyendo un panel de administración back-office completo para gestión de productos y contenidos.",
+                    "Mentoreé a desarrolladores junior y mid-level, realicé revisiones de código exhaustivas y promoví estándares de código limpio dentro del equipo."
                 ],
                 octubre: [
-                    "Desarrollé nuevas pantallas de UI y módulos core en plataformas de clientes (healthcare, educación superior, etc.) usando arquitectura monolítica .NET/NHibernate y frontends en Vanilla JS (Bindows).",
-                    "Colaboré directamente con Product Managers y clientes a través de plataformas de tickets para definir requerimientos y traducir feedback en tareas accionables.",
-                    "Modelé y mantuve estructuras de base de datos relacionales en PostgreSQL y SQL Server, escribiendo consultas, scripts y asegurando la integración con los servicios backend.",
-                    "Investigué y resolví bugs en frontend y backend, diagnosticando causas raíz mediante herramientas de debugging y logs para mantener la estabilidad del sistema.",
-                    "Creé y modifiqué reportes (Crystal Reports) según las necesidades del equipo y de los usuarios."
+                    "Desarrollé módulos backend monolíticos y lógica de negocio para sistemas de salud, seguros y educación superior utilizando .NET Framework, NHibernate y LINQ.",
+                    "Desarrollé y mantuve módulos CRUD, corrección de bugs y nuevas funcionalidades para un frontend en Vanilla JavaScript construido con Bindows.",
+                    "Construí un nuevo portal web para afiliados integrando un frontend en Angular 2 con los servicios backend monolíticos existentes.",
+                    "Diseñé, optimicé y mantuve estructuras de bases de datos relacionales en PostgreSQL y SQL Server, escribiendo consultas complejas, procedimientos almacenados y triggers.",
+                    "Diseñé y generé reportes operativos y de negocio utilizando Crystal Reports.",
+                    "Colaboré directamente con analistas funcionales y clientes finales a través de plataformas de tickets para relevamiento de requerimientos, análisis de logs, diagnóstico y resolución de incidentes."
                 ]
             },
             education: {
@@ -135,10 +138,10 @@ window.TRANSLATIONS = {
         cosmos_exit_label: "Return to portfolio",
         loading_text: "LOADING...",
         experience_language_english: "English-speaking role",
-        role_kopius: "Senior .NET Full Stack Developer",
-        role_axonier: "Mid-level Full Stack Developer",
-        role_arrow: "Mid-level Full Stack Developer",
-        role_octubre: "Junior Full Stack Developer",
+        role_kopius: "Senior Full Stack Engineer (.NET / Blazor / Angular)",
+        role_axonier: "Full Stack .NET Developer",
+        role_arrow: "Full Stack Tech Lead",
+        role_octubre: "Full Stack Developer",
         bio: `Hi, I'm <strong class="font-semibold text-zinc-900 dark:text-white">Ezequiel</strong>!<br><br>
         I'm a developer with over 9 years of experience in the <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">.NET</span> ecosystem, specializing mainly in <span class="font-medium underline underline-offset-4 decoration-black/30 dark:decoration-white/30">healthcare and insurance</span>.<br><br>
         I'm passionate about science and new technologies, but what drives me most is solving problems and helping people. I enjoy understanding what is happening, figuring out why, and finding the best solution.<br><br>
@@ -181,36 +184,39 @@ window.TRANSLATIONS = {
         lists: {
             experience: {
                 kopius: [
-                    "Built and maintained a responsive Blazor WebAssembly application for healthcare referral intake management, seamlessly integrated into a Piral micro-frontend architecture while preparing it for pre-release.",
-                    "Worked with databases, handling schema changes and replication-related work, as well as creating, modifying, and optimizing stored procedures; also created and updated reports using Microsoft Report Builder.",
-                    "Contributed to the development and maintenance of RESTful microservices consumed via Refit HTTP clients, and implemented AI-assisted data extraction capabilities for clinical documents.",
-                    "Optimized multi-tenant data layers using Dapper, complex SQL Server stored procedures, and SSDT (dacpac) for idempotent CI/CD deployment scripts.",
-                    "Maintained legacy enterprise WinForms application (MVP architecture) for healthcare systems, developing SSRS reports and SQL Server stored procedures for clinical and billing modules.",
-                    "Orchestrated microservice deployments to Microsoft Azure, managing app settings, resource configurations, and release pipelines.",
-                    "Collaborated with multiple cross-functional engineering teams to manage technical dependencies, align release schedules, and coordinate integration across microservices in Agile Scrum sprints.",
-                    "Resolved critical production incidents, bug fixes, and performance issues across microservices and legacy systems, ensuring high system availability.",
-                    "Leveraged GitHub Copilot and transitioned to a custom internal MCP solution to optimize developer velocity and automate daily workflows."
+                    "Built and maintained a responsive Blazor WebAssembly application for healthcare referral intake management (US Home Care), driving a gradual migration from a legacy monolithic architecture towards system go-live.",
+                    "Integrated Angular micro-frontend modules (pilets) using Piral into the monolithic application as a strategy to modernize legacy UI components.",
+                    "Contributed to RESTful microservices consumed via Refit HTTP clients and implemented AI-assisted data extraction capabilities for clinical documents.",
+                    "Optimized multi-tenant data layers using Dapper, complex SQL Server stored procedures, and SSDT (dacpac) deployment scripts.",
+                    "Maintained a legacy enterprise WinForms application (MVP architecture) for healthcare systems, developing SSRS reports and SQL Server stored procedures for clinical and billing modules.",
+                    "Managed Azure configurations, application settings, microservice deployments, and release pipelines.",
+                    "Investigated and optimized performance issues across microservices and legacy systems, resolving production incidents and improving application stability.",
+                    "Used GitHub Copilot and later an internal MCP (Model Context Protocol) solution with sub-agents to boost developer productivity and automate daily workflows.",
+                    "Collaborated with cross-functional engineering teams (+250 IT staff) to manage technical dependencies, conduct code reviews, and deliver integrations within Agile Scrum sprints."
                 ],
                 axonier: [
-                    "Continued the development of two Razor web portals for Assist-Card: an internal/B2E sales engine and a multi-tenant B2B agency portal localized for regional markets.",
-                    "Provided continuous maintenance, performance optimizations, and critical bug fixes across insurance sales platforms and backend web services/APIs, ensuring high availability.",
-                    "Implemented database logic using a mix of SQL Server stored procedures and high-performance inline queries, optimizing data retrieval speed.",
-                    "Utilized Azure DevOps features for repository and lifecycle management, executing manual application deployments to lower environments.",
-                    "Managed source control and release pipelines through Azure, Git & TFS, actively contributing to daily Scrum ceremonies and sprint deliveries."
+                    "Continued the development of two Razor web portals for Assist Card: an internal/B2E sales engine and a multi-tenant B2B agency portal localized for different regional markets.",
+                    "Developed and maintained REST microservices and API gateway services (including translation and data access components) in .NET using Refit, while resolving bugs and performance bottlenecks.",
+                    "Contributed to core business systems built in Java and .NET to ensure stable transaction processing and business logic execution.",
+                    "Implemented database logic using SQL Server stored procedures and optimized inline queries for high-performance data retrieval and transaction flows.",
+                    "Managed source control and release processes through Azure DevOps, Git, and TFS, executing application deployments to lower environments.",
+                    "Assisted and supported teammates on technical blockers, code integration, and daily workflows within Agile Scrum sprints."
                 ],
                 arrow: [
-                    "Served as Development Lead at a startup: defined the technology stack, worked with clients, mentored the team, and developed key features.",
-                    "Contributed to the development of enterprise applications using .NET Core 3.1 for backend logic and Angular 8 for single-page applications (SPAs).",
-                    "Integrated Entity Framework with PostgreSQL databases, designing schemas and optimizing ORM queries.",
-                    "Developed and maintained a Laravel e-commerce platform, including a back-office admin panel for product and content management.",
-                    "Mentored junior and mid-level developers, conducted code reviews, and fostered best practices within the team."
+                    "Served as Full Stack Tech Lead at a startup: led technical decision-making, tech stack selection, direct client communication, and team mentorship.",
+                    "Communicated directly with clients to define technical requirements, scope deliverables, and provide project updates.",
+                    "Built enterprise web applications using .NET Core 3.1 for backend services and Angular 8 for single-page applications (SPAs).",
+                    "Integrated Entity Framework Core with PostgreSQL databases, designing schemas and optimizing ORM queries.",
+                    "Developed and maintained a custom Laravel e-commerce platform, including a full-featured back-office administration panel for product and content management.",
+                    "Mentored junior and mid-level developers, conducted thorough code reviews, and promoted clean coding standards across the team."
                 ],
                 octubre: [
-                    "Built new UI screens and core modules across diverse client platforms (healthcare, higher education, etc.) using a .NET / NHibernate monolithic backend and multiple Vanilla JS (Bindows) frontends.",
-                    "Partnered directly with Product Managers and clients via ticketing platforms to scope requirements and translate feedback into actionable tasks.",
-                    "Modeled and maintained PostgreSQL and SQL Server relational database structures, writing SQL queries, scripts, and ensuring seamless integration with backend services.",
-                    "Investigated and resolved software bugs across frontend and backend codebases, diagnosing root causes through debugging tools and logs to maintain system stability.",
-                    "Created and modified reports (Crystal Reports) based on team and user needs."
+                    "Developed monolithic backend modules and business logic for healthcare, insurance, and higher education systems using .NET Framework, NHibernate, and LINQ.",
+                    "Developed and maintained CRUD modules, bug fixes, and new features for a vanilla JavaScript frontend built with Bindows.",
+                    "Built a new member-facing web portal by integrating an Angular 2 frontend with existing monolithic backend services.",
+                    "Designed, optimized, and maintained relational database structures in PostgreSQL and SQL Server, writing complex queries, stored procedures, and triggers.",
+                    "Designed and generated operational and business reports using Crystal Reports.",
+                    "Collaborated directly with functional analysts and end clients via ticketing platforms to gather requirements, analyze logs, troubleshoot issues, and resolve software incidents."
                 ]
             },
             education: {
